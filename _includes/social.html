@@ -1,0 +1,41 @@
+{%- assign social = site.minima.social_links -%}
+
+<style>
+a {
+  color: $link-base-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+  .social-media-list &:hover {
+    text-decoration: none;
+
+    .username {
+      text-decoration: underline;
+    }
+  }
+}
+
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.social-links {
+  @include relative-font-size(0.9375);
+  color: $brand-color;
+}
+
+</style>
+
+<ul class="social-media-list">
+  {%- if social.github -%}<li><a rel="me" href="https://github.com/{{ social.github | cgi_escape | escape }}" title="{{ social.github | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg></a></li>{%- endif -%}
+  <li><a rel="me" href="https://twitter.com/eooffshore" title="EoOffshore"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg></a></li>
+</ul>
