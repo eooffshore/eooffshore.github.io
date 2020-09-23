@@ -1,0 +1,9 @@
+name: eoosite
+channels:
+  - conda-forge
+  - pyviz
+dependencies:
+  - pip
+  - pip:
+    - ghp-import # GitHub Pages publish tool, used with jupyter-book
+    - jupyter-book
