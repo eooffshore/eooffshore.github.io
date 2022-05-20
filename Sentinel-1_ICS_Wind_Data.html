@@ -1,0 +1,3552 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Sentinel-1 Wind Data for Irish Continental Shelf region</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://eooffshore.github.io/Sentinel-1_ICS_Wind_Data.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Offshore Wind in Irish Areas Of Interest" href="Offshore_Wind_AOI.html" />
+    <link rel="prev" title="NEWA Wind Data for Irish Continental Shelf region" href="NEWA_ICS_Wind_Data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/eooffshore_banner.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  EOOffshore
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_overview.html">
+   Project Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="approach.html">
+   Approach
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Wind Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="datasets.html">
+   Irish Continental Shelf Data Sets
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ASCAT_ICS_Wind_Data.html">
+     ASCAT Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CCMP_ICS_Wind_Data.html">
+     CCMP Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ERA5_ICS_Wind_Data.html">
+     ERA5 Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MERA_ICS_Wind_Data.html">
+     MÉRA Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="NEWA_ICS_Wind_Data.html">
+     NEWA Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Sentinel-1 Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Area Of Interest Assessment
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Offshore_Wind_AOI.html">
+   Offshore Wind in Irish Areas Of Interest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Comparison_Wind_Power.html">
+   Comparison of Offshore Wind Speed Extrapolation and Power Density Estimation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Offshore Wind Atlases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="windatlas.html">
+   Wind Atlas Development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="MERA_ICS_Wind_Atlas.html">
+   MÉRA-based Wind Atlas for Irish Continental Shelf region
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Sentinel-1_ICS_Wind_Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Sentinel-1_ICS_Wind_Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-1-wind-data-products">
+   Sentinel-1 Wind Data Products
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-1-wind-zarr-store">
+   Sentinel-1 Wind Zarr Store
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-1-in-eooffshore-catalog">
+   Sentinel-1 in EOOffshore Catalog
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-the-catalog-and-view-the-sentinel-1-metadata">
+     Open the catalog and view the Sentinel-1 metadata
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-the-catalog-sentinel-1-zarr-store">
+     Load the catalog Sentinel-1 Zarr store
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-1-wind-quality-flag">
+     Sentinel-1 wind quality flag
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-the-mean-wind-quality-across-time-for-all-grid-coordinates">
+       Plot the mean wind quality across time for all grid coordinates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-the-mean-number-of-sar-observations-across-time-for-all-grid-coordinates">
+       Plot the mean number of SAR observations across time for all grid coordinates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#retain-only-cells-with-quality-in-0-2-and-a-minimum-number-of-observations-ge-200">
+       Retain only cells with quality in [0, 2] and a minimum number of observations (
+       <span class="math notranslate nohighlight">
+        \(\ge\)
+       </span>
+       200)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-1-wind-speed-2015-2021">
+     Sentinel-1 wind speed (2015 - 2021)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#calculate-mean-wind-speed-over-time-dimension-at-aoi-grid-coordinates">
+       Calculate mean wind speed over
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         time
+        </span>
+       </code>
+       dimension at AOI grid coordinates
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Sentinel-1 Wind Data for Irish Continental Shelf region</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-1-wind-data-products">
+   Sentinel-1 Wind Data Products
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-1-wind-zarr-store">
+   Sentinel-1 Wind Zarr Store
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-1-in-eooffshore-catalog">
+   Sentinel-1 in EOOffshore Catalog
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-the-catalog-and-view-the-sentinel-1-metadata">
+     Open the catalog and view the Sentinel-1 metadata
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-the-catalog-sentinel-1-zarr-store">
+     Load the catalog Sentinel-1 Zarr store
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-1-wind-quality-flag">
+     Sentinel-1 wind quality flag
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-the-mean-wind-quality-across-time-for-all-grid-coordinates">
+       Plot the mean wind quality across time for all grid coordinates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-the-mean-number-of-sar-observations-across-time-for-all-grid-coordinates">
+       Plot the mean number of SAR observations across time for all grid coordinates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#retain-only-cells-with-quality-in-0-2-and-a-minimum-number-of-observations-ge-200">
+       Retain only cells with quality in [0, 2] and a minimum number of observations (
+       <span class="math notranslate nohighlight">
+        \(\ge\)
+       </span>
+       200)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-1-wind-speed-2015-2021">
+     Sentinel-1 wind speed (2015 - 2021)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#calculate-mean-wind-speed-over-time-dimension-at-aoi-grid-coordinates">
+       Calculate mean wind speed over
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         time
+        </span>
+       </code>
+       dimension at AOI grid coordinates
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <p><a class="reference internal" href="_images/eooffshore_banner.png"><img alt="_images/eooffshore_banner.png" src="_images/eooffshore_banner.png" style="width: 48%;" /></a> </p>
+<p><a class="reference internal" href="_images/seai.png"><img alt="_images/seai.png" src="_images/seai.png" style="width: 25%;" /></a> <span /> <a class="reference internal" href="_images/ucd.png"><img alt="_images/ucd.png" src="_images/ucd.png" style="width: 7%;" /></a></p>
+<section id="sentinel-1-wind-data-for-irish-continental-shelf-region">
+<h1>Sentinel-1 Wind Data for Irish Continental Shelf region<a class="headerlink" href="#sentinel-1-wind-data-for-irish-continental-shelf-region" title="Permalink to this headline">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://www.copernicus.eu/en/about-copernicus">European Union Copernicus Earth Observation (EO) programme</a> and services are based on data collected from EO satellites, in particular, the <a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/home">Sentinel satellite missions</a>. This includes the <a class="reference external" href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1">Sentinel-1 mission</a>, which consists of a pair of C-band Synthetic Aperture Radar (SAR) imaging satellites in polar orbit. One of its main objectives is the provision of ocean monitoring services, where its <a class="reference external" href="https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/product-types-processing-levels/level-2">Level-2 Ocean (OCN) products</a> include an Ocean WInd field (OWI) component. This provides gridded estimates of wind speed and direction at 10m above the surface, with a typical spatial resolution of 1 km. Examples of Sentinel-1 SAR usage for ocean wind analysis are described in the following publications:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doi.org/10.5194/wes-3-573-2018">Ahsbahs et al. (2018) - Applications of satellite winds for the offshore wind farm site Anholt</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.5194/wes-5-1191-2020">Ahsbahs et al. (2020) - US East Coast synthetic aperture radar wind atlas for offshore wind energy</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.5194/wes-5-1023-2020">de Montera et al. (2020) - Validation of Sentinel-1 offshore winds and average wind power estimation around Ireland</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.5194/wes-5-375-2020">Hasager et al. (2020) - Europe’s offshore winds assessed with synthetic aperture radar, ASCAT and WRF over France</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1109/TGRS.2021.3055979">Longépé et al. (2021) - Co-Cross-Polarization Coherence Over the Sea Surface From Sentinel-1 SAR Data: Perspectives for
+Mission Calibration and Wind Field Retrieval and Norwegian Sea</a></p></li>
+</ul>
+<p>This notebook provides details of:</p>
+<ol class="simple">
+<li><p>Sentinel-1 wind data products retrieval.</p></li>
+<li><p>The creation of the Sentinel-1 Zarr wind store that is included in the EOOffshore catalog.</p></li>
+<li><p>A brief look at this Zarr store, including a demonstration of wind speed calculation.</p></li>
+</ol>
+<p><strong>How to cite:</strong> O’Callaghan, D. and McBreen, S.: Scalable Offshore Wind Analysis With Pangeo, EGU General Assembly 2022, Vienna, Austria, 23–27 May 2022, EGU22-2746, <a class="reference external" href="https://doi.org/10.5194/egusphere-egu22-2746">https://doi.org/10.5194/egusphere-egu22-2746</a>, 2022.</p>
+<p><strong>Note: more extensive usage of the EOOffshore Sentinel-1 Zarr store may be found in the following notebooks:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="Offshore_Wind_AOI.html"><span class="doc std std-doc">Offshore Wind in Irish Areas Of Interest</span></a></p></li>
+<li><p><a class="reference internal" href="Comparison_Wind_Power.html"><span class="doc std std-doc">Comparison of Offshore Wind Speed Extrapolation and Power Density Estimation</span></a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="sentinel-1-wind-data-products">
+<h2>Sentinel-1 Wind Data Products<a class="headerlink" href="#sentinel-1-wind-data-products" title="Permalink to this headline">¶</a></h2>
+<p>The EOOffshore project uses <a class="reference external" href="https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/product-types-processing-levels/level-2">Sentinel-1 Level-2 Ocean (OCN) wind products</a> data set, which provide ocean wind estimates from 2015 to the present day. The following data variables are relevant:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>Height (metres above sea level)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">owiWindSpeed</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(m/s\)</span></p></td>
+<td><p>10</p></td>
+<td><p>SAR Wind speed</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">owiWindDirection</span></code></p></td>
+<td><p>degrees</p></td>
+<td><p>10</p></td>
+<td><p>SAR Wind direction (meteorological convention = <br/>clockwise direction from where the wind comes <br/>respect to North)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code></p></td>
+<td><p>Dimensionless</p></td>
+<td><p>n/a</p></td>
+<td><p>Quality flag taking into account the <code class="docutils literal notranslate"><span class="pre">consistency_between_wind</span></code><br/><code class="docutils literal notranslate"><span class="pre">_inverted_and_NRCS_and_Doppler_measured</span></code>. <br/>0 = good; 1 = medium; 2 = low; 3 = poor.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Data products from all Sentinel missions, including those from Sentinel-1 observations, are publicly available via the <a class="reference external" href="https://scihub.copernicus.eu/">Copernicus Open Access Hub (COAH)</a>. Products are distributed using a Sentinel-specific variation of the <a class="reference external" href="https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/data-formats/safe-specification">Standard Archive Format for Europe (SAFE) format specification</a>. Retrieving products from the COAH is typically a two-stage process using the <a class="reference external" href="https://sentinelsat.readthedocs.io/en/stable/">Sentinelsat library</a></p>
+<ol class="simple">
+<li><p>Query the COAH for all Sentinel-1 Level-2 product identifiers available for a specified time period that are contained within the <a class="reference external" href="https://www.marine.ie/Home/site-area/irelands-marine-resource/real-map-ireland">Irish Continental Shelf (ICS)</a> region</p></li>
+<li><p>Retrieve product for each identifier listed in the query results</p></li>
+</ol>
+<p>Older data products may no longer be accessible from the COAH, where these are often moved to the Long Term Archive (LTA), (see <a class="reference external" href="https://forum.step.esa.int/t/esa-copernicus-data-access-long-term-archive-and-its-drawbacks/15394">related discussion</a>). As Sentinel-1 Level-2 products (back to 2015) are also hosted by the <a class="reference external" href="https://search.asf.alaska.edu/#/">Alaska Satellite Facility (ASF)</a>, any products no longer available in the COAH set were retrieved from the ASF using the <a class="reference external" href="https://docs.asf.alaska.edu/api/tools/"><code class="docutils literal notranslate"><span class="pre">aria2c</span></code> utility</a>. The following products were retrieved using a combination of the COAH and ASF archives:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Observation / Models</strong></p></td>
+<td><p>Satellite</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Product type</strong></p></td>
+<td><p>Near-Real-Time</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Processing level</strong></p></td>
+<td><p>Level-2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Data type</strong></p></td>
+<td><p>Gridded (latitude/longitude)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Horizontal coverage</strong></p></td>
+<td><p>Individual products within <a class="reference external" href="https://data.gov.ie/dataset/maritime-limits-irish-continental-shelf">ICS maritime limits</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Horizontal resolution</strong></p></td>
+<td><p>1 km</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Vertical coverage</strong></p></td>
+<td><p>Single level</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Temporal coverage</strong></p></td>
+<td><p>2015-06-07T18:21:04 to 2021-09-29T18:07:48</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Temporal resolution</strong></p></td>
+<td><p><a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-1-sar/revisit-and-coverage">12-day repeat frequency (6-day with two-satellite Sentinel-A/B constellation)</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Update frequency</strong></p></td>
+<td><p><a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1/data-distribution-schedule">Daily</a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>File format</strong></p></td>
+<td><p>NetCDF-4</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Total retrieved products</strong></p></td>
+<td><p>17,698 SAFE (containing 22,950 NetCDF-4)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total products size</strong></p></td>
+<td><p>241G</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="sentinel-1-wind-zarr-store">
+<h2>Sentinel-1 Wind Zarr Store<a class="headerlink" href="#sentinel-1-wind-zarr-store" title="Permalink to this headline">¶</a></h2>
+<p>As the retrieved NetCDF products (within the SAFE archives) are Level-2 products featuring heterogeneous curvilinear grids, they were initially regridded to a uniform grid using <a class="reference external" href="https://pangeo-xesmf.readthedocs.io/en/latest/index.html">xESMF</a>. A spatial resolution of 0.03 degrees was specified for this grid, which is similar to resolutions used in earlier Sentinel-1 ocean wind analysis (<a class="reference external" href="https://doi.org/10.5194/wes-5-1191-2020">Ahsbahs et al., 2020</a>; <a class="reference external" href="https://doi.org/10.5194/wes-5-1023-2020">de Montera et al., 2020</a>). Each Level-2 product is associated with an observation time, and it was necessary to assign a <code class="docutils literal notranslate"><span class="pre">time</span></code> coordinate dimension prior to further processing. Although each product provides a <code class="docutils literal notranslate"><span class="pre">firstMeasurementTime</span></code> value, this appears to only contain unique values for <a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-product-formatting">Single VV (SV) polarization</a> products. For all other products, the <a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-product-formatting">“Stop Date and Time” contained in the product filename</a> was used as the unique <code class="docutils literal notranslate"><span class="pre">time</span></code> coordinate. A <code class="docutils literal notranslate"><span class="pre">height</span></code> coordinate dimension (10m) was also added for the <code class="docutils literal notranslate"><span class="pre">owi...</span></code> variables. Using small product batch chunks, a chunked, compressed <a class="reference external" href="https://zarr.readthedocs.io/en/stable/">Zarr</a> store, which is a cloud-optimised format suitable for multi-dimensional arrays, was created by concatenating products along the <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension. This Zarr store was then rechunked in space (<code class="docutils literal notranslate"><span class="pre">x</span></code> - longitude, <code class="docutils literal notranslate"><span class="pre">y</span></code> - latitude dimensions) using <a class="reference external" href="https://github.com/pangeo-data/rechunker">Rechunker</a>, where a <code class="docutils literal notranslate"><span class="pre">time</span></code> chunk size was specified that resulted in a low number of <code class="docutils literal notranslate"><span class="pre">time</span></code> chunks. This approach is more suitable for subsequent processing of variables over time for Areas Of Interest (AOIs). Retaining only the <code class="docutils literal notranslate"><span class="pre">owi...</span></code> variables results in considerably lower storage requirements in this final rechunked Zarr store (1.2GB) compared to the original products that were retrieved.</p>
+<p>As requested by the <a class="reference external" href="https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice">Legal Notice on the use of Copernicus Sentinel Data and Service Information</a>, this Zarr store:</p>
+<ul class="simple">
+<li><p>Contains modified Copernicus Sentinel data [2015 - 2021].</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="sentinel-1-in-eooffshore-catalog">
+<h2>Sentinel-1 in EOOffshore Catalog<a class="headerlink" href="#sentinel-1-in-eooffshore-catalog" title="Permalink to this headline">¶</a></h2>
+<p>Imports required for subsequent processing</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">from</span> <span class="nn">intake</span> <span class="kn">import</span> <span class="n">open_catalog</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">shapely.geometry</span> <span class="k">as</span> <span class="nn">sgeom</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;axes.labelcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s2">&quot;text.color&quot;</span><span class="p">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;xtick.color&#39;</span><span class="p">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;ytick.color&#39;</span><span class="p">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;font.sans-serif&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;DejaVu Sans&#39;</span><span class="p">,</span> <span class="s1">&#39;Liberation Sans&#39;</span><span class="p">,</span> <span class="s1">&#39;Bitstream Vera Sans&#39;</span><span class="p">,</span> <span class="s1">&#39;sans-serif&#39;</span><span class="p">],})</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="open-the-catalog-and-view-the-sentinel-1-metadata">
+<h3>Open the catalog and view the Sentinel-1 metadata<a class="headerlink" href="#open-the-catalog-and-view-the-sentinel-1-metadata" title="Permalink to this headline">¶</a></h3>
+<p>All EOOffshore data sets, including the Sentinel-1 Zarr store described above, are accessible using the EOOffshore <a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake</a> catalog. Each <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html">catalog</a> entry provides a description and metadata associated with the corresponding data set, defined in a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#yaml-format">YAML configuration file</a>. The EOOffshore catalog configuration was originally influenced by the <a class="reference external" href="https://github.com/pangeo-data/pangeo-datastore/blob/master/intake-catalogs/atmosphere.yaml">Pangeo Cloud Data Store atmosphere.yaml catalog configuration</a>.</p>
+<p>To view the Sentinel-1 metadata:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">catalog</span> <span class="o">=</span> <span class="n">open_catalog</span><span class="p">(</span><span class="s1">&#39;data/intake-catalogs/eooffshore_ics.yaml&#39;</span><span class="p">)</span>
+<span class="n">catalog</span><span class="o">.</span><span class="n">eooffshore_ics_level3_sentinel1_ocn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eooffshore_ics_level3_sentinel1_ocn:
+  args:
+    storage_options: null
+    urlpath: /data/eo/zarr/scihub/s1_ocn/201501_202109/eooffshore_ics_level3_sentinel1_ocn.zarr
+  description: EOOffshore Project 2015 - 2021 Concatenated Sentinel-1 Level 2 OCN
+    wind (owiWind...) variable products from Copernicus, for Irish Continental Shelf.
+    Products have been regridded with xESMF (bilinear) to a Level 3 grid, NW (-26,
+    58), SE (-4, 46), grid resolution = 0.03 degrees. Contains modified Copernicus
+    Sentinel data [2015 - 2021].
+  driver: intake_xarray.xzarr.ZarrSource
+  metadata:
+    catalog_dir: /opt/eooffshore/notebooks/datasets/data/intake-catalogs/
+    tags:
+    - atmosphere
+    - wind
+    - sentinel1
+    - ocean
+    title: Sentinel-1 L2 OCN owiWind variables regridded to level 3 Irish Continental
+      Shelf grid (resolution = 0.03 degrees)
+    url: https://sentinels.copernicus.eu/web/sentinel/ocean-wind-field-component
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="load-the-catalog-sentinel-1-zarr-store">
+<h3>Load the catalog Sentinel-1 Zarr store<a class="headerlink" href="#load-the-catalog-sentinel-1-zarr-store" title="Permalink to this headline">¶</a></h3>
+<p>Intake catalog entries typically specify a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#driver-selection">driver</a> to be used when loading the corresponding data set. The Sentinel-1 entry specifies <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">intake_xarray.xzarr.ZarrSource</span></code></a>, a driver implementation provided by the <a class="reference external" href="https://intake-xarray.readthedocs.io/">intake-xarray</a> library. This enables NetCDF and Zarr data sets to be loaded using <a class="reference external" href="https://docs.xarray.dev/en/stable/index.html">xarray</a>, a library for processing N-D labeled arrays and datasets. As xarray labels take the form of dimensions, coordinates and attributes on top of <a class="reference external" href="https://numpy.org/">NumPy</a>-like arrays, it is particularly suited to data sets such as CCMP whose variables feature latitude/longitude grid coordinates.</p>
+<p>This intake driver will load the associated dataset into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a>. To enable support for potentially large data sets, the <a class="reference external" href="https://intake.readthedocs.io/en/latest/quickstart.html#working-with-dask"><code class="docutils literal notranslate"><span class="pre">to_dask()</span></code></a> function is used to load the underlying variable arrays with <a class="reference external" href="https://docs.dask.org/en/latest/">Dask</a>, a parallel, out-of-core computing library. The <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">ZarrSource</span></code></a> implementation will load the data set variables into <a class="reference external" href="https://docs.dask.org/en/latest/array.html">Dask arrays</a>, which will be loaded and processed in parallel as <a class="reference external" href="https://docs.dask.org/en/latest/array.html">chunks</a> during subsequent computation. As discussed above, variable chunk sizes may be specified during Zarr store creation.</p>
+<p>Here is the Sentinel-1 store loaded into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a>:</p>
+<ul class="simple">
+<li><p>All variables have associated coordinate dimensions:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> - unique observation time of eacb original Level-2 product</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> (longitude) and <code class="docutils literal notranslate"><span class="pre">y</span></code> (latitude) - the corresponding coordinate grid generated during regridding with xESMF</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code> - 10m (above sea level)</p></li>
+</ul>
+</li>
+<li><p>A low number of <code class="docutils literal notranslate"><span class="pre">time</span></code> chunks have been specified, to support subsequent computation across time for smaller AOI grid coordinates.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">eooffshore_ics_level3_sentinel1_ocn</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+<span class="c1"># Enable consistent variable naming</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;owiWindDirection&#39;</span><span class="p">:</span> <span class="s1">&#39;wind_direction&#39;</span><span class="p">,</span> <span class="s1">&#39;owiWindSpeed&#39;</span><span class="p">:</span> <span class="s1">&#39;wind_speed&#39;</span><span class="p">})</span>
+
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:         (height: 1, y: 401, x: 734, time: 18545)
+Coordinates:
+  * height          (height) int64 10
+    latitude        (y, x) float64 dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;
+    longitude       (y, x) float64 dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;
+  * time            (time) datetime64[ns] 2015-06-07T18:21:04 ... 2021-09-29T...
+Dimensions without coordinates: y, x
+Data variables:
+    wind_direction  (time, height, y, x) float32 dask.array&lt;chunksize=(18545, 1, 40, 40), meta=np.ndarray&gt;
+    owiWindQuality  (time, height, y, x) float64 dask.array&lt;chunksize=(18545, 1, 40, 40), meta=np.ndarray&gt;
+    wind_speed      (time, height, y, x) float32 dask.array&lt;chunksize=(18545, 1, 40, 40), meta=np.ndarray&gt;
+Attributes:
+    eooffshore_zarr_creation_time:  2022-05-13T14:02:25Z
+    eooffshore_zarr_details:        EOOffshore Project: Concatenated Sentinel...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-9a82fb60-ee0d-4c6b-9754-e471a2b73c10' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-9a82fb60-ee0d-4c6b-9754-e471a2b73c10' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>height</span>: 1</li><li><span>y</span>: 401</li><li><span>x</span>: 734</li><li><span class='xr-has-index'>time</span>: 18545</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-0e4cf61f-8183-4256-9f05-e96adb6b108a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0e4cf61f-8183-4256-9f05-e96adb6b108a' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>height</span></div><div class='xr-var-dims'>(height)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>10</div><input id='attrs-e903735d-8571-4751-9fa5-a64e100f8e5c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e903735d-8571-4751-9fa5-a64e100f8e5c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e5251f06-619b-4ec8-b0f8-a131cabd1c6a' class='xr-var-data-in' type='checkbox'><label for='data-e5251f06-619b-4ec8-b0f8-a131cabd1c6a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Height above the surface</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([10])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;</div><input id='attrs-73e38ba9-e20f-46c7-a343-b5ad278ee0aa' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-73e38ba9-e20f-46c7-a343-b5ad278ee0aa' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9fe56e33-1f10-49b7-b26e-aed5563de245' class='xr-var-data-in' type='checkbox'><label for='data-9fe56e33-1f10-49b7-b26e-aed5563de245' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 2.25 MiB </td>
+                        <td> 2.25 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (401, 734) </td>
+                        <td> (401, 734) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 2 Tasks </td>
+                        <td> 1 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float64 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="115" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="65" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="65" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,65.55858310626704 0.0,65.55858310626704" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="85.558583" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="140.000000" y="32.779292" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,32.779292)">401</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;</div><input id='attrs-78835b4d-8c6e-46c6-b647-2928d3155472' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-78835b4d-8c6e-46c6-b647-2928d3155472' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6206933d-c586-421f-83ae-09ec14824da8' class='xr-var-data-in' type='checkbox'><label for='data-6206933d-c586-421f-83ae-09ec14824da8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 2.25 MiB </td>
+                        <td> 2.25 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (401, 734) </td>
+                        <td> (401, 734) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 2 Tasks </td>
+                        <td> 1 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float64 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="115" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="65" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="65" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,65.55858310626704 0.0,65.55858310626704" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="85.558583" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="140.000000" y="32.779292" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,32.779292)">401</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2015-06-07T18:21:04 ... 2021-09-...</div><input id='attrs-f0398d35-5062-4864-9343-055d77e56901' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f0398d35-5062-4864-9343-055d77e56901' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b4fa22a2-5fff-482a-aa6b-4f0607022110' class='xr-var-data-in' type='checkbox'><label for='data-b4fa22a2-5fff-482a-aa6b-4f0607022110' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Unique time associated with corresponding source Sentinel-1 L2 OCN product</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2015-06-07T18:21:04.000000000&#x27;, &#x27;2015-07-29T06:39:47.000000000&#x27;,
+       &#x27;2015-07-29T06:40:12.000000000&#x27;, ..., &#x27;2021-09-29T18:06:58.000000000&#x27;,
+       &#x27;2021-09-29T18:07:23.000000000&#x27;, &#x27;2021-09-29T18:07:48.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2d456e39-fad7-4013-940d-f979cc601fdb' class='xr-section-summary-in' type='checkbox'  checked><label for='section-2d456e39-fad7-4013-940d-f979cc601fdb' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>wind_direction</span></div><div class='xr-var-dims'>(time, height, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(18545, 1, 40, 40), meta=np.ndarray&gt;</div><input id='attrs-2e88cdc6-f5f6-4bf3-b02a-90579ddac8a3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2e88cdc6-f5f6-4bf3-b02a-90579ddac8a3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7cd763fd-9d1f-4c7c-84ba-a5074cdf6af5' class='xr-var-data-in' type='checkbox'><label for='data-7cd763fd-9d1f-4c7c-84ba-a5074cdf6af5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>long_name :</span></dt><dd>SAR Wind direction (meteorological convention= clockwise direction from where the wind comes respect to North)</dd><dt><span>standard_name :</span></dt><dd>wind_direction</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 20.33 GiB </td>
+                        <td> 113.19 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (18545, 1, 401, 734) </td>
+                        <td> (18545, 1, 40, 40) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 210 Tasks </td>
+                        <td> 209 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float32 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="478" height="94" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >18545</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+
+
+  <!-- Horizontal lines -->
+  <line x1="190" y1="0" x2="204" y2="14" style="stroke-width:2" />
+  <line x1="190" y1="2" x2="204" y2="17" />
+  <line x1="190" y1="5" x2="204" y2="20" />
+  <line x1="190" y1="8" x2="204" y2="23" />
+  <line x1="190" y1="11" x2="204" y2="26" />
+  <line x1="190" y1="14" x2="204" y2="29" />
+  <line x1="190" y1="17" x2="204" y2="32" />
+  <line x1="190" y1="20" x2="204" y2="35" />
+  <line x1="190" y1="23" x2="204" y2="38" />
+  <line x1="190" y1="26" x2="204" y2="41" />
+  <line x1="190" y1="29" x2="204" y2="44" />
+  <line x1="190" y1="29" x2="204" y2="44" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="190" y1="0" x2="190" y2="29" style="stroke-width:2" />
+  <line x1="204" y1="14" x2="204" y2="44" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="190.0,0.0 204.9485979497544,14.948597949754403 204.9485979497544,44.421515894771346 190.0,29.472917945016942" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="190" y1="0" x2="223" y2="0" style="stroke-width:2" />
+  <line x1="204" y1="14" x2="238" y2="14" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="190" y1="0" x2="204" y2="14" style="stroke-width:2" />
+  <line x1="191" y1="0" x2="206" y2="14" />
+  <line x1="193" y1="0" x2="208" y2="14" />
+  <line x1="195" y1="0" x2="210" y2="14" />
+  <line x1="197" y1="0" x2="212" y2="14" />
+  <line x1="199" y1="0" x2="213" y2="14" />
+  <line x1="200" y1="0" x2="215" y2="14" />
+  <line x1="202" y1="0" x2="217" y2="14" />
+  <line x1="204" y1="0" x2="219" y2="14" />
+  <line x1="206" y1="0" x2="221" y2="14" />
+  <line x1="208" y1="0" x2="222" y2="14" />
+  <line x1="209" y1="0" x2="224" y2="14" />
+  <line x1="211" y1="0" x2="226" y2="14" />
+  <line x1="213" y1="0" x2="228" y2="14" />
+  <line x1="215" y1="0" x2="230" y2="14" />
+  <line x1="217" y1="0" x2="231" y2="14" />
+  <line x1="218" y1="0" x2="233" y2="14" />
+  <line x1="220" y1="0" x2="235" y2="14" />
+  <line x1="222" y1="0" x2="237" y2="14" />
+  <line x1="223" y1="0" x2="238" y2="14" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="190.0,0.0 223.069247784912,0.0 238.0178457346664,14.948597949754403 204.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="204" y1="14" x2="238" y2="14" style="stroke-width:2" />
+  <line x1="204" y1="17" x2="238" y2="17" />
+  <line x1="204" y1="20" x2="238" y2="20" />
+  <line x1="204" y1="23" x2="238" y2="23" />
+  <line x1="204" y1="26" x2="238" y2="26" />
+  <line x1="204" y1="29" x2="238" y2="29" />
+  <line x1="204" y1="32" x2="238" y2="32" />
+  <line x1="204" y1="35" x2="238" y2="35" />
+  <line x1="204" y1="38" x2="238" y2="38" />
+  <line x1="204" y1="41" x2="238" y2="41" />
+  <line x1="204" y1="44" x2="238" y2="44" />
+  <line x1="204" y1="44" x2="238" y2="44" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="204" y1="14" x2="204" y2="44" style="stroke-width:2" />
+  <line x1="206" y1="14" x2="206" y2="44" />
+  <line x1="208" y1="14" x2="208" y2="44" />
+  <line x1="210" y1="14" x2="210" y2="44" />
+  <line x1="212" y1="14" x2="212" y2="44" />
+  <line x1="213" y1="14" x2="213" y2="44" />
+  <line x1="215" y1="14" x2="215" y2="44" />
+  <line x1="217" y1="14" x2="217" y2="44" />
+  <line x1="219" y1="14" x2="219" y2="44" />
+  <line x1="221" y1="14" x2="221" y2="44" />
+  <line x1="222" y1="14" x2="222" y2="44" />
+  <line x1="224" y1="14" x2="224" y2="44" />
+  <line x1="226" y1="14" x2="226" y2="44" />
+  <line x1="228" y1="14" x2="228" y2="44" />
+  <line x1="230" y1="14" x2="230" y2="44" />
+  <line x1="231" y1="14" x2="231" y2="44" />
+  <line x1="233" y1="14" x2="233" y2="44" />
+  <line x1="235" y1="14" x2="235" y2="44" />
+  <line x1="237" y1="14" x2="237" y2="44" />
+  <line x1="238" y1="14" x2="238" y2="44" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="204.9485979497544,14.948597949754403 238.0178457346664,14.948597949754403 238.0178457346664,44.421515894771346 204.9485979497544,44.421515894771346" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="221.483222" y="64.421516" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="258.017846" y="29.685057" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,258.017846,29.685057)">401</text>
+  <text x="187.474299" y="56.947217" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,187.474299,56.947217)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>owiWindQuality</span></div><div class='xr-var-dims'>(time, height, y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(18545, 1, 40, 40), meta=np.ndarray&gt;</div><input id='attrs-a980256e-3c52-48a7-b15b-dee491efb8e5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a980256e-3c52-48a7-b15b-dee491efb8e5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8514242a-9691-4e46-8076-bd5bf07c2916' class='xr-var-data-in' type='checkbox'><label for='data-8514242a-9691-4e46-8076-bd5bf07c2916' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>flag_meanings :</span></dt><dd>good medium low poor</dd><dt><span>flag_values :</span></dt><dd>[0, 1, 2, 3]</dd><dt><span>long_name :</span></dt><dd>Quality flag taking into account the consistency_between_wind_inverted_and_NRCS_and_Doppler_measured</dd><dt><span>valid_range :</span></dt><dd>[0, 3]</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 40.67 GiB </td>
+                        <td> 226.38 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (18545, 1, 401, 734) </td>
+                        <td> (18545, 1, 40, 40) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 210 Tasks </td>
+                        <td> 209 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float64 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="478" height="94" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >18545</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+
+
+  <!-- Horizontal lines -->
+  <line x1="190" y1="0" x2="204" y2="14" style="stroke-width:2" />
+  <line x1="190" y1="2" x2="204" y2="17" />
+  <line x1="190" y1="5" x2="204" y2="20" />
+  <line x1="190" y1="8" x2="204" y2="23" />
+  <line x1="190" y1="11" x2="204" y2="26" />
+  <line x1="190" y1="14" x2="204" y2="29" />
+  <line x1="190" y1="17" x2="204" y2="32" />
+  <line x1="190" y1="20" x2="204" y2="35" />
+  <line x1="190" y1="23" x2="204" y2="38" />
+  <line x1="190" y1="26" x2="204" y2="41" />
+  <line x1="190" y1="29" x2="204" y2="44" />
+  <line x1="190" y1="29" x2="204" y2="44" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="190" y1="0" x2="190" y2="29" style="stroke-width:2" />
+  <line x1="204" y1="14" x2="204" y2="44" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="190.0,0.0 204.9485979497544,14.948597949754403 204.9485979497544,44.421515894771346 190.0,29.472917945016942" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="190" y1="0" x2="223" y2="0" style="stroke-width:2" />
+  <line x1="204" y1="14" x2="238" y2="14" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="190" y1="0" x2="204" y2="14" style="stroke-width:2" />
+  <line x1="191" y1="0" x2="206" y2="14" />
+  <line x1="193" y1="0" x2="208" y2="14" />
+  <line x1="195" y1="0" x2="210" y2="14" />
+  <line x1="197" y1="0" x2="212" y2="14" />
+  <line x1="199" y1="0" x2="213" y2="14" />
+  <line x1="200" y1="0" x2="215" y2="14" />
+  <line x1="202" y1="0" x2="217" y2="14" />
+  <line x1="204" y1="0" x2="219" y2="14" />
+  <line x1="206" y1="0" x2="221" y2="14" />
+  <line x1="208" y1="0" x2="222" y2="14" />
+  <line x1="209" y1="0" x2="224" y2="14" />
+  <line x1="211" y1="0" x2="226" y2="14" />
+  <line x1="213" y1="0" x2="228" y2="14" />
+  <line x1="215" y1="0" x2="230" y2="14" />
+  <line x1="217" y1="0" x2="231" y2="14" />
+  <line x1="218" y1="0" x2="233" y2="14" />
+  <line x1="220" y1="0" x2="235" y2="14" />
+  <line x1="222" y1="0" x2="237" y2="14" />
+  <line x1="223" y1="0" x2="238" y2="14" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="190.0,0.0 223.069247784912,0.0 238.0178457346664,14.948597949754403 204.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="204" y1="14" x2="238" y2="14" style="stroke-width:2" />
+  <line x1="204" y1="17" x2="238" y2="17" />
+  <line x1="204" y1="20" x2="238" y2="20" />
+  <line x1="204" y1="23" x2="238" y2="23" />
+  <line x1="204" y1="26" x2="238" y2="26" />
+  <line x1="204" y1="29" x2="238" y2="29" />
+  <line x1="204" y1="32" x2="238" y2="32" />
+  <line x1="204" y1="35" x2="238" y2="35" />
+  <line x1="204" y1="38" x2="238" y2="38" />
+  <line x1="204" y1="41" x2="238" y2="41" />
+  <line x1="204" y1="44" x2="238" y2="44" />
+  <line x1="204" y1="44" x2="238" y2="44" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="204" y1="14" x2="204" y2="44" style="stroke-width:2" />
+  <line x1="206" y1="14" x2="206" y2="44" />
+  <line x1="208" y1="14" x2="208" y2="44" />
+  <line x1="210" y1="14" x2="210" y2="44" />
+  <line x1="212" y1="14" x2="212" y2="44" />
+  <line x1="213" y1="14" x2="213" y2="44" />
+  <line x1="215" y1="14" x2="215" y2="44" />
+  <line x1="217" y1="14" x2="217" y2="44" />
+  <line x1="219" y1="14" x2="219" y2="44" />
+  <line x1="221" y1="14" x2="221" y2="44" />
+  <line x1="222" y1="14" x2="222" y2="44" />
+  <line x1="224" y1="14" x2="224" y2="44" />
+  <line x1="226" y1="14" x2="226" y2="44" />
+  <line x1="228" y1="14" x2="228" y2="44" />
+  <line x1="230" y1="14" x2="230" y2="44" />
+  <line x1="231" y1="14" x2="231" y2="44" />
+  <line x1="233" y1="14" x2="233" y2="44" />
+  <line x1="235" y1="14" x2="235" y2="44" />
+  <line x1="237" y1="14" x2="237" y2="44" />
+  <line x1="238" y1="14" x2="238" y2="44" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="204.9485979497544,14.948597949754403 238.0178457346664,14.948597949754403 238.0178457346664,44.421515894771346 204.9485979497544,44.421515894771346" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="221.483222" y="64.421516" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="258.017846" y="29.685057" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,258.017846,29.685057)">401</text>
+  <text x="187.474299" y="56.947217" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,187.474299,56.947217)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_speed</span></div><div class='xr-var-dims'>(time, height, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(18545, 1, 40, 40), meta=np.ndarray&gt;</div><input id='attrs-3fd0734b-c609-42f3-a77a-e192b57bc919' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3fd0734b-c609-42f3-a77a-e192b57bc919' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f49f2bca-6c30-41d7-89b2-a3e1041907c1' class='xr-var-data-in' type='checkbox'><label for='data-f49f2bca-6c30-41d7-89b2-a3e1041907c1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>long_name :</span></dt><dd>SAR Wind speed</dd><dt><span>standard_name :</span></dt><dd>wind_speed</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 20.33 GiB </td>
+                        <td> 113.19 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (18545, 1, 401, 734) </td>
+                        <td> (18545, 1, 40, 40) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 210 Tasks </td>
+                        <td> 209 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float32 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="478" height="94" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >18545</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+
+
+  <!-- Horizontal lines -->
+  <line x1="190" y1="0" x2="204" y2="14" style="stroke-width:2" />
+  <line x1="190" y1="2" x2="204" y2="17" />
+  <line x1="190" y1="5" x2="204" y2="20" />
+  <line x1="190" y1="8" x2="204" y2="23" />
+  <line x1="190" y1="11" x2="204" y2="26" />
+  <line x1="190" y1="14" x2="204" y2="29" />
+  <line x1="190" y1="17" x2="204" y2="32" />
+  <line x1="190" y1="20" x2="204" y2="35" />
+  <line x1="190" y1="23" x2="204" y2="38" />
+  <line x1="190" y1="26" x2="204" y2="41" />
+  <line x1="190" y1="29" x2="204" y2="44" />
+  <line x1="190" y1="29" x2="204" y2="44" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="190" y1="0" x2="190" y2="29" style="stroke-width:2" />
+  <line x1="204" y1="14" x2="204" y2="44" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="190.0,0.0 204.9485979497544,14.948597949754403 204.9485979497544,44.421515894771346 190.0,29.472917945016942" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="190" y1="0" x2="223" y2="0" style="stroke-width:2" />
+  <line x1="204" y1="14" x2="238" y2="14" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="190" y1="0" x2="204" y2="14" style="stroke-width:2" />
+  <line x1="191" y1="0" x2="206" y2="14" />
+  <line x1="193" y1="0" x2="208" y2="14" />
+  <line x1="195" y1="0" x2="210" y2="14" />
+  <line x1="197" y1="0" x2="212" y2="14" />
+  <line x1="199" y1="0" x2="213" y2="14" />
+  <line x1="200" y1="0" x2="215" y2="14" />
+  <line x1="202" y1="0" x2="217" y2="14" />
+  <line x1="204" y1="0" x2="219" y2="14" />
+  <line x1="206" y1="0" x2="221" y2="14" />
+  <line x1="208" y1="0" x2="222" y2="14" />
+  <line x1="209" y1="0" x2="224" y2="14" />
+  <line x1="211" y1="0" x2="226" y2="14" />
+  <line x1="213" y1="0" x2="228" y2="14" />
+  <line x1="215" y1="0" x2="230" y2="14" />
+  <line x1="217" y1="0" x2="231" y2="14" />
+  <line x1="218" y1="0" x2="233" y2="14" />
+  <line x1="220" y1="0" x2="235" y2="14" />
+  <line x1="222" y1="0" x2="237" y2="14" />
+  <line x1="223" y1="0" x2="238" y2="14" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="190.0,0.0 223.069247784912,0.0 238.0178457346664,14.948597949754403 204.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="204" y1="14" x2="238" y2="14" style="stroke-width:2" />
+  <line x1="204" y1="17" x2="238" y2="17" />
+  <line x1="204" y1="20" x2="238" y2="20" />
+  <line x1="204" y1="23" x2="238" y2="23" />
+  <line x1="204" y1="26" x2="238" y2="26" />
+  <line x1="204" y1="29" x2="238" y2="29" />
+  <line x1="204" y1="32" x2="238" y2="32" />
+  <line x1="204" y1="35" x2="238" y2="35" />
+  <line x1="204" y1="38" x2="238" y2="38" />
+  <line x1="204" y1="41" x2="238" y2="41" />
+  <line x1="204" y1="44" x2="238" y2="44" />
+  <line x1="204" y1="44" x2="238" y2="44" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="204" y1="14" x2="204" y2="44" style="stroke-width:2" />
+  <line x1="206" y1="14" x2="206" y2="44" />
+  <line x1="208" y1="14" x2="208" y2="44" />
+  <line x1="210" y1="14" x2="210" y2="44" />
+  <line x1="212" y1="14" x2="212" y2="44" />
+  <line x1="213" y1="14" x2="213" y2="44" />
+  <line x1="215" y1="14" x2="215" y2="44" />
+  <line x1="217" y1="14" x2="217" y2="44" />
+  <line x1="219" y1="14" x2="219" y2="44" />
+  <line x1="221" y1="14" x2="221" y2="44" />
+  <line x1="222" y1="14" x2="222" y2="44" />
+  <line x1="224" y1="14" x2="224" y2="44" />
+  <line x1="226" y1="14" x2="226" y2="44" />
+  <line x1="228" y1="14" x2="228" y2="44" />
+  <line x1="230" y1="14" x2="230" y2="44" />
+  <line x1="231" y1="14" x2="231" y2="44" />
+  <line x1="233" y1="14" x2="233" y2="44" />
+  <line x1="235" y1="14" x2="235" y2="44" />
+  <line x1="237" y1="14" x2="237" y2="44" />
+  <line x1="238" y1="14" x2="238" y2="44" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="204.9485979497544,14.948597949754403 238.0178457346664,14.948597949754403 238.0178457346664,44.421515894771346 204.9485979497544,44.421515894771346" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="221.483222" y="64.421516" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="258.017846" y="29.685057" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,258.017846,29.685057)">401</text>
+  <text x="187.474299" y="56.947217" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,187.474299,56.947217)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-06b458a3-5c98-4ad8-b9a0-6c3a5e638fda' class='xr-section-summary-in' type='checkbox'  checked><label for='section-06b458a3-5c98-4ad8-b9a0-6c3a5e638fda' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>eooffshore_zarr_creation_time :</span></dt><dd>2022-05-13T14:02:25Z</dd><dt><span>eooffshore_zarr_details :</span></dt><dd>EOOffshore Project: Concatenated Sentinel-1 Level 2 OCN wind (owiWind...) variable products from Copernicus, for Irish Continental Shelf. Products have been regridded with xESMF (bilinear) to a Level 3 grid, NW: (-26, 58), SE: (-4, 46), grid resolution: 0.03 degrees. Contains modified Copernicus Sentinel data [2015 - 2021].</dd></dl></div></li></ul></div></div></div></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="sentinel-1-wind-quality-flag">
+<h3>Sentinel-1 wind quality flag<a class="headerlink" href="#sentinel-1-wind-quality-flag" title="Permalink to this headline">¶</a></h3>
+<p>Sentinel-1 OCN products contain an <code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code> variable, which reflects the quality of corresponding wind variables at a particular time.</p>
+<p>Each variable in the Sentinel-1 data set, including <code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code>, is loaded into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>:</p>
+<ul class="simple">
+<li><p>The arrays are transposed here to produce more intuitive <code class="docutils literal notranslate"><span class="pre">time</span></code> chunk visualisations. This is not required for computation.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;owiWindQuality&#x27; (height: 1, time: 18545, y: 401, x: 734)&gt;
+dask.array&lt;transpose, shape=(1, 18545, 401, 734), dtype=float64, chunksize=(1, 18545, 40, 40), chunktype=numpy.ndarray&gt;
+Coordinates:
+  * height     (height) int64 10
+    latitude   (y, x) float64 dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;
+    longitude  (y, x) float64 dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;
+  * time       (time) datetime64[ns] 2015-06-07T18:21:04 ... 2021-09-29T18:07:48
+Dimensions without coordinates: y, x
+Attributes:
+    coordinates:    lon lat
+    flag_meanings:  good medium low poor
+    flag_values:    [0, 1, 2, 3]
+    long_name:      Quality flag taking into account the consistency_between_...
+    valid_range:    [0, 3]</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'owiWindQuality'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>height</span>: 1</li><li><span class='xr-has-index'>time</span>: 18545</li><li><span>y</span>: 401</li><li><span>x</span>: 734</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-d49be0a0-1d73-4107-9f90-e4495731260e' class='xr-array-in' type='checkbox' checked><label for='section-d49be0a0-1d73-4107-9f90-e4495731260e' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>dask.array&lt;chunksize=(1, 18545, 40, 40), meta=np.ndarray&gt;</span></div><div class='xr-array-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 40.67 GiB </td>
+                        <td> 226.38 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1, 18545, 401, 734) </td>
+                        <td> (1, 18545, 40, 40) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 419 Tasks </td>
+                        <td> 209 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float64 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="343" height="150" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="25" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="25" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="25" y1="0" x2="25" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 25.412616514582485,0.0 25.412616514582485,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="12.706308" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >1</text>
+  <text x="45.412617" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,45.412617,12.706308)">1</text>
+
+
+  <!-- Horizontal lines -->
+  <line x1="95" y1="0" x2="165" y2="70" style="stroke-width:2" />
+  <line x1="95" y1="2" x2="165" y2="73" />
+  <line x1="95" y1="5" x2="165" y2="76" />
+  <line x1="95" y1="8" x2="165" y2="79" />
+  <line x1="95" y1="11" x2="165" y2="82" />
+  <line x1="95" y1="14" x2="165" y2="85" />
+  <line x1="95" y1="17" x2="165" y2="88" />
+  <line x1="95" y1="20" x2="165" y2="91" />
+  <line x1="95" y1="23" x2="165" y2="94" />
+  <line x1="95" y1="26" x2="165" y2="97" />
+  <line x1="95" y1="29" x2="165" y2="99" />
+  <line x1="95" y1="29" x2="165" y2="100" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="95" y1="0" x2="95" y2="29" style="stroke-width:2" />
+  <line x1="165" y1="70" x2="165" y2="100" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="95.0,0.0 165.58823529411765,70.58823529411765 165.58823529411765,100.0611532391346 95.0,29.472917945016942" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="95" y1="0" x2="128" y2="0" style="stroke-width:2" />
+  <line x1="165" y1="70" x2="198" y2="70" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="95" y1="0" x2="165" y2="70" style="stroke-width:2" />
+  <line x1="96" y1="0" x2="167" y2="70" />
+  <line x1="98" y1="0" x2="169" y2="70" />
+  <line x1="100" y1="0" x2="170" y2="70" />
+  <line x1="102" y1="0" x2="172" y2="70" />
+  <line x1="104" y1="0" x2="174" y2="70" />
+  <line x1="105" y1="0" x2="176" y2="70" />
+  <line x1="107" y1="0" x2="178" y2="70" />
+  <line x1="109" y1="0" x2="180" y2="70" />
+  <line x1="111" y1="0" x2="181" y2="70" />
+  <line x1="113" y1="0" x2="183" y2="70" />
+  <line x1="114" y1="0" x2="185" y2="70" />
+  <line x1="116" y1="0" x2="187" y2="70" />
+  <line x1="118" y1="0" x2="189" y2="70" />
+  <line x1="120" y1="0" x2="190" y2="70" />
+  <line x1="122" y1="0" x2="192" y2="70" />
+  <line x1="123" y1="0" x2="194" y2="70" />
+  <line x1="125" y1="0" x2="196" y2="70" />
+  <line x1="127" y1="0" x2="198" y2="70" />
+  <line x1="128" y1="0" x2="198" y2="70" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="95.0,0.0 128.069247784912,0.0 198.65748307902965,70.58823529411765 165.58823529411765,70.58823529411765" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="165" y1="70" x2="198" y2="70" style="stroke-width:2" />
+  <line x1="165" y1="73" x2="198" y2="73" />
+  <line x1="165" y1="76" x2="198" y2="76" />
+  <line x1="165" y1="79" x2="198" y2="79" />
+  <line x1="165" y1="82" x2="198" y2="82" />
+  <line x1="165" y1="85" x2="198" y2="85" />
+  <line x1="165" y1="88" x2="198" y2="88" />
+  <line x1="165" y1="91" x2="198" y2="91" />
+  <line x1="165" y1="94" x2="198" y2="94" />
+  <line x1="165" y1="97" x2="198" y2="97" />
+  <line x1="165" y1="99" x2="198" y2="99" />
+  <line x1="165" y1="100" x2="198" y2="100" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="165" y1="70" x2="165" y2="100" style="stroke-width:2" />
+  <line x1="167" y1="70" x2="167" y2="100" />
+  <line x1="169" y1="70" x2="169" y2="100" />
+  <line x1="170" y1="70" x2="170" y2="100" />
+  <line x1="172" y1="70" x2="172" y2="100" />
+  <line x1="174" y1="70" x2="174" y2="100" />
+  <line x1="176" y1="70" x2="176" y2="100" />
+  <line x1="178" y1="70" x2="178" y2="100" />
+  <line x1="180" y1="70" x2="180" y2="100" />
+  <line x1="181" y1="70" x2="181" y2="100" />
+  <line x1="183" y1="70" x2="183" y2="100" />
+  <line x1="185" y1="70" x2="185" y2="100" />
+  <line x1="187" y1="70" x2="187" y2="100" />
+  <line x1="189" y1="70" x2="189" y2="100" />
+  <line x1="190" y1="70" x2="190" y2="100" />
+  <line x1="192" y1="70" x2="192" y2="100" />
+  <line x1="194" y1="70" x2="194" y2="100" />
+  <line x1="196" y1="70" x2="196" y2="100" />
+  <line x1="198" y1="70" x2="198" y2="100" />
+  <line x1="198" y1="70" x2="198" y2="100" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="165.58823529411765,70.58823529411765 198.65748307902965,70.58823529411765 198.65748307902965,100.0611532391346 165.58823529411765,100.0611532391346" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="182.122859" y="120.061153" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="218.657483" y="85.324694" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,218.657483,85.324694)">401</text>
+  <text x="120.294118" y="84.767036" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,120.294118,84.767036)">18545</text>
+</svg>
+        </td>
+    </tr>
+</table></div></div></li><li class='xr-section-item'><input id='section-e6ac438b-e8cd-446d-ad86-e1895b0f776e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e6ac438b-e8cd-446d-ad86-e1895b0f776e' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>height</span></div><div class='xr-var-dims'>(height)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>10</div><input id='attrs-9e5bc4c8-b70e-446e-be03-50eeb93e786e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9e5bc4c8-b70e-446e-be03-50eeb93e786e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9b6da8dc-8414-423b-9244-d6b46801d149' class='xr-var-data-in' type='checkbox'><label for='data-9b6da8dc-8414-423b-9244-d6b46801d149' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Height above the surface</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([10])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;</div><input id='attrs-80e0ad24-4584-4a7d-bc64-19b667934271' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-80e0ad24-4584-4a7d-bc64-19b667934271' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fdf06a67-3fca-43b9-89a5-2a8e00a1efb1' class='xr-var-data-in' type='checkbox'><label for='data-fdf06a67-3fca-43b9-89a5-2a8e00a1efb1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 2.25 MiB </td>
+                        <td> 2.25 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (401, 734) </td>
+                        <td> (401, 734) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 2 Tasks </td>
+                        <td> 1 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float64 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="115" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="65" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="65" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,65.55858310626704 0.0,65.55858310626704" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="85.558583" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="140.000000" y="32.779292" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,32.779292)">401</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;</div><input id='attrs-a5bffde9-5d99-4bc8-9074-9430a34d9fed' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a5bffde9-5d99-4bc8-9074-9430a34d9fed' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2e8eb52b-4377-405e-8a9b-dfd864b9e4d2' class='xr-var-data-in' type='checkbox'><label for='data-2e8eb52b-4377-405e-8a9b-dfd864b9e4d2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 2.25 MiB </td>
+                        <td> 2.25 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (401, 734) </td>
+                        <td> (401, 734) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 2 Tasks </td>
+                        <td> 1 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float64 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="115" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="65" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="65" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,65.55858310626704 0.0,65.55858310626704" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="85.558583" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="140.000000" y="32.779292" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,32.779292)">401</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2015-06-07T18:21:04 ... 2021-09-...</div><input id='attrs-7986dbac-6a1e-4f97-85a8-9ac1c5988930' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7986dbac-6a1e-4f97-85a8-9ac1c5988930' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e8a589ac-c1b7-4081-8a94-2f3a31d72c46' class='xr-var-data-in' type='checkbox'><label for='data-e8a589ac-c1b7-4081-8a94-2f3a31d72c46' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Unique time associated with corresponding source Sentinel-1 L2 OCN product</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2015-06-07T18:21:04.000000000&#x27;, &#x27;2015-07-29T06:39:47.000000000&#x27;,
+       &#x27;2015-07-29T06:40:12.000000000&#x27;, ..., &#x27;2021-09-29T18:06:58.000000000&#x27;,
+       &#x27;2021-09-29T18:07:23.000000000&#x27;, &#x27;2021-09-29T18:07:48.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-48b3efeb-142c-425b-8393-b8e8efbb0737' class='xr-section-summary-in' type='checkbox'  checked><label for='section-48b3efeb-142c-425b-8393-b8e8efbb0737' class='xr-section-summary' >Attributes: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>flag_meanings :</span></dt><dd>good medium low poor</dd><dt><span>flag_values :</span></dt><dd>[0, 1, 2, 3]</dd><dt><span>long_name :</span></dt><dd>Quality flag taking into account the consistency_between_wind_inverted_and_NRCS_and_Doppler_measured</dd><dt><span>valid_range :</span></dt><dd>[0, 3]</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<section id="plot-the-mean-wind-quality-across-time-for-all-grid-coordinates">
+<h4>Plot the mean wind quality across time for all grid coordinates<a class="headerlink" href="#plot-the-mean-wind-quality-across-time-for-all-grid-coordinates" title="Permalink to this headline">¶</a></h4>
+<p>According to the <a class="reference external" href="https://sentinels.copernicus.eu/documents/247904/1877131/S1-RS-MDA-52-7441-3-9-2_Sentinel-1ProductSpecification.pdf/4f4488ef-60ad-52cb-160c-71ebdf6ca820?t=1641274625444">Sentinel-1 Product Specification (Issue/Revision: 3/9, Date: 07/05/2021)</a>:</p>
+<ul class="simple">
+<li><p>“<em>Wind quality flag (<code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code>) values can be 0 (high quality), 1 (medium quality), 2 (low quality) or 3 (bad quality).</em></p></li>
+</ul>
+<p>Previous analysis of Sentinel-1 OCN products (<a class="reference external" href="https://doi.org/10.5194/wes-5-1023-2020">de Montera et al., 2020</a>) excluded “bad quality” observations (<code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code> = 3). Here, the following plots look at mean <code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code> across the <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension:</p>
+<ol class="simple">
+<li><p>Mean <code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code> for all observations</p></li>
+<li><p>Mean <code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code>, excluding “bad quality” observations</p></li>
+</ol>
+<p>Using Dask, the data set loading process is lazy, where no data is loaded inititally. Instead, data loading is <a class="reference external" href="https://tutorial.dask.org/01x_lazy.html">delayed until execution time, where variables will be loaded and processed in parallel according to the corresponding chunks specification</a>. Dask arrays implement a subset of the NumPy <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.ndarray.html"><code class="docutils literal notranslate"><span class="pre">ndarray</span></code></a> interface using blocked algorithms, and the original variable arrays will be split into smaller chunk arrays, enabling computation on arrays larger than memory using all available cores. The blocked algorithms are coordinated using <a class="reference external" href="https://docs.dask.org/en/stable/graphs.html">Dask graphs</a>.</p>
+<p>Here, mean <code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code> over the <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension is initially determined for all grid coordinates, where Dask graph execution is triggered by calling <a class="reference external" href="https://docs.dask.org/en/stable/api.html#dask.compute"><code class="docutils literal notranslate"><span class="pre">compute()</span></code></a>. The resulting variable values will be contained in a NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>.</p>
+<p>Graph execution is managed by a <a class="reference external" href="https://docs.dask.org/en/stable/scheduling.html">task scheduler</a>. The default scheduler (used for executing this notebook) executes computations with <a class="reference external" href="https://docs.dask.org/en/stable/scheduling.html#local-threads">local threads</a>. However, execution may also be performed on a <a class="reference external" href="https://docs.dask.org/en/stable/scheduling.html#dask-distributed-local">distributed cluster</a> <strong>without any change to the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> code used here</strong>.</p>
+<p>Map plots of variables with grid coordinates may be generated using <a class="reference external" href="https://docs.xarray.dev/en/latest/user-guide/plotting.html">xarray’s plotting capabilities</a>, and other libraries. To plot mean <code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code>:</p>
+<ul class="simple">
+<li><p>Specify a suitable projection using <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html">Cartopy</a></p></li>
+<li><p>Call the variable <a class="reference external" href="https://docs.xarray.dev/en/latest/generated/xarray.DataArray.plot.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray.plot()</span></code></a></p></li>
+<li><p>Load the <a class="reference external" href="https://data.gov.ie/dataset/maritime-limits-irish-continental-shelf">ICS maritime limits</a> geometry with <a class="reference external" href="https://shapely.readthedocs.io/en/stable/manual.html#linestrings">Shapely</a></p></li>
+<li><p>Specifying a Cartopy projection will use a <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.13/matplotlib/geoaxes.html"><code class="docutils literal notranslate"><span class="pre">GeoAxes</span></code>, which is a subclass of a regular matplotlib <code class="docutils literal notranslate"><span class="pre">Axes</span></code></a>. This may be used to plot the following:</p>
+<ul>
+<li><p>ICS boundary</p></li>
+<li><p>Variable grid (latitude/longitude) lines</p></li>
+<li><p>Ireland coastline</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/linestring_ics_geo.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">jf</span><span class="p">:</span>
+    <span class="n">icsgeo</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">jf</span><span class="p">)</span>
+<span class="n">icsline</span> <span class="o">=</span> <span class="n">sgeom</span><span class="o">.</span><span class="n">LineString</span><span class="p">(</span><span class="n">icsgeo</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;geometry&#39;</span><span class="p">][</span><span class="s1">&#39;coordinates&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MAP_PROJECTION</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">plot_ics_variable</span><span class="p">(</span><span class="n">ax</span><span class="p">:</span> <span class="n">mpl</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span> 
+                      <span class="n">variable</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span> 
+                      <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+                      <span class="n">vmin</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> 
+                      <span class="n">vmax</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+                      <span class="n">cmap</span><span class="p">:</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Colormap</span> <span class="o">=</span> <span class="s1">&#39;inferno_r&#39;</span><span class="p">):</span>
+    <span class="c1"># x and y must be specified for 2-d grids</span>
+    <span class="n">variable</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+
+    <span class="c1"># ICS boundary</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">icsline</span><span class="p">],</span> <span class="n">MAP_PROJECTION</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Lat/lon gridlines</span>
+    <span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">formatter_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">direction_label</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+    <span class="n">label_style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">xlabel_style</span> <span class="o">=</span> <span class="n">label_style</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">ylabel_style</span> <span class="o">=</span> <span class="n">label_style</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">16.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">MAP_PROJECTION</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="n">quality_title</span> <span class="o">=</span> <span class="s1">&#39;Mean wind quality flag&#39;</span>
+
+<span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">owiWindQuality</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">keep_attrs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">(),</span>
+                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{quality_title}</span><span class="s1"> (all)&#39;</span><span class="p">,</span>
+                  <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                  <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                  <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">keep_attrs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">(),</span>
+                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{quality_title}</span><span class="s1"> (excluding bad quality)&#39;</span><span class="p">,</span>
+                  <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                  <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                  <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Sentinel-1_ICS_Wind_Data_16_0.png" src="_images/Sentinel-1_ICS_Wind_Data_16_0.png" />
+</div>
+</div>
+</section>
+<section id="plot-the-mean-number-of-sar-observations-across-time-for-all-grid-coordinates">
+<h4>Plot the mean number of SAR observations across time for all grid coordinates<a class="headerlink" href="#plot-the-mean-number-of-sar-observations-across-time-for-all-grid-coordinates" title="Permalink to this headline">¶</a></h4>
+<p>A minimum number of SAR observations are required for wind speed analysis (for example, <a class="reference external" href="https://doi.org/10.1016/j.rse.2014.09.030">Hasager et al., 2015</a>; <a class="reference external" href="https://doi.org/10.1175/JAMC-D-15-0197.1">Badger et al., 2016</a>). Based on the following plot of total observations per grid cell, it is clear that observations are not uniformly distributed across the Sentinel-1 ICS grid. A histogram of the SAR observations distribution is also displayed, using <a class="reference external" href="https://docs.xarray.dev/en/latest/generated/xarray.plot.hist.html"><code class="docutils literal notranslate"><span class="pre">xarray.plot.hist()</span></code></a>, along with corresponding distribution statistics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;total_sar_observations&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">wind_speed</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;long_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Total SAR observations per cell&#39;</span><span class="p">})</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">16.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Total SAR observations&#39;</span><span class="p">,</span>
+                  <span class="n">vmin</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+                  <span class="n">vmax</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+                  <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">MAP_PROJECTION</span><span class="p">),</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;inferno_r&#39;</span><span class="p">)</span>
+
+<span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Sentinel-1_ICS_Wind_Data_18_0.png" src="_images/Sentinel-1_ICS_Wind_Data_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>total_sar_observations</th>
+      <td>294334.0</td>
+      <td>254.171346</td>
+      <td>289.59132</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>137.0</td>
+      <td>503.0</td>
+      <td>1060.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="retain-only-cells-with-quality-in-0-2-and-a-minimum-number-of-observations-ge-200">
+<h4>Retain only cells with quality in [0, 2] and a minimum number of observations (<span class="math notranslate nohighlight">\(\ge\)</span> 200)<a class="headerlink" href="#retain-only-cells-with-quality-in-0-2-and-a-minimum-number-of-observations-ge-200" title="Permalink to this headline">¶</a></h4>
+<p>Excluding cells with low numbers of SAR observations does not noticeably reduce coverage of Irish offshore AOIs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">16.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">MAP_PROJECTION</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="n">quality_title</span> <span class="o">=</span> <span class="s1">&#39;Mean wind quality flag&#39;</span>
+
+<span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Total SAR observations (200+)&#39;</span><span class="p">,</span>
+                  <span class="n">vmin</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+                  <span class="n">vmax</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+                  <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">keep_attrs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">(),</span>
+                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{quality_title}</span><span class="s1"> (filtered)&#39;</span><span class="p">,</span>
+                  <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                  <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                  <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Sentinel-1_ICS_Wind_Data_21_0.png" src="_images/Sentinel-1_ICS_Wind_Data_21_0.png" />
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sentinel-1-wind-speed-2015-2021">
+<h3>Sentinel-1 wind speed (2015 - 2021)<a class="headerlink" href="#sentinel-1-wind-speed-2015-2021" title="Permalink to this headline">¶</a></h3>
+<p>Wind speed is loaded into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">wind_speed</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;wind_speed&#x27; (height: 1, time: 18545, y: 401, x: 734)&gt;
+dask.array&lt;transpose, shape=(1, 18545, 401, 734), dtype=float32, chunksize=(1, 18545, 40, 40), chunktype=numpy.ndarray&gt;
+Coordinates:
+  * height     (height) int64 10
+    latitude   (y, x) float64 dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;
+    longitude  (y, x) float64 dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;
+  * time       (time) datetime64[ns] 2015-06-07T18:21:04 ... 2021-09-29T18:07:48
+Dimensions without coordinates: y, x
+Attributes:
+    coordinates:    lon lat
+    long_name:      SAR Wind speed
+    standard_name:  wind_speed
+    units:          m/s</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'wind_speed'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>height</span>: 1</li><li><span class='xr-has-index'>time</span>: 18545</li><li><span>y</span>: 401</li><li><span>x</span>: 734</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-f1fcc33e-9e12-478b-99ae-1c9c838e4532' class='xr-array-in' type='checkbox' checked><label for='section-f1fcc33e-9e12-478b-99ae-1c9c838e4532' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>dask.array&lt;chunksize=(1, 18545, 40, 40), meta=np.ndarray&gt;</span></div><div class='xr-array-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 20.33 GiB </td>
+                        <td> 113.19 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1, 18545, 401, 734) </td>
+                        <td> (1, 18545, 40, 40) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 2093 Tasks </td>
+                        <td> 209 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float32 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="343" height="150" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="25" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="25" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="25" y1="0" x2="25" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 25.412616514582485,0.0 25.412616514582485,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="12.706308" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >1</text>
+  <text x="45.412617" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,45.412617,12.706308)">1</text>
+
+
+  <!-- Horizontal lines -->
+  <line x1="95" y1="0" x2="165" y2="70" style="stroke-width:2" />
+  <line x1="95" y1="2" x2="165" y2="73" />
+  <line x1="95" y1="5" x2="165" y2="76" />
+  <line x1="95" y1="8" x2="165" y2="79" />
+  <line x1="95" y1="11" x2="165" y2="82" />
+  <line x1="95" y1="14" x2="165" y2="85" />
+  <line x1="95" y1="17" x2="165" y2="88" />
+  <line x1="95" y1="20" x2="165" y2="91" />
+  <line x1="95" y1="23" x2="165" y2="94" />
+  <line x1="95" y1="26" x2="165" y2="97" />
+  <line x1="95" y1="29" x2="165" y2="99" />
+  <line x1="95" y1="29" x2="165" y2="100" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="95" y1="0" x2="95" y2="29" style="stroke-width:2" />
+  <line x1="165" y1="70" x2="165" y2="100" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="95.0,0.0 165.58823529411765,70.58823529411765 165.58823529411765,100.0611532391346 95.0,29.472917945016942" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="95" y1="0" x2="128" y2="0" style="stroke-width:2" />
+  <line x1="165" y1="70" x2="198" y2="70" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="95" y1="0" x2="165" y2="70" style="stroke-width:2" />
+  <line x1="96" y1="0" x2="167" y2="70" />
+  <line x1="98" y1="0" x2="169" y2="70" />
+  <line x1="100" y1="0" x2="170" y2="70" />
+  <line x1="102" y1="0" x2="172" y2="70" />
+  <line x1="104" y1="0" x2="174" y2="70" />
+  <line x1="105" y1="0" x2="176" y2="70" />
+  <line x1="107" y1="0" x2="178" y2="70" />
+  <line x1="109" y1="0" x2="180" y2="70" />
+  <line x1="111" y1="0" x2="181" y2="70" />
+  <line x1="113" y1="0" x2="183" y2="70" />
+  <line x1="114" y1="0" x2="185" y2="70" />
+  <line x1="116" y1="0" x2="187" y2="70" />
+  <line x1="118" y1="0" x2="189" y2="70" />
+  <line x1="120" y1="0" x2="190" y2="70" />
+  <line x1="122" y1="0" x2="192" y2="70" />
+  <line x1="123" y1="0" x2="194" y2="70" />
+  <line x1="125" y1="0" x2="196" y2="70" />
+  <line x1="127" y1="0" x2="198" y2="70" />
+  <line x1="128" y1="0" x2="198" y2="70" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="95.0,0.0 128.069247784912,0.0 198.65748307902965,70.58823529411765 165.58823529411765,70.58823529411765" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="165" y1="70" x2="198" y2="70" style="stroke-width:2" />
+  <line x1="165" y1="73" x2="198" y2="73" />
+  <line x1="165" y1="76" x2="198" y2="76" />
+  <line x1="165" y1="79" x2="198" y2="79" />
+  <line x1="165" y1="82" x2="198" y2="82" />
+  <line x1="165" y1="85" x2="198" y2="85" />
+  <line x1="165" y1="88" x2="198" y2="88" />
+  <line x1="165" y1="91" x2="198" y2="91" />
+  <line x1="165" y1="94" x2="198" y2="94" />
+  <line x1="165" y1="97" x2="198" y2="97" />
+  <line x1="165" y1="99" x2="198" y2="99" />
+  <line x1="165" y1="100" x2="198" y2="100" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="165" y1="70" x2="165" y2="100" style="stroke-width:2" />
+  <line x1="167" y1="70" x2="167" y2="100" />
+  <line x1="169" y1="70" x2="169" y2="100" />
+  <line x1="170" y1="70" x2="170" y2="100" />
+  <line x1="172" y1="70" x2="172" y2="100" />
+  <line x1="174" y1="70" x2="174" y2="100" />
+  <line x1="176" y1="70" x2="176" y2="100" />
+  <line x1="178" y1="70" x2="178" y2="100" />
+  <line x1="180" y1="70" x2="180" y2="100" />
+  <line x1="181" y1="70" x2="181" y2="100" />
+  <line x1="183" y1="70" x2="183" y2="100" />
+  <line x1="185" y1="70" x2="185" y2="100" />
+  <line x1="187" y1="70" x2="187" y2="100" />
+  <line x1="189" y1="70" x2="189" y2="100" />
+  <line x1="190" y1="70" x2="190" y2="100" />
+  <line x1="192" y1="70" x2="192" y2="100" />
+  <line x1="194" y1="70" x2="194" y2="100" />
+  <line x1="196" y1="70" x2="196" y2="100" />
+  <line x1="198" y1="70" x2="198" y2="100" />
+  <line x1="198" y1="70" x2="198" y2="100" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="165.58823529411765,70.58823529411765 198.65748307902965,70.58823529411765 198.65748307902965,100.0611532391346 165.58823529411765,100.0611532391346" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="182.122859" y="120.061153" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="218.657483" y="85.324694" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,218.657483,85.324694)">401</text>
+  <text x="120.294118" y="84.767036" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,120.294118,84.767036)">18545</text>
+</svg>
+        </td>
+    </tr>
+</table></div></div></li><li class='xr-section-item'><input id='section-543e1500-e3a1-484e-a36e-9f4821e41a91' class='xr-section-summary-in' type='checkbox'  checked><label for='section-543e1500-e3a1-484e-a36e-9f4821e41a91' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>height</span></div><div class='xr-var-dims'>(height)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>10</div><input id='attrs-f81d1c4a-9841-4b3f-aa90-a99d4d3ec2eb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f81d1c4a-9841-4b3f-aa90-a99d4d3ec2eb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-036a5ec7-f4ae-4aac-92ad-4c52345a9639' class='xr-var-data-in' type='checkbox'><label for='data-036a5ec7-f4ae-4aac-92ad-4c52345a9639' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Height above the surface</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([10])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;</div><input id='attrs-9fecd04a-e6ba-4591-9ffb-3308396144b3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9fecd04a-e6ba-4591-9ffb-3308396144b3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e252a3e4-4316-450b-9a6e-d1e6dd0db529' class='xr-var-data-in' type='checkbox'><label for='data-e252a3e4-4316-450b-9a6e-d1e6dd0db529' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 2.25 MiB </td>
+                        <td> 2.25 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (401, 734) </td>
+                        <td> (401, 734) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 2 Tasks </td>
+                        <td> 1 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float64 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="115" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="65" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="65" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,65.55858310626704 0.0,65.55858310626704" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="85.558583" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="140.000000" y="32.779292" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,32.779292)">401</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(401, 734), meta=np.ndarray&gt;</div><input id='attrs-3a16f8d5-1dfd-41ad-88f5-737e0f25011a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3a16f8d5-1dfd-41ad-88f5-737e0f25011a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-995de151-4bd5-43bc-a747-700bee4f97bd' class='xr-var-data-in' type='checkbox'><label for='data-995de151-4bd5-43bc-a747-700bee4f97bd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 2.25 MiB </td>
+                        <td> 2.25 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (401, 734) </td>
+                        <td> (401, 734) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 2 Tasks </td>
+                        <td> 1 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float64 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="115" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="65" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="65" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="65" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,65.55858310626704 0.0,65.55858310626704" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="85.558583" font-size="1.0rem" font-weight="100" text-anchor="middle" >734</text>
+  <text x="140.000000" y="32.779292" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,32.779292)">401</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2015-06-07T18:21:04 ... 2021-09-...</div><input id='attrs-782c07f0-099b-454f-a733-6d29dffe593f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-782c07f0-099b-454f-a733-6d29dffe593f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1b567514-f16f-4004-b445-965c8d5a18ff' class='xr-var-data-in' type='checkbox'><label for='data-1b567514-f16f-4004-b445-965c8d5a18ff' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Unique time associated with corresponding source Sentinel-1 L2 OCN product</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2015-06-07T18:21:04.000000000&#x27;, &#x27;2015-07-29T06:39:47.000000000&#x27;,
+       &#x27;2015-07-29T06:40:12.000000000&#x27;, ..., &#x27;2021-09-29T18:06:58.000000000&#x27;,
+       &#x27;2021-09-29T18:07:23.000000000&#x27;, &#x27;2021-09-29T18:07:48.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-55f2df9f-aed5-4cec-aa4d-de06eedcd767' class='xr-section-summary-in' type='checkbox'  checked><label for='section-55f2df9f-aed5-4cec-aa4d-de06eedcd767' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>long_name :</span></dt><dd>SAR Wind speed</dd><dt><span>standard_name :</span></dt><dd>wind_speed</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<section id="calculate-mean-wind-speed-over-time-dimension-at-aoi-grid-coordinates">
+<h4>Calculate mean wind speed over <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension at AOI grid coordinates<a class="headerlink" href="#calculate-mean-wind-speed-over-time-dimension-at-aoi-grid-coordinates" title="Permalink to this headline">¶</a></h4>
+<p>To perform some analysis at known AOI latitude/longitude coordinates, the <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.sel.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray.sel(...,</span> <span class="pre">method='nearest')</span></code></a> function may be used to select a subset of the data array (or data set) at coordinates nearest to the specified parameters.
+Here, mean wind speed over the <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension is determined for the specified coordinates.</p>
+<ul class="simple">
+<li><p><strong>Note:</strong> <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.sel.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray.sel(...,</span> <span class="pre">method='nearest')</span></code></a> does not support selection from two-dimensional curvilinear grids as used in the regridded Sentinel-1 data set. Consequently, <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.isel.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray.isel()</span></code></a> is used here with the <code class="docutils literal notranslate"><span class="pre">x</span></code> (longitude) and <code class="docutils literal notranslate"><span class="pre">y</span></code> (latitude) dimensions for demonstration. A solution enabling two-dimensional grid selection is described in the <a class="reference internal" href="Offshore_Wind_AOI.html"><span class="doc std std-doc">Offshore Wind in Irish Areas Of Interest</span></a> notebook.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">wind_speed</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">390</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;wind_speed&#x27; (height: 1)&gt;
+array([9.388478], dtype=float32)
+Coordinates:
+  * height     (height) int64 10
+    latitude   float64 50.52
+    longitude  float64 -14.28</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'wind_speed'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>height</span>: 1</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-d8921cc9-8652-4c52-913f-7c2ceba24fc7' class='xr-array-in' type='checkbox' checked><label for='section-d8921cc9-8652-4c52-913f-7c2ceba24fc7' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>9.388</span></div><div class='xr-array-data'><pre>array([9.388478], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-36d32c8e-b77e-4129-bcab-158542d73c20' class='xr-section-summary-in' type='checkbox'  checked><label for='section-36d32c8e-b77e-4129-bcab-158542d73c20' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>height</span></div><div class='xr-var-dims'>(height)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>10</div><input id='attrs-fc3042c5-5b09-41dd-8a53-d285f441e493' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fc3042c5-5b09-41dd-8a53-d285f441e493' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-faef5177-049a-4abd-a3ab-673af29d0302' class='xr-var-data-in' type='checkbox'><label for='data-faef5177-049a-4abd-a3ab-673af29d0302' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Height above the surface</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([10])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>50.52</div><input id='attrs-af0627f7-282f-4000-9b3b-d32dfac1518e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-af0627f7-282f-4000-9b3b-d32dfac1518e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-011df2c7-1ec7-427a-996b-739982b239d0' class='xr-var-data-in' type='checkbox'><label for='data-011df2c7-1ec7-427a-996b-739982b239d0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><pre>array(50.515)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-14.28</div><input id='attrs-725039ff-9a14-40b2-b8c8-5a75aea79787' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-725039ff-9a14-40b2-b8c8-5a75aea79787' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4a76d8fa-e142-4da2-b763-94d0c4634733' class='xr-var-data-in' type='checkbox'><label for='data-4a76d8fa-e142-4da2-b763-94d0c4634733' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><pre>array(-14.285)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6073ac6a-7a0e-4caf-9c39-dac04dc1b2cf' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-6073ac6a-7a0e-4caf-9c39-dac04dc1b2cf' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="NEWA_ICS_Wind_Data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">NEWA Wind Data for Irish Continental Shelf region</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Offshore_Wind_AOI.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Offshore Wind in Irish Areas Of Interest</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Earth Observation Offshore <a href="https://www.twitter.com/EOOffshore" target="_blank">@EOOffshore</a><br/>
+    
+        &copy; Copyright 2020-2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

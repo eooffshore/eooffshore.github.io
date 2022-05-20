@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Irish Continental Shelf Data Sets</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://eooffshore.github.io/datasets.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ASCAT Wind Data for Irish Continental Shelf region" href="ASCAT_ICS_Wind_Data.html" />
+    <link rel="prev" title="Acknowledgements" href="acknowledgements.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/eooffshore_banner.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  EOOffshore
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_overview.html">
+   Project Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="approach.html">
+   Approach
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Wind Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Irish Continental Shelf Data Sets
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ASCAT_ICS_Wind_Data.html">
+     ASCAT Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CCMP_ICS_Wind_Data.html">
+     CCMP Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ERA5_ICS_Wind_Data.html">
+     ERA5 Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MERA_ICS_Wind_Data.html">
+     MÉRA Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="NEWA_ICS_Wind_Data.html">
+     NEWA Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sentinel-1_ICS_Wind_Data.html">
+     Sentinel-1 Wind Data for Irish Continental Shelf region
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Area Of Interest Assessment
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Offshore_Wind_AOI.html">
+   Offshore Wind in Irish Areas Of Interest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Comparison_Wind_Power.html">
+   Comparison of Offshore Wind Speed Extrapolation and Power Density Estimation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Offshore Wind Atlases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="windatlas.html">
+   Wind Atlas Development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="MERA_ICS_Wind_Atlas.html">
+   MÉRA-based Wind Atlas for Irish Continental Shelf region
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/datasets.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Irish Continental Shelf Data Sets</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section id="irish-continental-shelf-data-sets">
+<h1>Irish Continental Shelf Data Sets<a class="headerlink" href="#irish-continental-shelf-data-sets" title="Permalink to this headline">¶</a></h1>
+<p>The EOOffshore project has involved the creation of a new wind data catalog, consisting of a collection of analysis-ready, cloud-optimized (ARCO) data sets,
+which features up to 21 years of available in situ, reanalysis, and satellite observation wind data products for the <a class="reference external" href="https://www.marine.ie/Home/site-area/irelands-marine-resource/real-map-ireland">Irish Continental Shelf</a> region.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><img alt="Irish Continental Shelf" src="_images/ics.png" /></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake library</a> is used to manage this catalog, where ARCO datasets have been generated using the <a class="reference external" href="https://zarr.readthedocs.io/en/stable/">Zarr</a> format, enabling subsequent scalable processing with <a class="reference external" href="https://zarr.readthedocs.io/en/stable/">xarray</a> and <a class="reference external" href="https://dask.org/">Dask</a>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data</p></th>
+<th class="head"><p>Provider</p></th>
+<th class="head"><p>Time</p></th>
+<th class="head"><p># Products</p></th>
+<th class="head"><p>Products Size (GB)</p></th>
+<th class="head"><p>Zarr (GB)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://resources.marine.copernicus.eu/product-detail/WIND_GLO_WIND_L3_NRT_OBSERVATIONS_012_002">ASCAT Near Real Time L3 Sea Winds</a></p></td>
+<td><p><a class="reference external" href="https://marine.copernicus.eu/">Copernicus Marine Service</a></p></td>
+<td><p>2016-01 to 2021-09</p></td>
+<td><p>324</p></td>
+<td><p>16</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://resources.marine.copernicus.eu/product-detail/WIND_GLO_WIND_L3_REP_OBSERVATIONS_012_005">ASCAT Reprocessed L3 Sea Winds</a></p></td>
+<td><p><a class="reference external" href="https://marine.copernicus.eu/">Copernicus Marine Service</a></p></td>
+<td><p>2007-01 to 2021-07</p></td>
+<td><p>412</p></td>
+<td><p>21</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.remss.com/measurements/ccmp/">CCMP Wind V2.1 NRT</a></p></td>
+<td><p><a class="reference external" href="http://www.remss.com">Remote Sensing Systems</a></p></td>
+<td><p>2015-01 to 2021-09</p></td>
+<td><p>2,436</p></td>
+<td><p>109</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp##%21/dataset/reanalysis-era5-single-levels">ERA5 Hourly Single Level</a></p></td>
+<td><p><a class="reference external" href="https://climate.copernicus.eu/">Copernicus Climate Change Service</a></p></td>
+<td><p>2001-01 to 2021-09</p></td>
+<td><p>249</p></td>
+<td><p>10</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.met.ie/climate/available-data/mera">Met Éireann Re-Analysis (MÉRA)</a></p></td>
+<td><p><a class="reference external" href="https://www.met.ie/about-us">Met Éireann</a></p></td>
+<td><p>2001-01 to 2016-12</p></td>
+<td><p>1,920</p></td>
+<td><p>226</p></td>
+<td><p>196</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-2-algorithms">Sentinel-1 L2 OCN</a></p></td>
+<td><p><a class="reference external" href="https://scihub.copernicus.eu/">Copernicus Open Access Hub</a>; <a class="reference external" href="https://asf.alaska.edu/">Alaska Satellite Facility</a></p></td>
+<td><p>2015-06 to 2021-09</p></td>
+<td><p>17,698</p></td>
+<td><p>241</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.marine.ie/Home/site-area/data-services/real-time-observations/irish-weather-buoy-network-imos">Irish Weather Buoy Network</a></p></td>
+<td><p><a class="reference external" href="https://www.marine.ie/Home/home">Marine Institute</a></p></td>
+<td><p>2001-05 to 2021-09</p></td>
+<td><p>1</p></td>
+<td><p>0.08</p></td>
+<td><p>n/a</p></td>
+</tr>
+</tbody>
+</table>
+<p>Overviews of the catalog data sets are provided in the following notebooks:</p>
+<ol class="simple">
+<li><p><a class="reference internal" href="ASCAT_ICS_Wind_Data.html"><span class="doc std std-doc">Advanced SCATterometer (ASCAT) Sea Surface Winds</span></a></p></li>
+<li><p><a class="reference internal" href="CCMP_ICS_Wind_Data.html"><span class="doc std std-doc">Cross-Calibrated Multi-Platform (CCMP) Wind Vector Analysis</span></a></p></li>
+<li><p><a class="reference internal" href="ERA5_ICS_Wind_Data.html"><span class="doc std std-doc">ERA5 Hourly Single Level Wind</span></a></p></li>
+<li><p><a class="reference internal" href="MERA_ICS_Wind_Data.html"><span class="doc std std-doc">Met Éireann Re-Analysis (MÉRA) Wind</span></a></p></li>
+<li><p><a class="reference internal" href="NEWA_ICS_Wind_Data.html"><span class="doc std std-doc">New European Wind Atlas (NEWA)</span></a></p></li>
+<li><p><a class="reference internal" href="Sentinel-1_ICS_Wind_Data.html"><span class="doc std std-doc">Sentinel-1 Ocean (OCN) Wind</span></a></p></li>
+</ol>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="acknowledgements.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Acknowledgements</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ASCAT_ICS_Wind_Data.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ASCAT Wind Data for Irish Continental Shelf region</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Earth Observation Offshore <a href="https://www.twitter.com/EOOffshore" target="_blank">@EOOffshore</a><br/>
+    
+        &copy; Copyright 2020-2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
