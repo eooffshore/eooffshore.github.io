@@ -307,8 +307,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-the-catalog-and-view-the-ascat-metadata">
-     Open the catalog and view the ASCAT metadata
+    <a class="reference internal nav-link" href="#open-the-catalog-and-view-the-newa-metadata">
+     Open the catalog and view the NEWA metadata
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -377,8 +377,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-the-catalog-and-view-the-ascat-metadata">
-     Open the catalog and view the ASCAT metadata
+    <a class="reference internal nav-link" href="#open-the-catalog-and-view-the-newa-metadata">
+     Open the catalog and view the NEWA metadata
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -579,8 +579,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<section id="open-the-catalog-and-view-the-ascat-metadata">
-<h3>Open the catalog and view the ASCAT metadata<a class="headerlink" href="#open-the-catalog-and-view-the-ascat-metadata" title="Permalink to this headline">¶</a></h3>
+<section id="open-the-catalog-and-view-the-newa-metadata">
+<h3>Open the catalog and view the NEWA metadata<a class="headerlink" href="#open-the-catalog-and-view-the-newa-metadata" title="Permalink to this headline">¶</a></h3>
 <p>All EOOffshore data sets, including the NEWA Zarr stores described above, are accessible using the EOOffshore <a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake</a> catalog. Each <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html">catalog</a> entry provides a description and metadata associated with the corresponding data set, defined in a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#yaml-format">YAML configuration file</a>. The EOOffshore catalog configuration was originally influenced by the <a class="reference external" href="https://github.com/pangeo-data/pangeo-datastore/blob/master/intake-catalogs/atmosphere.yaml">Pangeo Cloud Data Store atmosphere.yaml catalog configuration</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -720,7 +720,7 @@ const thebe_selector_output = ".output, .cell_output"
 <hr class="docutils" />
 <section id="load-each-catalog-newa-zarr-store">
 <h3>Load each catalog NEWA Zarr store<a class="headerlink" href="#load-each-catalog-newa-zarr-store" title="Permalink to this headline">¶</a></h3>
-<p>Intake catalog entries typically specify a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#driver-selection">driver</a> to be used when loading the corresponding data set. The MÉRA entry specifies <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">intake_xarray.xzarr.ZarrSource</span></code></a>, a driver implementation provided by the <a class="reference external" href="https://intake-xarray.readthedocs.io/">intake-xarray</a> library. This enables NetCDF and Zarr data sets to be loaded using <a class="reference external" href="https://docs.xarray.dev/en/stable/index.html">xarray</a>, a library for processing N-D labeled arrays and datasets. As xarray labels take the form of dimensions, coordinates and attributes on top of <a class="reference external" href="https://numpy.org/">NumPy</a>-like arrays, it is particularly suited to data sets such as MÉRA whose variables feature latitude/longitude grid coordinates.</p>
+<p>Intake catalog entries typically specify a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#driver-selection">driver</a> to be used when loading the corresponding data set. The NEWA entries specify <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">intake_xarray.xzarr.ZarrSource</span></code></a>, a driver implementation provided by the <a class="reference external" href="https://intake-xarray.readthedocs.io/">intake-xarray</a> library. This enables NetCDF and Zarr data sets to be loaded using <a class="reference external" href="https://docs.xarray.dev/en/stable/index.html">xarray</a>, a library for processing N-D labeled arrays and datasets. As xarray labels take the form of dimensions, coordinates and attributes on top of <a class="reference external" href="https://numpy.org/">NumPy</a>-like arrays, it is particularly suited to data sets such as MÉRA whose variables feature latitude/longitude grid coordinates.</p>
 <p>This intake driver will load the associated dataset into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a>. To enable support for potentially large data sets, the <a class="reference external" href="https://intake.readthedocs.io/en/latest/quickstart.html#working-with-dask"><code class="docutils literal notranslate"><span class="pre">to_dask()</span></code></a> function is used to load the underlying variable arrays with <a class="reference external" href="https://docs.dask.org/en/latest/">Dask</a>, a parallel, out-of-core computing library. The <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">ZarrSource</span></code></a> implementation will load the data set variables into <a class="reference external" href="https://docs.dask.org/en/latest/array.html">Dask arrays</a>, which will be loaded and processed in parallel as <a class="reference external" href="https://docs.dask.org/en/latest/array.html">chunks</a> during subsequent computation. As discussed above, variable chunk sizes may be specified during Zarr store creation.</p>
 <p>This utility class is used for Zarr loading and preparation. The 10m NEWA wind variables (<code class="docutils literal notranslate"><span class="pre">WS10</span></code> and <code class="docutils literal notranslate"><span class="pre">WD10</span></code>) are added to the corresponding wind variables containing data at multiple heights (<code class="docutils literal notranslate"><span class="pre">WS</span></code> and <code class="docutils literal notranslate"><span class="pre">WD</span></code>), and the <code class="docutils literal notranslate"><span class="pre">height</span></code> dimension is reindexed to include the 10m data.</p>
 <div class="cell docutils container">
