@@ -1,2 +1,26 @@
-- file: intro
-
+format: jb-book
+root: intro
+parts:
+- caption: EOOffshore
+  chapters:
+  - file: project_overview
+  - file: approach
+  - file: acknowledgements
+- caption: Wind Data
+  chapters:
+  - file: datasets
+    sections:
+     - file: ASCAT_ICS_Wind_Data
+     - file: CCMP_ICS_Wind_Data
+     - file: ERA5_ICS_Wind_Data
+     - file: MERA_ICS_Wind_Data
+     - file: NEWA_ICS_Wind_Data
+     - file: Sentinel-1_ICS_Wind_Data
+- caption: Area Of Interest Assessment
+  chapters:
+  - file: Offshore_Wind_AOI
+  - file: Comparison_Wind_Power
+- caption: Offshore Wind Atlases
+  chapters:
+  - file: windatlas
+  - file: MERA_ICS_Wind_Atlas
