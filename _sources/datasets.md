@@ -16,7 +16,8 @@ The [Intake library](https://intake.readthedocs.io/en/latest/) is used to manage
 | [CCMP Wind V2.1 NRT](http://www.remss.com/measurements/ccmp/) | [Remote Sensing Systems](http://www.remss.com) | 2015-01 to 2021-09 | 2,436 | 109 | 0.5 |
 | [ERA5 Hourly Single Level](https://cds.climate.copernicus.eu/cdsapp##!/dataset/reanalysis-era5-single-levels) | [Copernicus Climate Change Service](https://climate.copernicus.eu/) | 2001-01 to 2021-09 | 249 | 10 | 16 |
 | [Met Éireann Re-Analysis (MÉRA)](https://www.met.ie/climate/available-data/mera) | [Met Éireann](https://www.met.ie/about-us) | 2001-01 to 2016-12 | 1,920 | 226 | 196 |
-| [Sentinel-1 L2 OCN](https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-2-algorithms) | [Copernicus Open Access Hub](https://scihub.copernicus.eu/); [Alaska Satellite Facility](https://asf.alaska.edu/) | 2015-06 to 2021-09 | 17,698 | 241 | 12 |
+| [New European Wind Atlas (NEWA)](https://map.neweuropeanwindatlas.eu) | [NEWA](https://www.neweuropeanwindatlas.eu/mission) | 2009-01 to 2018-12 | 14,608 | 27 | 20 |
+| [Sentinel-1 L2 OCN](https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-2-algorithms) | [Copernicus Open Access Hub](https://scihub.copernicus.eu/); [Alaska Satellite Facility](https://asf.alaska.edu/) | 2015-06 to 2021-09 | 17,698 | 241 | 1.2 |
 | [Irish Weather Buoy Network](http://www.marine.ie/Home/site-area/data-services/real-time-observations/irish-weather-buoy-network-imos) | [Marine Institute](https://www.marine.ie/Home/home) | 2001-05 to 2021-09 | 1 | 0.08 | n/a |
 
 Overviews of the catalog data sets are provided in the following notebooks:
