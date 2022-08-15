@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sentinel-1 Wind Data for Irish Continental Shelf region</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -38,22 +37,20 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://eooffshore.github.io/Sentinel-1_ICS_Wind_Data.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -469,9 +466,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <p><a class="reference internal" href="_images/eooffshore_banner.png"><img alt="_images/eooffshore_banner.png" src="_images/eooffshore_banner.png" style="width: 48%;" /></a> </p>
 <p><a class="reference internal" href="_images/seai.png"><img alt="_images/seai.png" src="_images/seai.png" style="width: 25%;" /></a> <span /> <a class="reference internal" href="_images/ucd.png"><img alt="_images/ucd.png" src="_images/ucd.png" style="width: 7%;" /></a></p>
-<section id="sentinel-1-wind-data-for-irish-continental-shelf-region">
+<div class="section" id="sentinel-1-wind-data-for-irish-continental-shelf-region">
 <h1>Sentinel-1 Wind Data for Irish Continental Shelf region<a class="headerlink" href="#sentinel-1-wind-data-for-irish-continental-shelf-region" title="Permalink to this headline">¶</a></h1>
-<section id="introduction">
+<div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://www.copernicus.eu/en/about-copernicus">European Union Copernicus Earth Observation (EO) programme</a> and services are based on data collected from EO satellites, in particular, the <a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/home">Sentinel satellite missions</a>. This includes the <a class="reference external" href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1">Sentinel-1 mission</a>, which consists of a pair of C-band Synthetic Aperture Radar (SAR) imaging satellites in polar orbit. One of its main objectives is the provision of ocean monitoring services, where its <a class="reference external" href="https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/product-types-processing-levels/level-2">Level-2 Ocean (OCN) products</a> include an Ocean WInd field (OWI) component. This provides gridded estimates of wind speed and direction at 10m above the surface, with a typical spatial resolution of 1 km. Examples of Sentinel-1 SAR usage for ocean wind analysis are described in the following publications:</p>
 <ul class="simple">
@@ -488,15 +485,20 @@ Mission Calibration and Wind Field Retrieval and Norwegian Sea</a></p></li>
 <li><p>The creation of the Sentinel-1 Zarr wind store that is included in the EOOffshore catalog.</p></li>
 <li><p>A brief look at this Zarr store, including a demonstration of wind speed calculation.</p></li>
 </ol>
-<p><strong>How to cite:</strong> O’Callaghan, D. and McBreen, S.: Scalable Offshore Wind Analysis With Pangeo, EGU General Assembly 2022, Vienna, Austria, 23–27 May 2022, EGU22-2746, <a class="reference external" href="https://doi.org/10.5194/egusphere-egu22-2746">https://doi.org/10.5194/egusphere-egu22-2746</a>, 2022.</p>
+<p>This Sentinel-1 Zarr store has been uploaded to <a class="reference external" href="https://zenodo.org/record/6967056">Zenodo</a>.</p>
+<p><strong>How to cite:</strong></p>
+<ol class="simple">
+<li><p>O’Callaghan, D. and McBreen, S.: Scalable Offshore Wind Analysis With Pangeo, EGU General Assembly 2022, Vienna, Austria, 23–27 May 2022, EGU22-2746, <a class="reference external" href="https://doi.org/10.5194/egusphere-egu22-2746">https://doi.org/10.5194/egusphere-egu22-2746</a>, 2022.</p></li>
+<li><p><a class="reference external" href="https://zenodo.org/record/6967056">O’Callaghan, D. and McBreen, S.: EOOffshore: Sentinel-1 Wind Data for the Irish Continental Shelf Region,  (1.0.0) [Data set], Zenodo, 2022.</a> <a class="reference external" href="https://doi.org/10.5281/zenodo.6967056"><img alt="https://doi.org/10.5281/zenodo.6967056" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6967056.svg" /></a></p></li>
+</ol>
 <p><strong>Note: more extensive usage of the EOOffshore Sentinel-1 Zarr store may be found in the following notebooks:</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="Offshore_Wind_AOI.html"><span class="doc std std-doc">Offshore Wind in Irish Areas Of Interest</span></a></p></li>
 <li><p><a class="reference internal" href="Comparison_Wind_Power.html"><span class="doc std std-doc">Comparison of Offshore Wind Speed Extrapolation and Power Density Estimation</span></a></p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="sentinel-1-wind-data-products">
+<div class="section" id="sentinel-1-wind-data-products">
 <h2>Sentinel-1 Wind Data Products<a class="headerlink" href="#sentinel-1-wind-data-products" title="Permalink to this headline">¶</a></h2>
 <p>The EOOffshore project uses <a class="reference external" href="https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/product-types-processing-levels/level-2">Sentinel-1 Level-2 Ocean (OCN) wind products</a> data set, which provide ocean wind estimates from 2015 to the present day. The following data variables are relevant:</p>
 <table class="colwidths-auto table">
@@ -579,25 +581,25 @@ Mission Calibration and Wind Field Retrieval and Norwegian Sea</a></p></li>
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 <hr class="docutils" />
-<section id="sentinel-1-wind-zarr-store">
+<div class="section" id="sentinel-1-wind-zarr-store">
 <h2>Sentinel-1 Wind Zarr Store<a class="headerlink" href="#sentinel-1-wind-zarr-store" title="Permalink to this headline">¶</a></h2>
 <p>As the retrieved NetCDF products (within the SAFE archives) are Level-2 products featuring heterogeneous curvilinear grids, they were initially regridded to a uniform grid using <a class="reference external" href="https://pangeo-xesmf.readthedocs.io/en/latest/index.html">xESMF</a>. A spatial resolution of 0.03 degrees was specified for this grid, which is similar to resolutions used in earlier Sentinel-1 ocean wind analysis (<a class="reference external" href="https://doi.org/10.5194/wes-5-1191-2020">Ahsbahs et al., 2020</a>; <a class="reference external" href="https://doi.org/10.5194/wes-5-1023-2020">de Montera et al., 2020</a>). Each Level-2 product is associated with an observation time, and it was necessary to assign a <code class="docutils literal notranslate"><span class="pre">time</span></code> coordinate dimension prior to further processing. Although each product provides a <code class="docutils literal notranslate"><span class="pre">firstMeasurementTime</span></code> value, this appears to only contain unique values for <a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-product-formatting">Single VV (SV) polarization</a> products. For all other products, the <a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-product-formatting">“Stop Date and Time” contained in the product filename</a> was used as the unique <code class="docutils literal notranslate"><span class="pre">time</span></code> coordinate. A <code class="docutils literal notranslate"><span class="pre">height</span></code> coordinate dimension (10m) was also added for the <code class="docutils literal notranslate"><span class="pre">owi...</span></code> variables. Using small product batch chunks, a chunked, compressed <a class="reference external" href="https://zarr.readthedocs.io/en/stable/">Zarr</a> store, which is a cloud-optimised format suitable for multi-dimensional arrays, was created by concatenating products along the <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension. This Zarr store was then rechunked in space (<code class="docutils literal notranslate"><span class="pre">x</span></code> - longitude, <code class="docutils literal notranslate"><span class="pre">y</span></code> - latitude dimensions) using <a class="reference external" href="https://github.com/pangeo-data/rechunker">Rechunker</a>, where a <code class="docutils literal notranslate"><span class="pre">time</span></code> chunk size was specified that resulted in a low number of <code class="docutils literal notranslate"><span class="pre">time</span></code> chunks. This approach is more suitable for subsequent processing of variables over time for Areas Of Interest (AOIs). Retaining only the <code class="docutils literal notranslate"><span class="pre">owi...</span></code> variables results in considerably lower storage requirements in this final rechunked Zarr store (1.2GB) compared to the original products that were retrieved.</p>
 <p>As requested by the <a class="reference external" href="https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice">Legal Notice on the use of Copernicus Sentinel Data and Service Information</a>, this Zarr store:</p>
 <ul class="simple">
 <li><p>Contains modified Copernicus Sentinel data [2015 - 2021].</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="sentinel-1-in-eooffshore-catalog">
+<div class="section" id="sentinel-1-in-eooffshore-catalog">
 <h2>Sentinel-1 in EOOffshore Catalog<a class="headerlink" href="#sentinel-1-in-eooffshore-catalog" title="Permalink to this headline">¶</a></h2>
 <p>Imports required for subsequent processing</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">from</span> <span class="nn">intake</span> <span class="kn">import</span> <span class="n">open_catalog</span>
+<span class="kn">from</span> <span class="nn">intake</span> <span class="k">import</span> <span class="n">open_catalog</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -611,7 +613,7 @@ Mission Calibration and Wind Field Retrieval and Norwegian Sea</a></p></li>
 </div>
 </div>
 </div>
-<section id="open-the-catalog-and-view-the-sentinel-1-metadata">
+<div class="section" id="open-the-catalog-and-view-the-sentinel-1-metadata">
 <h3>Open the catalog and view the Sentinel-1 metadata<a class="headerlink" href="#open-the-catalog-and-view-the-sentinel-1-metadata" title="Permalink to this headline">¶</a></h3>
 <p>All EOOffshore data sets, including the Sentinel-1 Zarr store described above, are accessible using the EOOffshore <a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake</a> catalog. Each <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html">catalog</a> entry provides a description and metadata associated with the corresponding data set, defined in a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#yaml-format">YAML configuration file</a>. The EOOffshore catalog configuration was originally influenced by the <a class="reference external" href="https://github.com/pangeo-data/pangeo-datastore/blob/master/intake-catalogs/atmosphere.yaml">Pangeo Cloud Data Store atmosphere.yaml catalog configuration</a>.</p>
 <p>To view the Sentinel-1 metadata:</p>
@@ -647,9 +649,9 @@ Mission Calibration and Wind Field Retrieval and Norwegian Sea</a></p></li>
 </div>
 </div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="load-the-catalog-sentinel-1-zarr-store">
+<div class="section" id="load-the-catalog-sentinel-1-zarr-store">
 <h3>Load the catalog Sentinel-1 Zarr store<a class="headerlink" href="#load-the-catalog-sentinel-1-zarr-store" title="Permalink to this headline">¶</a></h3>
 <p>Intake catalog entries typically specify a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#driver-selection">driver</a> to be used when loading the corresponding data set. The Sentinel-1 entry specifies <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">intake_xarray.xzarr.ZarrSource</span></code></a>, a driver implementation provided by the <a class="reference external" href="https://intake-xarray.readthedocs.io/">intake-xarray</a> library. This enables NetCDF and Zarr data sets to be loaded using <a class="reference external" href="https://docs.xarray.dev/en/stable/index.html">xarray</a>, a library for processing N-D labeled arrays and datasets. As xarray labels take the form of dimensions, coordinates and attributes on top of <a class="reference external" href="https://numpy.org/">NumPy</a>-like arrays, it is particularly suited to data sets such as CCMP whose variables feature latitude/longitude grid coordinates.</p>
 <p>This intake driver will load the associated dataset into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a>. To enable support for potentially large data sets, the <a class="reference external" href="https://intake.readthedocs.io/en/latest/quickstart.html#working-with-dask"><code class="docutils literal notranslate"><span class="pre">to_dask()</span></code></a> function is used to load the underlying variable arrays with <a class="reference external" href="https://docs.dask.org/en/latest/">Dask</a>, a parallel, out-of-core computing library. The <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">ZarrSource</span></code></a> implementation will load the data set variables into <a class="reference external" href="https://docs.dask.org/en/latest/array.html">Dask arrays</a>, which will be loaded and processed in parallel as <a class="reference external" href="https://docs.dask.org/en/latest/array.html">chunks</a> during subsequent computation. As discussed above, variable chunk sizes may be specified during Zarr store creation.</p>
@@ -1615,9 +1617,9 @@ Attributes:
     </tr>
 </table></div></li></ul></div></li><li class='xr-section-item'><input id='section-06b458a3-5c98-4ad8-b9a0-6c3a5e638fda' class='xr-section-summary-in' type='checkbox'  checked><label for='section-06b458a3-5c98-4ad8-b9a0-6c3a5e638fda' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>eooffshore_zarr_creation_time :</span></dt><dd>2022-05-13T14:02:25Z</dd><dt><span>eooffshore_zarr_details :</span></dt><dd>EOOffshore Project: Concatenated Sentinel-1 Level 2 OCN wind (owiWind...) variable products from Copernicus, for Irish Continental Shelf. Products have been regridded with xESMF (bilinear) to a Level 3 grid, NW: (-26, 58), SE: (-4, 46), grid resolution: 0.03 degrees. Contains modified Copernicus Sentinel data [2015 - 2021].</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="sentinel-1-wind-quality-flag">
+<div class="section" id="sentinel-1-wind-quality-flag">
 <h3>Sentinel-1 wind quality flag<a class="headerlink" href="#sentinel-1-wind-quality-flag" title="Permalink to this headline">¶</a></h3>
 <p>Sentinel-1 OCN products contain an <code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code> variable, which reflects the quality of corresponding wind variables at a particular time.</p>
 <p>Each variable in the Sentinel-1 data set, including <code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code>, is loaded into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>:</p>
@@ -2266,7 +2268,7 @@ Attributes:
        &#x27;2021-09-29T18:07:23.000000000&#x27;, &#x27;2021-09-29T18:07:48.000000000&#x27;],
       dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-48b3efeb-142c-425b-8393-b8e8efbb0737' class='xr-section-summary-in' type='checkbox'  checked><label for='section-48b3efeb-142c-425b-8393-b8e8efbb0737' class='xr-section-summary' >Attributes: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>flag_meanings :</span></dt><dd>good medium low poor</dd><dt><span>flag_values :</span></dt><dd>[0, 1, 2, 3]</dd><dt><span>long_name :</span></dt><dd>Quality flag taking into account the consistency_between_wind_inverted_and_NRCS_and_Doppler_measured</dd><dt><span>valid_range :</span></dt><dd>[0, 3]</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<section id="plot-the-mean-wind-quality-across-time-for-all-grid-coordinates">
+<div class="section" id="plot-the-mean-wind-quality-across-time-for-all-grid-coordinates">
 <h4>Plot the mean wind quality across time for all grid coordinates<a class="headerlink" href="#plot-the-mean-wind-quality-across-time-for-all-grid-coordinates" title="Permalink to this headline">¶</a></h4>
 <p>According to the <a class="reference external" href="https://sentinels.copernicus.eu/documents/247904/1877131/S1-RS-MDA-52-7441-3-9-2_Sentinel-1ProductSpecification.pdf/4f4488ef-60ad-52cb-160c-71ebdf6ca820?t=1641274625444">Sentinel-1 Product Specification (Issue/Revision: 3/9, Date: 07/05/2021)</a>:</p>
 <ul class="simple">
@@ -2338,7 +2340,7 @@ Attributes:
 <span class="n">quality_title</span> <span class="o">=</span> <span class="s1">&#39;Mean wind quality flag&#39;</span>
 
 <span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">owiWindQuality</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">keep_attrs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">(),</span>
-                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{quality_title}</span><span class="s1"> (all)&#39;</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{quality_title}</span><span class="s1"> (all)&#39;</span><span class="p">,</span>
                   <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                   <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
                   <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -2346,7 +2348,7 @@ Attributes:
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">))</span>
 
 <span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">keep_attrs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">(),</span>
-                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{quality_title}</span><span class="s1"> (excluding bad quality)&#39;</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{quality_title}</span><span class="s1"> (excluding bad quality)&#39;</span><span class="p">,</span>
                   <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                   <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
                   <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -2357,8 +2359,8 @@ Attributes:
 <img alt="_images/Sentinel-1_ICS_Wind_Data_16_0.png" src="_images/Sentinel-1_ICS_Wind_Data_16_0.png" />
 </div>
 </div>
-</section>
-<section id="plot-the-mean-number-of-sar-observations-across-time-for-all-grid-coordinates">
+</div>
+<div class="section" id="plot-the-mean-number-of-sar-observations-across-time-for-all-grid-coordinates">
 <h4>Plot the mean number of SAR observations across time for all grid coordinates<a class="headerlink" href="#plot-the-mean-number-of-sar-observations-across-time-for-all-grid-coordinates" title="Permalink to this headline">¶</a></h4>
 <p>A minimum number of SAR observations are required for wind speed analysis (for example, <a class="reference external" href="https://doi.org/10.1016/j.rse.2014.09.030">Hasager et al., 2015</a>; <a class="reference external" href="https://doi.org/10.1175/JAMC-D-15-0197.1">Badger et al., 2016</a>). Based on the following plot of total observations per grid cell, it is clear that observations are not uniformly distributed across the Sentinel-1 ICS grid. A histogram of the SAR observations distribution is also displayed, using <a class="reference external" href="https://docs.xarray.dev/en/latest/generated/xarray.plot.hist.html"><code class="docutils literal notranslate"><span class="pre">xarray.plot.hist()</span></code></a>, along with corresponding distribution statistics.</p>
 <div class="cell docutils container">
@@ -2369,7 +2371,7 @@ Attributes:
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">16.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="p">,</span>
-                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Total SAR observations&#39;</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;Total SAR observations&#39;</span><span class="p">,</span>
                   <span class="n">vmin</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
                   <span class="n">vmax</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
                   <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">MAP_PROJECTION</span><span class="p">),</span>
@@ -2434,8 +2436,8 @@ Attributes:
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="retain-only-cells-with-quality-in-0-2-and-a-minimum-number-of-observations-ge-200">
+</div>
+<div class="section" id="retain-only-cells-with-quality-in-0-2-and-a-minimum-number-of-observations-ge-200">
 <h4>Retain only cells with quality in [0, 2] and a minimum number of observations (<span class="math notranslate nohighlight">\(\ge\)</span> 200)<a class="headerlink" href="#retain-only-cells-with-quality-in-0-2-and-a-minimum-number-of-observations-ge-200" title="Permalink to this headline">¶</a></h4>
 <p>Excluding cells with low numbers of SAR observations does not noticeably reduce coverage of Irish offshore AOIs.</p>
 <div class="cell docutils container">
@@ -2448,13 +2450,13 @@ Attributes:
 <span class="n">quality_title</span> <span class="o">=</span> <span class="s1">&#39;Mean wind quality flag&#39;</span>
 
 <span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="p">,</span>
-                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Total SAR observations (200+)&#39;</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;Total SAR observations (200+)&#39;</span><span class="p">,</span>
                   <span class="n">vmin</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
                   <span class="n">vmax</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">total_sar_observations</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
                   <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">owiWindQuality</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">keep_attrs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">(),</span>
-                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{quality_title}</span><span class="s1"> (filtered)&#39;</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{quality_title}</span><span class="s1"> (filtered)&#39;</span><span class="p">,</span>
                   <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                   <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                   <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -2465,10 +2467,10 @@ Attributes:
 <img alt="_images/Sentinel-1_ICS_Wind_Data_21_0.png" src="_images/Sentinel-1_ICS_Wind_Data_21_0.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 <hr class="docutils" />
-<section id="sentinel-1-wind-speed-2015-2021">
+<div class="section" id="sentinel-1-wind-speed-2015-2021">
 <h3>Sentinel-1 wind speed (2015 - 2021)<a class="headerlink" href="#sentinel-1-wind-speed-2015-2021" title="Permalink to this headline">¶</a></h3>
 <p>Wind speed is loaded into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>:</p>
 <div class="cell docutils container">
@@ -3112,7 +3114,7 @@ Attributes:
        &#x27;2021-09-29T18:07:23.000000000&#x27;, &#x27;2021-09-29T18:07:48.000000000&#x27;],
       dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-55f2df9f-aed5-4cec-aa4d-de06eedcd767' class='xr-section-summary-in' type='checkbox'  checked><label for='section-55f2df9f-aed5-4cec-aa4d-de06eedcd767' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>long_name :</span></dt><dd>SAR Wind speed</dd><dt><span>standard_name :</span></dt><dd>wind_speed</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<section id="calculate-mean-wind-speed-over-time-dimension-at-aoi-grid-coordinates">
+<div class="section" id="calculate-mean-wind-speed-over-time-dimension-at-aoi-grid-coordinates">
 <h4>Calculate mean wind speed over <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension at AOI grid coordinates<a class="headerlink" href="#calculate-mean-wind-speed-over-time-dimension-at-aoi-grid-coordinates" title="Permalink to this headline">¶</a></h4>
 <p>To perform some analysis at known AOI latitude/longitude coordinates, the <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.sel.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray.sel(...,</span> <span class="pre">method='nearest')</span></code></a> function may be used to select a subset of the data array (or data set) at coordinates nearest to the specified parameters.
 Here, mean wind speed over the <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension is determined for the specified coordinates.</p>
@@ -3484,10 +3486,10 @@ Coordinates:
     latitude   float64 50.52
     longitude  float64 -14.28</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'wind_speed'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>height</span>: 1</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-d8921cc9-8652-4c52-913f-7c2ceba24fc7' class='xr-array-in' type='checkbox' checked><label for='section-d8921cc9-8652-4c52-913f-7c2ceba24fc7' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>9.388</span></div><div class='xr-array-data'><pre>array([9.388478], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-36d32c8e-b77e-4129-bcab-158542d73c20' class='xr-section-summary-in' type='checkbox'  checked><label for='section-36d32c8e-b77e-4129-bcab-158542d73c20' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>height</span></div><div class='xr-var-dims'>(height)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>10</div><input id='attrs-fc3042c5-5b09-41dd-8a53-d285f441e493' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fc3042c5-5b09-41dd-8a53-d285f441e493' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-faef5177-049a-4abd-a3ab-673af29d0302' class='xr-var-data-in' type='checkbox'><label for='data-faef5177-049a-4abd-a3ab-673af29d0302' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Height above the surface</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([10])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>50.52</div><input id='attrs-af0627f7-282f-4000-9b3b-d32dfac1518e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-af0627f7-282f-4000-9b3b-d32dfac1518e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-011df2c7-1ec7-427a-996b-739982b239d0' class='xr-var-data-in' type='checkbox'><label for='data-011df2c7-1ec7-427a-996b-739982b239d0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><pre>array(50.515)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-14.28</div><input id='attrs-725039ff-9a14-40b2-b8c8-5a75aea79787' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-725039ff-9a14-40b2-b8c8-5a75aea79787' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4a76d8fa-e142-4da2-b763-94d0c4634733' class='xr-var-data-in' type='checkbox'><label for='data-4a76d8fa-e142-4da2-b763-94d0c4634733' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><pre>array(-14.285)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6073ac6a-7a0e-4caf-9c39-dac04dc1b2cf' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-6073ac6a-7a0e-4caf-9c39-dac04dc1b2cf' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

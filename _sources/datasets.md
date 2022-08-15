@@ -22,9 +22,9 @@ The [Intake library](https://intake.readthedocs.io/en/latest/) is used to manage
 
 Overviews of the catalog data sets are provided in the following notebooks:
 
-1. [Advanced SCATterometer (ASCAT) Sea Surface Winds](ASCAT_ICS_Wind_Data)
-1. [Cross-Calibrated Multi-Platform (CCMP) Wind Vector Analysis](CCMP_ICS_Wind_Data)
-1. [ERA5 Hourly Single Level Wind](ERA5_ICS_Wind_Data)
+1. [Advanced SCATterometer (ASCAT) Sea Surface Winds](ASCAT_ICS_Wind_Data) [![https://doi.org/10.5281/zenodo.6976298](https://zenodo.org/badge/DOI/10.5281/zenodo.6976298.svg)](https://doi.org/10.5281/zenodo.6976298)
+1. [Cross-Calibrated Multi-Platform (CCMP) Wind Vector Analysis](CCMP_ICS_Wind_Data) [![https://doi.org/10.5281/zenodo.6958151](https://zenodo.org/badge/DOI/10.5281/zenodo.6958151.svg)](https://doi.org/10.5281/zenodo.6958151)
+1. [ERA5 Hourly Single Level Wind](ERA5_ICS_Wind_Data) [![https://doi.org/10.5281/zenodo.6974217](https://zenodo.org/badge/DOI/10.5281/zenodo.6974217.svg)](https://doi.org/10.5281/zenodo.6974217)
 1. [Met Éireann Re-Analysis (MÉRA) Wind](MERA_ICS_Wind_Data)
-1. [New European Wind Atlas (NEWA)](NEWA_ICS_Wind_Data)
-1. [Sentinel-1 Ocean (OCN) Wind](Sentinel-1_ICS_Wind_Data)
+1. [New European Wind Atlas (NEWA)](NEWA_ICS_Wind_Data) [![https://doi.org/10.5281/zenodo.6977029](https://zenodo.org/badge/DOI/10.5281/zenodo.6977029.svg)](https://doi.org/10.5281/zenodo.6977029)
+1. [Sentinel-1 Ocean (OCN) Wind](Sentinel-1_ICS_Wind_Data) [![https://doi.org/10.5281/zenodo.6967056](https://zenodo.org/badge/DOI/10.5281/zenodo.6967056.svg)](https://doi.org/10.5281/zenodo.6967056)

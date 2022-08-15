@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NEWA Wind Data for Irish Continental Shelf region</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -38,22 +37,20 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://eooffshore.github.io/NEWA_ICS_Wind_Data.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -417,9 +414,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <p><a class="reference internal" href="_images/eooffshore_banner.png"><img alt="_images/eooffshore_banner.png" src="_images/eooffshore_banner.png" style="width: 48%;" /></a> </p>
 <p><a class="reference internal" href="_images/seai.png"><img alt="_images/seai.png" src="_images/seai.png" style="width: 25%;" /></a> <span /> <a class="reference internal" href="_images/ucd.png"><img alt="_images/ucd.png" src="_images/ucd.png" style="width: 7%;" /></a></p>
-<section id="newa-wind-data-for-irish-continental-shelf-region">
+<div class="section" id="newa-wind-data-for-irish-continental-shelf-region">
 <h1>NEWA Wind Data for Irish Continental Shelf region<a class="headerlink" href="#newa-wind-data-for-irish-continental-shelf-region" title="Permalink to this headline">¶</a></h1>
-<section id="introduction">
+<div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://www.neweuropeanwindatlas.eu/">New European Wind Atlas (NEWA)</a> provides wind statistics covering onshore Europe, 100km offshore over European seas, and the complete North and Baltic Seas, based on <a class="reference external" href="https://map.neweuropeanwindatlas.eu/about">30 years of mesoscale simulations</a>. Further details may be found in the following publications:</p>
 <ul class="simple">
@@ -434,15 +431,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>The creation of the NEWA Zarr wind stores that are included in the EOOffshore catalog.</p></li>
 <li><p>A brief look at these Zarr stores, including a demonstration of wind speed calculation.</p></li>
 </ol>
-<p><strong>How to cite:</strong> O’Callaghan, D. and McBreen, S.: Scalable Offshore Wind Analysis With Pangeo, EGU General Assembly 2022, Vienna, Austria, 23–27 May 2022, EGU22-2746, <a class="reference external" href="https://doi.org/10.5194/egusphere-egu22-2746">https://doi.org/10.5194/egusphere-egu22-2746</a>, 2022.</p>
+<p>These NEWA Zarr stores have been uploaded to <a class="reference external" href="https://zenodo.org/record/6977029">Zenodo</a>.</p>
+<p><strong>How to cite:</strong></p>
+<ol class="simple">
+<li><p>O’Callaghan, D. and McBreen, S.: Scalable Offshore Wind Analysis With Pangeo, EGU General Assembly 2022, Vienna, Austria, 23–27 May 2022, EGU22-2746, <a class="reference external" href="https://doi.org/10.5194/egusphere-egu22-2746">https://doi.org/10.5194/egusphere-egu22-2746</a>, 2022.</p></li>
+<li><p><a class="reference external" href="https://zenodo.org/record/6977029">O’Callaghan, D. and McBreen, S.: EOOffshore: New European Wind Atlas (NEWA) Data for the Irish Continental Shelf Region,  (1.0.0) [Data set], Zenodo, 2022.</a> <a class="reference external" href="https://doi.org/10.5281/zenodo.6977029"><img alt="https://doi.org/10.5281/zenodo.6977029" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6977029.svg" /></a></p></li>
+</ol>
 <p><strong>Note: more extensive usage of the EOOffshore NEWA Zarr stores may be found in the following notebooks:</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="Offshore_Wind_AOI.html"><span class="doc std std-doc">Offshore Wind in Irish Areas Of Interest</span></a></p></li>
 <li><p><a class="reference internal" href="Comparison_Wind_Power.html"><span class="doc std std-doc">Comparison of Offshore Wind Speed Extrapolation and Power Density Estimation</span></a></p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="newa-wind-data-products">
+<div class="section" id="newa-wind-data-products">
 <h2>NEWA Wind Data Products<a class="headerlink" href="#newa-wind-data-products" title="Permalink to this headline">¶</a></h2>
 <p>The EOOffshore project uses the mesoscale data products available for selection on the <a class="reference external" href="https://map.neweuropeanwindatlas.eu">NEWA Map Layers and Datasets</a> website. These contain variables at multiple heights (metres above surface level), which means they are particularly useful for the EOOffshore project due to these heights being similar to typical <a class="reference external" href="https://www.wind-energy-the-facts.org/hub-height.html">wind turbine hub heights</a>. Unlike other data sets used by EOOffshore, they also provide a power density variable in addition to variables related to wind speed and direction. The following data variables are relevant:</p>
 <table class="colwidths-auto table">
@@ -544,9 +546,9 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 <hr class="docutils" />
-<section id="newa-wind-zarr-stores">
+<div class="section" id="newa-wind-zarr-stores">
 <h2>NEWA Wind Zarr Stores<a class="headerlink" href="#newa-wind-zarr-stores" title="Permalink to this headline">¶</a></h2>
 <p>For each AOI data set:</p>
 <ul class="simple">
@@ -564,22 +566,22 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>Data [2009 - 2018] obtained from the New European Wind Atlas (NEWA), a free, web-based application developed, owned and operated by the NEWA Consortium. For additional information see <a class="reference external" href="http://www.neweuropeanwindatlas.eu">www.neweuropeanwindatlas.eu</a>.</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="newa-in-eooffshore-catalog">
+<div class="section" id="newa-in-eooffshore-catalog">
 <h2>NEWA in EOOffshore Catalog<a class="headerlink" href="#newa-in-eooffshore-catalog" title="Permalink to this headline">¶</a></h2>
 <p>Imports required for subsequent processing</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
-<span class="kn">from</span> <span class="nn">intake</span> <span class="kn">import</span> <span class="n">Catalog</span><span class="p">,</span> <span class="n">open_catalog</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="k">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">intake</span> <span class="k">import</span> <span class="n">Catalog</span><span class="p">,</span> <span class="n">open_catalog</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="open-the-catalog-and-view-the-newa-metadata">
+<div class="section" id="open-the-catalog-and-view-the-newa-metadata">
 <h3>Open the catalog and view the NEWA metadata<a class="headerlink" href="#open-the-catalog-and-view-the-newa-metadata" title="Permalink to this headline">¶</a></h3>
 <p>All EOOffshore data sets, including the NEWA Zarr stores described above, are accessible using the EOOffshore <a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake</a> catalog. Each <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html">catalog</a> entry provides a description and metadata associated with the corresponding data set, defined in a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#yaml-format">YAML configuration file</a>. The EOOffshore catalog configuration was originally influenced by the <a class="reference external" href="https://github.com/pangeo-data/pangeo-datastore/blob/master/intake-catalogs/atmosphere.yaml">Pangeo Cloud Data Store atmosphere.yaml catalog configuration</a>.</p>
 <div class="cell docutils container">
@@ -716,9 +718,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="load-each-catalog-newa-zarr-store">
+<div class="section" id="load-each-catalog-newa-zarr-store">
 <h3>Load each catalog NEWA Zarr store<a class="headerlink" href="#load-each-catalog-newa-zarr-store" title="Permalink to this headline">¶</a></h3>
 <p>Intake catalog entries typically specify a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#driver-selection">driver</a> to be used when loading the corresponding data set. The NEWA entries specify <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">intake_xarray.xzarr.ZarrSource</span></code></a>, a driver implementation provided by the <a class="reference external" href="https://intake-xarray.readthedocs.io/">intake-xarray</a> library. This enables NetCDF and Zarr data sets to be loaded using <a class="reference external" href="https://docs.xarray.dev/en/stable/index.html">xarray</a>, a library for processing N-D labeled arrays and datasets. As xarray labels take the form of dimensions, coordinates and attributes on top of <a class="reference external" href="https://numpy.org/">NumPy</a>-like arrays, it is particularly suited to data sets such as NEWA whose variables feature latitude/longitude grid coordinates.</p>
 <p>This intake driver will load the associated dataset into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a>. To enable support for potentially large data sets, the <a class="reference external" href="https://intake.readthedocs.io/en/latest/quickstart.html#working-with-dask"><code class="docutils literal notranslate"><span class="pre">to_dask()</span></code></a> function is used to load the underlying variable arrays with <a class="reference external" href="https://docs.dask.org/en/latest/">Dask</a>, a parallel, out-of-core computing library. The <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">ZarrSource</span></code></a> implementation will load the data set variables into <a class="reference external" href="https://docs.dask.org/en/latest/array.html">Dask arrays</a>, which will be loaded and processed in parallel as <a class="reference external" href="https://docs.dask.org/en/latest/array.html">chunks</a> during subsequent computation. As discussed above, variable chunk sizes may be specified during Zarr store creation.</p>
@@ -5560,9 +5562,9 @@ Attributes: (12/116)
     </tr>
 </table></div></li></ul></div></li><li class='xr-section-item'><input id='section-69ecaf82-1ddd-4fd7-8a44-a7a12ccd10a8' class='xr-section-summary-in' type='checkbox'  ><label for='section-69ecaf82-1ddd-4fd7-8a44-a7a12ccd10a8' class='xr-section-summary' >Attributes: <span>(116)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>ADAPT_DT_MAX :</span></dt><dd>15.0</dd><dt><span>ADAPT_DT_MIN :</span></dt><dd>3.0</dd><dt><span>ADAPT_DT_START :</span></dt><dd>13.0</dd><dt><span>AER_ANGEXP_OPT :</span></dt><dd>1</dd><dt><span>AER_ANGEXP_VAL :</span></dt><dd>1.2999999523162842</dd><dt><span>AER_AOD550_OPT :</span></dt><dd>1</dd><dt><span>AER_AOD550_VAL :</span></dt><dd>0.11999999731779099</dd><dt><span>AER_ASY_OPT :</span></dt><dd>1</dd><dt><span>AER_ASY_VAL :</span></dt><dd>1.401298464324817e-45</dd><dt><span>AER_OPT :</span></dt><dd>0</dd><dt><span>AER_SSA_OPT :</span></dt><dd>1</dd><dt><span>AER_SSA_VAL :</span></dt><dd>1.401298464324817e-45</dd><dt><span>AER_TYPE :</span></dt><dd>1</dd><dt><span>BLDT :</span></dt><dd>0.0</dd><dt><span>BL_PBL_PHYSICS :</span></dt><dd>5</dd><dt><span>BOTTOM-TOP_GRID_DIMENSION :</span></dt><dd>61</dd><dt><span>BUCKET_J :</span></dt><dd>-1.0</dd><dt><span>BUCKET_MM :</span></dt><dd>-1.0</dd><dt><span>CONST_Cp_DRY_AIR :</span></dt><dd>1004.5</dd><dt><span>CONST_GRAVITY :</span></dt><dd>9.81</dd><dt><span>CONST_RATIO_Rd_Rw :</span></dt><dd>0.622</dd><dt><span>CONST_R_DRY_AIR :</span></dt><dd>287.0</dd><dt><span>CONST_R_WATER :</span></dt><dd>461.4</dd><dt><span>CUDT :</span></dt><dd>5.0</dd><dt><span>CU_PHYSICS :</span></dt><dd>0</dd><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>DAMPCOEF :</span></dt><dd>0.15000000596046448</dd><dt><span>DAMP_OPT :</span></dt><dd>0</dd><dt><span>DFI_OPT :</span></dt><dd>0</dd><dt><span>DIFF_6TH_FACTOR :</span></dt><dd>0.10000000149011612</dd><dt><span>DIFF_6TH_OPT :</span></dt><dd>2</dd><dt><span>DIFF_OPT :</span></dt><dd>1</dd><dt><span>DT :</span></dt><dd>10.0</dd><dt><span>DX :</span></dt><dd>3000.0</dd><dt><span>DY :</span></dt><dd>3000.0</dd><dt><span>EXPERIMENT :</span></dt><dd>Production Run</dd><dt><span>FEEDBACK :</span></dt><dd>0</dd><dt><span>GFDDA_END_H :</span></dt><dd>0</dd><dt><span>GFDDA_INTERVAL_M :</span></dt><dd>0</dd><dt><span>GMT :</span></dt><dd>0.0</dd><dt><span>GRAV_SETTLING :</span></dt><dd>0</dd><dt><span>GRIDTYPE :</span></dt><dd>C</dd><dt><span>GRID_FDDA :</span></dt><dd>0</dd><dt><span>GRID_ID :</span></dt><dd>3</dd><dt><span>GRID_SFDDA :</span></dt><dd>0</dd><dt><span>HYPSOMETRIC_OPT :</span></dt><dd>2</dd><dt><span>ICLOUD :</span></dt><dd>1</dd><dt><span>ICLOUD_CU :</span></dt><dd>0</dd><dt><span>INSTITUTION :</span></dt><dd>The NEWA Consortium</dd><dt><span>ISFFLX :</span></dt><dd>1</dd><dt><span>ISFTCFLX :</span></dt><dd>0</dd><dt><span>ISHALLOW :</span></dt><dd>0</dd><dt><span>ISICE :</span></dt><dd>24</dd><dt><span>ISLAKE :</span></dt><dd>28</dd><dt><span>ISOILWATER :</span></dt><dd>14</dd><dt><span>ISURBAN :</span></dt><dd>1</dd><dt><span>ISWATER :</span></dt><dd>16</dd><dt><span>I_PARENT_START :</span></dt><dd>39</dd><dt><span>JULDAY :</span></dt><dd>366</dd><dt><span>JULYR :</span></dt><dd>2008</dd><dt><span>J_PARENT_START :</span></dt><dd>39</dd><dt><span>KHDIF :</span></dt><dd>0.0</dd><dt><span>KM_OPT :</span></dt><dd>4</dd><dt><span>KVDIF :</span></dt><dd>0.0</dd><dt><span>MAP_PROJ :</span></dt><dd>1</dd><dt><span>MAP_PROJ_CHAR :</span></dt><dd>Lambert Conformal</dd><dt><span>MFSHCONV :</span></dt><dd>0</dd><dt><span>MMINLU :</span></dt><dd>USGS</dd><dt><span>MOAD_CEN_LAT :</span></dt><dd>54.0</dd><dt><span>MOIST_ADV_OPT :</span></dt><dd>1</dd><dt><span>MP_PHYSICS :</span></dt><dd>4</dd><dt><span>NUM_LAND_CAT :</span></dt><dd>28</dd><dt><span>OBS_NUDGE_OPT :</span></dt><dd>0</dd><dt><span>PARENT_GRID_RATIO :</span></dt><dd>3</dd><dt><span>PARENT_ID :</span></dt><dd>2</dd><dt><span>POLE_LAT :</span></dt><dd>90.0</dd><dt><span>POLE_LON :</span></dt><dd>0.0</dd><dt><span>PREC_ACC_DT :</span></dt><dd>30.0</dd><dt><span>RADT :</span></dt><dd>12.0</dd><dt><span>RA_LW_PHYSICS :</span></dt><dd>4</dd><dt><span>RA_SW_PHYSICS :</span></dt><dd>4</dd><dt><span>SCALAR_ADV_OPT :</span></dt><dd>1</dd><dt><span>SCALAR_PBLMIX :</span></dt><dd>0</dd><dt><span>SF_LAKE_PHYSICS :</span></dt><dd>0</dd><dt><span>SF_OCEAN_PHYSICS :</span></dt><dd>0</dd><dt><span>SF_SFCLAY_PHYSICS :</span></dt><dd>2</dd><dt><span>SF_SURFACE_PHYSICS :</span></dt><dd>2</dd><dt><span>SF_URBAN_PHYSICS :</span></dt><dd>0</dd><dt><span>SGFDDA_END_H :</span></dt><dd>0</dd><dt><span>SGFDDA_INTERVAL_M :</span></dt><dd>0</dd><dt><span>SHCU_PHYSICS :</span></dt><dd>0</dd><dt><span>SIMULATION_INITIALIZATION_TYPE :</span></dt><dd>REAL-DATA CASE</dd><dt><span>SIMULATION_START_DATE :</span></dt><dd>2008-12-31_00:00:00</dd><dt><span>SKEBS_ON :</span></dt><dd>0</dd><dt><span>SMOOTH_OPTION :</span></dt><dd>2</dd><dt><span>SOUTH-NORTH_GRID_DIMENSION :</span></dt><dd>Attribute edlided: Unsupported attribute type (NC_INT64)</dd><dt><span>SPEC_BDY_FINAL_MU :</span></dt><dd>1</dd><dt><span>SST_UPDATE :</span></dt><dd>1</dd><dt><span>STAND_LON :</span></dt><dd>15.0</dd><dt><span>START_DATE :</span></dt><dd>2008-12-31_00:00:00</dd><dt><span>SURFACE_INPUT_SOURCE :</span></dt><dd>1</dd><dt><span>SWINT_OPT :</span></dt><dd>1</dd><dt><span>SWRAD_SCAT :</span></dt><dd>1.0</dd><dt><span>TITLE :</span></dt><dd>Timeseries of the New European Wind Atlas from WRF V3.8.1</dd><dt><span>TKE_ADV_OPT :</span></dt><dd>1</dd><dt><span>TRACER_PBLMIX :</span></dt><dd>1</dd><dt><span>TRUELAT1 :</span></dt><dd>30.0</dd><dt><span>TRUELAT2 :</span></dt><dd>60.0</dd><dt><span>USE_Q_DIABATIC :</span></dt><dd>0</dd><dt><span>USE_THETA_M :</span></dt><dd>0</dd><dt><span>WEST-EAST_GRID_DIMENSION :</span></dt><dd>Attribute edlided: Unsupported attribute type (NC_INT64)</dd><dt><span>W_DAMPING :</span></dt><dd>1</dd><dt><span>YSU_TOPDOWN_PBLMIX :</span></dt><dd>0</dd><dt><span>eooffshore_zarr_creation_time :</span></dt><dd>2022-05-13T15:52:39Z</dd><dt><span>eooffshore_zarr_details :</span></dt><dd>EOOffshore Project: Concatenated NEWA wind variable products for M4 area of interest within the Irish Continental Shelf. Data [2009 - 2018] obtained from the New European Wind Atlas (NEWA), a free, web-based application developed, owned and operated by the NEWA Consortium. For additional information see www.neweuropeanwindatlas.eu.</dd><dt><span>history :</span></dt><dd>2021-10-27 13:38:07 GMT Hyrax-1.16.0 http://opendap.neweuropeanwindatlas.eu/opendap/newa/NEWA_MESOSCALE_ATLAS/2009/NEWA-2009-01-01.nc.nc?PD[0:2:47][0:1:3][799:1:818][232:1:251],WS[0:2:47][0:1:3][799:1:818][232:1:251],WS10[0:2:47][799:1:818][232:1:251],WD[0:2:47][0:1:3][799:1:818][232:1:251],WD10[0:2:47][799:1:818][232:1:251],RHO[0:2:47][799:1:818][232:1:251],time[0:2:47],height[0:1:3],west_east[232:1:251],south_north[799:1:818],XLON[799:1:818][232:1:251],XLAT[799:1:818][232:1:251],Times[0:2:47],crs</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="newa-wind-speed-2009-2018">
+<div class="section" id="newa-wind-speed-2009-2018">
 <h3>NEWA wind speed (2009 - 2018)<a class="headerlink" href="#newa-wind-speed-2009-2018" title="Permalink to this headline">¶</a></h3>
 <p>Each variable in the NEWA data sets, for example, wind speed, is loaded into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>:</p>
 <ul class="simple">
@@ -7944,7 +7946,7 @@ Attributes:
        &#x27;2018-12-31T22:00:00.000000000&#x27;, &#x27;2018-12-31T23:00:00.000000000&#x27;],
       dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-0a25d0da-df3a-4a28-8129-2f2481ca10eb' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0a25d0da-df3a-4a28-8129-2f2481ca10eb' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Wind Speed</dd><dt><span>standard_name :</span></dt><dd>wind_speed</dd><dt><span>units :</span></dt><dd>m s-1</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<section id="calculate-mean-wind-speed-over-time-dimension-for-all-heights-at-aoi-grid-coordinates">
+<div class="section" id="calculate-mean-wind-speed-over-time-dimension-for-all-heights-at-aoi-grid-coordinates">
 <h4>Calculate mean wind speed over <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension for all heights at AOI grid coordinates<a class="headerlink" href="#calculate-mean-wind-speed-over-time-dimension-for-all-heights-at-aoi-grid-coordinates" title="Permalink to this headline">¶</a></h4>
 <p>Using Dask, the data set loading process is lazy, where no data is loaded inititally. Instead, data loading is <a class="reference external" href="https://tutorial.dask.org/01x_lazy.html">delayed until execution time, where variables will be loaded and processed in parallel according to the corresponding chunks specification</a>. Dask arrays implement a subset of the NumPy <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.ndarray.html"><code class="docutils literal notranslate"><span class="pre">ndarray</span></code></a> interface using blocked algorithms, and the original variable arrays will be split into smaller chunk arrays, enabling computation on arrays larger than memory using all available cores. The blocked algorithms are coordinated using <a class="reference external" href="https://docs.dask.org/en/stable/graphs.html">Dask graphs</a>.</p>
 <p>To perform some analysis at known AOI latitude/longitude coordinates, the <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.sel.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray.sel(...,</span> <span class="pre">method='nearest')</span></code></a> function may be used to select a subset of the data array (or data set) at coordinates nearest to the specified parameters.
@@ -9419,10 +9421,10 @@ Coordinates:
     longitude  float32 -10.26</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'wind_speed'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>height</span>: 5</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-54c109be-1565-4cc3-a628-b07f16eefddd' class='xr-array-in' type='checkbox' checked><label for='section-54c109be-1565-4cc3-a628-b07f16eefddd' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>9.485 10.27 10.51 10.69 10.97</span></div><div class='xr-array-data'><pre>array([ 9.485068, 10.272412, 10.511473, 10.694211, 10.965795],
       dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-82de54ca-ef05-49f0-8f48-a9e9068a939f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-82de54ca-ef05-49f0-8f48-a9e9068a939f' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>height</span></div><div class='xr-var-dims'>(height)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>10.0 50.0 75.0 100.0 150.0</div><input id='attrs-1f7ddce4-ad44-4d27-a300-eb6bbd7a5a0c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1f7ddce4-ad44-4d27-a300-eb6bbd7a5a0c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-49bb88f1-fe18-4757-ba32-9cd0079c8c22' class='xr-var-data-in' type='checkbox'><label for='data-49bb88f1-fe18-4757-ba32-9cd0079c8c22' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Height above Ground</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([ 10.,  50.,  75., 100., 150.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>54.75</div><input id='attrs-e3b8feb9-f00f-4518-a3bb-480f90488660' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e3b8feb9-f00f-4518-a3bb-480f90488660' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7fa7bb30-84c2-4719-9fe8-a11ab82c0d37' class='xr-var-data-in' type='checkbox'><label for='data-7fa7bb30-84c2-4719-9fe8-a11ab82c0d37' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(54.753136, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-10.26</div><input id='attrs-fd110e59-180a-4255-a10d-1e4e1be972d8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-fd110e59-180a-4255-a10d-1e4e1be972d8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-36060c03-6aed-4755-8a7c-7a59a331d246' class='xr-var-data-in' type='checkbox'><label for='data-36060c03-6aed-4755-8a7c-7a59a331d246' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(-10.262146, dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b32a8ed5-e223-4d61-9e0a-5dcc145aae3d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b32a8ed5-e223-4d61-9e0a-5dcc145aae3d' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

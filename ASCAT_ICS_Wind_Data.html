@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ASCAT Wind Data for Irish Continental Shelf region</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -38,22 +37,20 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://eooffshore.github.io/ASCAT_ICS_Wind_Data.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -483,9 +480,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <p><a class="reference internal" href="_images/eooffshore_banner.png"><img alt="_images/eooffshore_banner.png" src="_images/eooffshore_banner.png" style="width: 48%;" /></a> </p>
 <p><a class="reference internal" href="_images/seai.png"><img alt="_images/seai.png" src="_images/seai.png" style="width: 25%;" /></a> <span /> <a class="reference internal" href="_images/ucd.png"><img alt="_images/ucd.png" src="_images/ucd.png" style="width: 7%;" /></a></p>
-<section id="ascat-wind-data-for-irish-continental-shelf-region">
+<div class="section" id="ascat-wind-data-for-irish-continental-shelf-region">
 <h1>ASCAT Wind Data for Irish Continental Shelf region<a class="headerlink" href="#ascat-wind-data-for-irish-continental-shelf-region" title="Permalink to this headline">¶</a></h1>
-<section id="introduction">
+<div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://marine.copernicus.eu/">Copernicus Marine Service (CMS), or Copernicus Marine Environment Monitoring Service (CMEMS)</a>, is the marine component of the <a class="reference external" href="https://www.copernicus.eu/en/about-copernicus">European Union Copernicus Earth Observation (EO) programme</a>. It provides free, regular and systematic ocean data products on a global and regional scale. The CMS <a class="reference external" href="https://marine.copernicus.eu/about/producers/wind-tac">Surface Wind Thematic Assembly Center (Wind TAC)</a> is responsible for the collection, processing, qualification and distribution of surface winds data products derived from scatterometer satellite missions, including near-real time (NRT) and delayed mode (REP) processing of global wind observations. The focus of this notebook is on the CMS wind speed and direction data products generated using the <a class="reference external" href="https://www.eumetsat.int/ascat">Advanced SCATterometer (ASCAT)</a> instruments deployed on the <a class="reference external" href="https://www.eumetsat.int/our-satellites/metop-series">Metop satellites</a>. Further details and examples of ocean wind analysis using ASCAT data products are described in the following publications:</p>
 <ul class="simple">
@@ -504,15 +501,20 @@ Farm Site Selection in Irish Waters</a></p></li>
 <li><p>The creation of the ASCAT Zarr wind stores that are included in the EOOffshore catalog.</p></li>
 <li><p>A brief look at these Zarr stores, including a demonstration of wind speed calculation.</p></li>
 </ol>
-<p><strong>How to cite:</strong> O’Callaghan, D. and McBreen, S.: Scalable Offshore Wind Analysis With Pangeo, EGU General Assembly 2022, Vienna, Austria, 23–27 May 2022, EGU22-2746, <a class="reference external" href="https://doi.org/10.5194/egusphere-egu22-2746">https://doi.org/10.5194/egusphere-egu22-2746</a>, 2022.</p>
+<p>These ASCAT Zarr stores have been uploaded to <a class="reference external" href="https://zenodo.org/record/6976298">Zenodo</a>.</p>
+<p><strong>How to cite:</strong></p>
+<ol class="simple">
+<li><p>O’Callaghan, D. and McBreen, S.: Scalable Offshore Wind Analysis With Pangeo, EGU General Assembly 2022, Vienna, Austria, 23–27 May 2022, EGU22-2746, <a class="reference external" href="https://doi.org/10.5194/egusphere-egu22-2746">https://doi.org/10.5194/egusphere-egu22-2746</a>, 2022.</p></li>
+<li><p><a class="reference external" href="https://zenodo.org/record/6976298">O’Callaghan, D. and McBreen, S.: EOOffshore: ASCAT Wind Data for the Irish Continental Shelf Region,  (1.0.0) [Data set], Zenodo, 2022.</a> <a class="reference external" href="https://doi.org/10.5281/zenodo.6976298"><img alt="https://doi.org/10.5281/zenodo.6976298" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6976298.svg" /></a></p></li>
+</ol>
 <p><strong>Note: more extensive usage of the EOOffshore ASCAT Zarr stores may be found in the following notebooks:</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="Offshore_Wind_AOI.html"><span class="doc std std-doc">Offshore Wind in Irish Areas Of Interest</span></a></p></li>
 <li><p><a class="reference internal" href="Comparison_Wind_Power.html"><span class="doc std std-doc">Comparison of Offshore Wind Speed Extrapolation and Power Density Estimation</span></a></p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="ascat-wind-data-products">
+<div class="section" id="ascat-wind-data-products">
 <h2>ASCAT Wind Data Products<a class="headerlink" href="#ascat-wind-data-products" title="Permalink to this headline">¶</a></h2>
 <p>The EOOffshore project uses the following CMS data sets providing ASCAT wind products:</p>
 <ul class="simple">
@@ -619,9 +621,9 @@ Farm Site Selection in Irish Waters</a></p></li>
 <li><p>Metop-A and Metop-B REP products are available from 2007 and 2019 respectively. No REP products are currently available for Metop-C.</p></li>
 <li><p>Metop-C NRT products are available from October 2019.</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="ascat-wind-zarr-stores">
+<div class="section" id="ascat-wind-zarr-stores">
 <h2>ASCAT Wind Zarr Stores<a class="headerlink" href="#ascat-wind-zarr-stores" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension for a particular month is distributed across:</p>
 <ul class="simple">
@@ -633,16 +635,16 @@ Farm Site Selection in Irish Waters</a></p></li>
 <ul class="simple">
 <li><p>Generated using E.U. Copernicus Marine Service Information; <a class="reference external" href="https://doi.org/10.48670/moi-00182">https://doi.org/10.48670/moi-00182</a>; <a class="reference external" href="https://doi.org/10.48670/moi-00183">https://doi.org/10.48670/moi-00183</a>;</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="ascat-in-eooffshore-catalog">
+<div class="section" id="ascat-in-eooffshore-catalog">
 <h2>ASCAT in EOOffshore Catalog<a class="headerlink" href="#ascat-in-eooffshore-catalog" title="Permalink to this headline">¶</a></h2>
 <p>Imports required for subsequent processing</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">from</span> <span class="nn">intake</span> <span class="kn">import</span> <span class="n">open_catalog</span>
+<span class="kn">from</span> <span class="nn">intake</span> <span class="k">import</span> <span class="n">open_catalog</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
@@ -658,7 +660,7 @@ Farm Site Selection in Irish Waters</a></p></li>
 </div>
 </div>
 </div>
-<section id="open-the-catalog-and-view-the-ascat-metadata">
+<div class="section" id="open-the-catalog-and-view-the-ascat-metadata">
 <h3>Open the catalog and view the ASCAT metadata<a class="headerlink" href="#open-the-catalog-and-view-the-ascat-metadata" title="Permalink to this headline">¶</a></h3>
 <p>All EOOffshore data sets, including the ASCAT Zarr stores described above, are accessible using the EOOffshore <a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake</a> catalog. Each <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html">catalog</a> entry provides a description and metadata associated with the corresponding data set, defined in a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#yaml-format">YAML configuration file</a>. The EOOffshore catalog configuration was originally influenced by the <a class="reference external" href="https://github.com/pangeo-data/pangeo-datastore/blob/master/intake-catalogs/atmosphere.yaml">Pangeo Cloud Data Store atmosphere.yaml catalog configuration</a>.</p>
 <div class="cell docutils container">
@@ -736,9 +738,9 @@ Farm Site Selection in Irish Waters</a></p></li>
 </div>
 </div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="load-the-catalog-ascat-zarr-store-into-an-xarray-dataset">
+<div class="section" id="load-the-catalog-ascat-zarr-store-into-an-xarray-dataset">
 <h3>Load the catalog ASCAT Zarr store into an <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code><a class="headerlink" href="#load-the-catalog-ascat-zarr-store-into-an-xarray-dataset" title="Permalink to this headline">¶</a></h3>
 <p>Intake catalog entries typically specify a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#driver-selection">driver</a> to be used when loading the corresponding data set. The ASCAT entries specify <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">intake_xarray.xzarr.ZarrSource</span></code></a>, a driver implementation provided by the <a class="reference external" href="https://intake-xarray.readthedocs.io/">intake-xarray</a> library. This enables NetCDF and Zarr data sets to be loaded using <a class="reference external" href="https://docs.xarray.dev/en/stable/index.html">xarray</a>, a library for processing N-D labeled arrays and datasets. As xarray labels take the form of dimensions, coordinates and attributes on top of <a class="reference external" href="https://numpy.org/">NumPy</a>-like arrays, it is particularly suited to data sets such as ASCAT whose variables feature latitude/longitude grid coordinates.</p>
 <p>This intake driver will load the associated dataset into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a>. To enable support for potentially large data sets, the <a class="reference external" href="https://intake.readthedocs.io/en/latest/quickstart.html#working-with-dask"><code class="docutils literal notranslate"><span class="pre">to_dask()</span></code></a> function is used to load the underlying variable arrays with <a class="reference external" href="https://docs.dask.org/en/latest/">Dask</a>, a parallel, out-of-core computing library. The <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">ZarrSource</span></code></a> implementation will load the data set variables into <a class="reference external" href="https://docs.dask.org/en/latest/array.html">Dask arrays</a>, which will be loaded and processed in parallel as <a class="reference external" href="https://docs.dask.org/en/latest/array.html">chunks</a> during subsequent computation. As discussed above, variable chunk sizes may be specified during Zarr store creation.</p>
@@ -3699,9 +3701,9 @@ Attributes: (12/36)
 </table></div></li></ul></div></li><li class='xr-section-item'><input id='section-a46188ec-07ba-45be-ab5c-873acd50be75' class='xr-section-summary-in' type='checkbox'  ><label for='section-a46188ec-07ba-45be-ab5c-873acd50be75' class='xr-section-summary' >Attributes: <span>(36)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>History :</span></dt><dd>Translated to CF-1.0 Conventions by Netcdf-Java CDM (CFGridWriter2)
 Original Dataset = KNMI-GLO-WIND_L3-REP-OBS_METOP-A_ASCAT_12_ASC; Translation Date = 2022-03-08T11:43:19.516Z</dd><dt><span>comment :</span></dt><dd>Orbit period and inclination are constant values. All wind directions in oceanographic convention (0 deg. flowing North)</dd><dt><span>contents :</span></dt><dd>ovw</dd><dt><span>creation_date :</span></dt><dd>2021-11-05</dd><dt><span>creation_time :</span></dt><dd>19:16:35</dd><dt><span>eooffshore_zarr_creation_time :</span></dt><dd>2022-05-13T11:34:41Z</dd><dt><span>eooffshore_zarr_details :</span></dt><dd>EOOffshore Project: Concatenated Copernicus Marine Service WIND_GLO_WIND_L3_REP_OBSERVATIONS_012_005 MetOp ASCAT Ascending/Descending products, for the Irish Continental Shelf. Original products time coordinates have been replaced with the satellite/pass measurement_time values. Generated using E.U. Copernicus Marine Service Information; https://doi.org/10.48670/moi-00183</dd><dt><span>equator_crossing_date :</span></dt><dd>2021-07-30</dd><dt><span>equator_crossing_longitude :</span></dt><dd> 316.072</dd><dt><span>equator_crossing_time :</span></dt><dd>22:59:30</dd><dt><span>geospatial_lat_max :</span></dt><dd>58.0625</dd><dt><span>geospatial_lat_min :</span></dt><dd>46.0625</dd><dt><span>geospatial_lon_max :</span></dt><dd>-0.0625</dd><dt><span>geospatial_lon_min :</span></dt><dd>-25.9375</dd><dt><span>granule_name :</span></dt><dd>GLO-WIND_L3-OBS_METOP-A_ASCAT_COA_ASC_20210731.nc</dd><dt><span>history :</span></dt><dd>N/A</dd><dt><span>institution :</span></dt><dd>EUMETSAT/OSI SAF/KNMI</dd><dt><span>instrument_calibration_version :</span></dt><dd>0</dd><dt><span>orbit_inclination :</span></dt><dd>98.7</dd><dt><span>orbit_number :</span></dt><dd>76680</dd><dt><span>pixel_size_on_horizontal :</span></dt><dd>12.5 km</dd><dt><span>processing_level :</span></dt><dd>L3</dd><dt><span>processing_type :</span></dt><dd>O</dd><dt><span>references :</span></dt><dd>ASCAT Wind Product User Manual, http://www.osi-saf.org/, http://www.knmi.nl/scatterometer/</dd><dt><span>rev_orbit_period :</span></dt><dd>6081.7</dd><dt><span>service_type :</span></dt><dd>N/A</dd><dt><span>software_identification_level_1 :</span></dt><dd>1000</dd><dt><span>software_identification_wind :</span></dt><dd>3202</dd><dt><span>source :</span></dt><dd>MetOp-A ASCAT</dd><dt><span>start_date :</span></dt><dd>2021-07-31</dd><dt><span>start_time :</span></dt><dd>00:00:00</dd><dt><span>stop_date :</span></dt><dd>2021-07-31</dd><dt><span>stop_time :</span></dt><dd>23:59:58</dd><dt><span>title :</span></dt><dd>Global Ocean - Wind - METOP-A ASCAT - 12km daily Ascending V2</dd><dt><span>title_short_name :</span></dt><dd>ASCATA-L3-Coastal</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="ascat-wind-speed-2007-2021">
+<div class="section" id="ascat-wind-speed-2007-2021">
 <h3>ASCAT wind speed (2007 - 2021)<a class="headerlink" href="#ascat-wind-speed-2007-2021" title="Permalink to this headline">¶</a></h3>
 <p>Each variable in an ASCAT data set, for example, wind speed, is loaded into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>:</p>
 <div class="cell docutils container">
@@ -4206,7 +4208,7 @@ Attributes:
        &#x27;2021-07-31T20:26:47.137746980&#x27;, &#x27;2021-07-31T21:42:48.414659293&#x27;],
       dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-fc3b65fb-30ad-4fe2-909e-33acb450f2d0' class='xr-section-summary-in' type='checkbox'  checked><label for='section-fc3b65fb-30ad-4fe2-909e-33acb450f2d0' class='xr-section-summary' >Attributes: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>_ChunkSizes :</span></dt><dd>[1, 720, 1440]</dd><dt><span>long_name :</span></dt><dd>stress equivalent wind speed at 10 m</dd><dt><span>standard_name :</span></dt><dd>wind_speed</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>valid_max :</span></dt><dd>5000</dd><dt><span>valid_min :</span></dt><dd>0</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<section id="calculate-mean-wind-speed-over-time-dimension-at-aoi-grid-coordinates">
+<div class="section" id="calculate-mean-wind-speed-over-time-dimension-at-aoi-grid-coordinates">
 <h4>Calculate mean wind speed over <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension at AOI grid coordinates<a class="headerlink" href="#calculate-mean-wind-speed-over-time-dimension-at-aoi-grid-coordinates" title="Permalink to this headline">¶</a></h4>
 <p>Using Dask, the data set loading process is lazy, where no data is loaded inititally. Instead, data loading is <a class="reference external" href="https://tutorial.dask.org/01x_lazy.html">delayed until execution time, where variables will be loaded and processed in parallel according to the corresponding chunks specification</a>. Dask arrays implement a subset of the NumPy <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.ndarray.html"><code class="docutils literal notranslate"><span class="pre">ndarray</span></code></a> interface using blocked algorithms, and the original variable arrays will be split into smaller chunk arrays, enabling computation on arrays larger than memory using all available cores. The blocked algorithms are coordinated using <a class="reference external" href="https://docs.dask.org/en/stable/graphs.html">Dask graphs</a>.</p>
 <p>To perform some analysis at known AOI latitude/longitude coordinates, the <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.sel.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray.sel(...,</span> <span class="pre">method='nearest')</span></code></a> function may be used to select a subset of the data array (or data set) at coordinates nearest to the specified parameters. Here, mean wind speed over the <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension is determined for the specified coordinates, where Dask graph execution is triggered by calling <a class="reference external" href="https://docs.dask.org/en/stable/api.html#dask.compute"><code class="docutils literal notranslate"><span class="pre">compute()</span></code></a>.</p>
@@ -4576,10 +4578,10 @@ Coordinates:
     latitude   float32 53.44
     longitude  float32 354.6</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'wind_speed'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>height</span>: 1</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-19cdedcc-2dbb-4c77-835c-8de512b6f7f9' class='xr-array-in' type='checkbox' checked><label for='section-19cdedcc-2dbb-4c77-835c-8de512b6f7f9' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>7.956</span></div><div class='xr-array-data'><pre>array([7.9561014], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-a46fb3f4-1298-4b64-8756-e443b4c06639' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a46fb3f4-1298-4b64-8756-e443b4c06639' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>height</span></div><div class='xr-var-dims'>(height)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>10</div><input id='attrs-c5bb129f-fd29-4c1e-8180-c20576b6de50' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c5bb129f-fd29-4c1e-8180-c20576b6de50' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d9c2f8eb-9862-46e5-9c2f-178b3e6a7be7' class='xr-var-data-in' type='checkbox'><label for='data-d9c2f8eb-9862-46e5-9c2f-178b3e6a7be7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Height above the surface</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([10])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>53.44</div><input id='attrs-a43a2f5f-3b52-4b05-a8a1-9343bb806f63' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a43a2f5f-3b52-4b05-a8a1-9343bb806f63' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-aa65a6ae-d17d-4386-8057-4f8898b156de' class='xr-var-data-in' type='checkbox'><label for='data-aa65a6ae-d17d-4386-8057-4f8898b156de' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>_ChunkSizes :</span></dt><dd>1440</dd><dt><span>_CoordinateAxisType :</span></dt><dd>Lat</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>valid_max :</span></dt><dd>90.0</dd><dt><span>valid_min :</span></dt><dd>-90.0</dd></dl></div><div class='xr-var-data'><pre>array(53.4375, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>354.6</div><input id='attrs-f95ffe56-96e6-4e8e-bc98-1c525f220741' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f95ffe56-96e6-4e8e-bc98-1c525f220741' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-11887a0a-b700-40d5-986e-d62b84996557' class='xr-var-data-in' type='checkbox'><label for='data-11887a0a-b700-40d5-986e-d62b84996557' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>_ChunkSizes :</span></dt><dd>2880</dd><dt><span>_CoordinateAxisType :</span></dt><dd>Lon</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>valid_max :</span></dt><dd>360.0</dd><dt><span>valid_min :</span></dt><dd>0.0</dd></dl></div><div class='xr-var-data'><pre>array(354.5625, dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d56901eb-5404-4628-b3b3-d042cdaabea1' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d56901eb-5404-4628-b3b3-d042cdaabea1' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 <hr class="docutils" />
-<section id="ascat-wind-vector-cell-quality-flag">
+<div class="section" id="ascat-wind-vector-cell-quality-flag">
 <h3>ASCAT wind vector cell quality flag<a class="headerlink" href="#ascat-wind-vector-cell-quality-flag" title="Permalink to this headline">¶</a></h3>
 <p>ASCAT products contain a <code class="docutils literal notranslate"><span class="pre">wvc_quality_flag</span></code> variable, which reflects the quality of corresponding wind variables at a particular time.</p>
 <p>Each variable in the ASCAT data sets, including <code class="docutils literal notranslate"><span class="pre">wvc_quality_flag</span></code>, is loaded into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>:</p>
@@ -5068,7 +5070,7 @@ Attributes:
        &#x27;2021-07-31T20:26:47.137746980&#x27;, &#x27;2021-07-31T21:42:48.414659293&#x27;],
       dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-0726e92b-b01e-4fb6-a507-a9cb3a873b2b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0726e92b-b01e-4fb6-a507-a9cb3a873b2b' class='xr-section-summary' >Attributes: <span>(7)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>_ChunkSizes :</span></dt><dd>[1, 720, 1440]</dd><dt><span>flag_masks :</span></dt><dd>[64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304]</dd><dt><span>flag_meanings :</span></dt><dd>distance_to_gmf_too_large data_are_redundant no_meteorological_background_used rain_detected rain_flag_not_usable small_wind_less_than_or_equal_to_3_m_s large_wind_greater_than_30_m_s wind_inversion_not_successful some_portion_of_wvc_is_over_ice some_portion_of_wvc_is_over_land variational_quality_control_fails knmi_quality_control_fails product_monitoring_event_flag product_monitoring_not_used any_beam_noise_content_above_threshold poor_azimuth_diversity not_enough_good_sigma0_for_wind_retrieval</dd><dt><span>long_name :</span></dt><dd>wind vector cell quality</dd><dt><span>standard_name :</span></dt><dd>status_flag</dd><dt><span>valid_max :</span></dt><dd>8388607</dd><dt><span>valid_min :</span></dt><dd>0</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<section id="create-a-mapping-between-quality-flag-meaning-and-corresponding-flag-mask-using-the-wvc-quality-flag-attributes">
+<div class="section" id="create-a-mapping-between-quality-flag-meaning-and-corresponding-flag-mask-using-the-wvc-quality-flag-attributes">
 <h4>Create a mapping between quality flag meaning and corresponding flag mask using the <code class="docutils literal notranslate"><span class="pre">wvc_quality_flag</span></code> attributes<a class="headerlink" href="#create-a-mapping-between-quality-flag-meaning-and-corresponding-flag-mask-using-the-wvc-quality-flag-attributes" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="https://scatterometer.knmi.nl/publications/pdf/ASCAT_Product_Manual.pdf">ASCAT Wind Product User Manual (1.17, 01/12/2021)</a> provides definitions of the quality flag values, where these are also contained in the <code class="docutils literal notranslate"><span class="pre">wvc_quality_flag</span></code> <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.attrs.html">metadata attributes</a>. The attribute definitions are also documented in the <a class="reference external" href="https://catalogue.marine.copernicus.eu/documents/PUM/CMEMS-WIND-PUM-012-002-005.pdf">Copernicus Marine Service Product User Manual For Global Ocean L3 Wind (Issue 2.21, November 2021)</a>:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">wvc_quality_flag</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
@@ -5113,8 +5115,8 @@ Attributes:
 </div>
 </div>
 </div>
-</section>
-<section id="plot-the-percentage-of-time-the-quality-flag-masks-are-set-for-all-grid-coordinates">
+</div>
+<div class="section" id="plot-the-percentage-of-time-the-quality-flag-masks-are-set-for-all-grid-coordinates">
 <h4>Plot the percentage of time the quality flag masks are set for all grid coordinates<a class="headerlink" href="#plot-the-percentage-of-time-the-quality-flag-masks-are-set-for-all-grid-coordinates" title="Permalink to this headline">¶</a></h4>
 <p>Here, using the <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension, the percentage of observations featuring each quality flag is determined for all grid coordinates.</p>
 <p>Map plots of variables with grid coordinates may be generated using <a class="reference external" href="https://docs.xarray.dev/en/latest/user-guide/plotting.html">xarray’s plotting capabilities</a>, and other libraries. To plot mean <code class="docutils literal notranslate"><span class="pre">owiWindQuality</span></code>:</p>
@@ -5185,7 +5187,7 @@ Attributes:
 <span class="n">total_observations</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">wvc_quality_flag</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">wvc_quality_flag</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 
 <span class="n">quality_flag_values</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;No flag mask set&#39;</span><span class="p">:</span> <span class="n">ds</span><span class="o">.</span><span class="n">wvc_quality_flag</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)}</span>
-<span class="n">quality_flag_values</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{flag_meaning}</span><span class="s1"> flag set&#39;</span><span class="p">:</span> <span class="n">ds</span><span class="o">.</span><span class="n">wvc_quality_flag</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span> <span class="o">&amp;</span> <span class="n">flag_mask</span><span class="p">)</span> <span class="k">for</span> <span class="n">flag_meaning</span><span class="p">,</span> <span class="n">flag_mask</span> <span class="ow">in</span> <span class="n">quality_flag_masks</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+<span class="n">quality_flag_values</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{flag_meaning}</span><span class="s1"> flag set&#39;</span><span class="p">:</span> <span class="n">ds</span><span class="o">.</span><span class="n">wvc_quality_flag</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span> <span class="o">&amp;</span> <span class="n">flag_mask</span><span class="p">)</span> <span class="k">for</span> <span class="n">flag_meaning</span><span class="p">,</span> <span class="n">flag_mask</span> <span class="ow">in</span> <span class="n">quality_flag_masks</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
                     
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">flag_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">quality_flag_values</span><span class="p">)):</span>
     <span class="c1"># Calculate percentage of non-zero/nan observations for each coordinate where this flag was set</span>
@@ -5193,7 +5195,7 @@ Attributes:
     <span class="n">vmax</span> <span class="o">=</span> <span class="n">flag_percentage</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
     <span class="n">vmax</span> <span class="o">=</span> <span class="mi">100</span> <span class="k">if</span> <span class="n">vmax</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">vmax</span>
     <span class="n">plot_ics_variable</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">flag_percentage</span><span class="p">,</span>
-                      <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;% </span><span class="si">{flag_label}</span><span class="s1">&#39;</span><span class="p">,</span>
+                      <span class="n">title</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;% </span><span class="si">{flag_label}</span><span class="s1">&#39;</span><span class="p">,</span>
                       <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                       <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span>
                       <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
@@ -5204,8 +5206,8 @@ Attributes:
 <img alt="_images/ASCAT_ICS_Wind_Data_27_0.png" src="_images/ASCAT_ICS_Wind_Data_27_0.png" />
 </div>
 </div>
-</section>
-<section id="filter-ascat-data-using-quality-flags">
+</div>
+<div class="section" id="filter-ascat-data-using-quality-flags">
 <h4>Filter ASCAT data using quality flags<a class="headerlink" href="#filter-ascat-data-using-quality-flags" title="Permalink to this headline">¶</a></h4>
 <p>These grid flag percentages may suggest that the ASCAT data could be filtered using the corresponding flag masks, for example, where all combinations of the following masks would be retained:</p>
 <ul class="simple">
@@ -8159,10 +8161,10 @@ Attributes: (12/36)
 </table></div></li></ul></div></li><li class='xr-section-item'><input id='section-8254a4a7-d6a3-4662-b97d-3356661aa9f9' class='xr-section-summary-in' type='checkbox'  ><label for='section-8254a4a7-d6a3-4662-b97d-3356661aa9f9' class='xr-section-summary' >Attributes: <span>(36)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>History :</span></dt><dd>Translated to CF-1.0 Conventions by Netcdf-Java CDM (CFGridWriter2)
 Original Dataset = KNMI-GLO-WIND_L3-REP-OBS_METOP-A_ASCAT_12_ASC; Translation Date = 2022-03-08T11:43:19.516Z</dd><dt><span>comment :</span></dt><dd>Orbit period and inclination are constant values. All wind directions in oceanographic convention (0 deg. flowing North)</dd><dt><span>contents :</span></dt><dd>ovw</dd><dt><span>creation_date :</span></dt><dd>2021-11-05</dd><dt><span>creation_time :</span></dt><dd>19:16:35</dd><dt><span>eooffshore_zarr_creation_time :</span></dt><dd>2022-05-13T11:34:41Z</dd><dt><span>eooffshore_zarr_details :</span></dt><dd>EOOffshore Project: Concatenated Copernicus Marine Service WIND_GLO_WIND_L3_REP_OBSERVATIONS_012_005 MetOp ASCAT Ascending/Descending products, for the Irish Continental Shelf. Original products time coordinates have been replaced with the satellite/pass measurement_time values. Generated using E.U. Copernicus Marine Service Information; https://doi.org/10.48670/moi-00183</dd><dt><span>equator_crossing_date :</span></dt><dd>2021-07-30</dd><dt><span>equator_crossing_longitude :</span></dt><dd> 316.072</dd><dt><span>equator_crossing_time :</span></dt><dd>22:59:30</dd><dt><span>geospatial_lat_max :</span></dt><dd>58.0625</dd><dt><span>geospatial_lat_min :</span></dt><dd>46.0625</dd><dt><span>geospatial_lon_max :</span></dt><dd>-0.0625</dd><dt><span>geospatial_lon_min :</span></dt><dd>-25.9375</dd><dt><span>granule_name :</span></dt><dd>GLO-WIND_L3-OBS_METOP-A_ASCAT_COA_ASC_20210731.nc</dd><dt><span>history :</span></dt><dd>N/A</dd><dt><span>institution :</span></dt><dd>EUMETSAT/OSI SAF/KNMI</dd><dt><span>instrument_calibration_version :</span></dt><dd>0</dd><dt><span>orbit_inclination :</span></dt><dd>98.7</dd><dt><span>orbit_number :</span></dt><dd>76680</dd><dt><span>pixel_size_on_horizontal :</span></dt><dd>12.5 km</dd><dt><span>processing_level :</span></dt><dd>L3</dd><dt><span>processing_type :</span></dt><dd>O</dd><dt><span>references :</span></dt><dd>ASCAT Wind Product User Manual, http://www.osi-saf.org/, http://www.knmi.nl/scatterometer/</dd><dt><span>rev_orbit_period :</span></dt><dd>6081.7</dd><dt><span>service_type :</span></dt><dd>N/A</dd><dt><span>software_identification_level_1 :</span></dt><dd>1000</dd><dt><span>software_identification_wind :</span></dt><dd>3202</dd><dt><span>source :</span></dt><dd>MetOp-A ASCAT</dd><dt><span>start_date :</span></dt><dd>2021-07-31</dd><dt><span>start_time :</span></dt><dd>00:00:00</dd><dt><span>stop_date :</span></dt><dd>2021-07-31</dd><dt><span>stop_time :</span></dt><dd>23:59:58</dd><dt><span>title :</span></dt><dd>Global Ocean - Wind - METOP-A ASCAT - 12km daily Ascending V2</dd><dt><span>title_short_name :</span></dt><dd>ASCATA-L3-Coastal</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MÉRA Wind Data for Irish Continental Shelf region</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -38,22 +37,20 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://eooffshore.github.io/MERA_ICS_Wind_Data.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -417,9 +414,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <p><a class="reference internal" href="_images/eooffshore_banner.png"><img alt="_images/eooffshore_banner.png" src="_images/eooffshore_banner.png" style="width: 48%;" /></a> </p>
 <p><a class="reference internal" href="_images/seai.png"><img alt="_images/seai.png" src="_images/seai.png" style="width: 25%;" /></a> <span /> <a class="reference internal" href="_images/ucd.png"><img alt="_images/ucd.png" src="_images/ucd.png" style="width: 7%;" /></a></p>
-<section id="mera-wind-data-for-irish-continental-shelf-region">
+<div class="section" id="mera-wind-data-for-irish-continental-shelf-region">
 <h1>MÉRA Wind Data for Irish Continental Shelf region<a class="headerlink" href="#mera-wind-data-for-irish-continental-shelf-region" title="Permalink to this headline">¶</a></h1>
-<section id="introduction">
+<div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.met.ie/climate/available-data/mera">Met Éireann Re-Analysis (MÉRA) - Climate Re-analysis</a> is a reanalysis data set developed by <a class="reference external" href="https://www.met.ie/about-us">Met Éireann</a>, Ireland’s National Meteorological Service. It contains a 35-year very high resolution (2.5 km horizontal grid) regional climate reanalysis for Ireland using the <span class="xref myst">ALADIN-HIRLAM numerical weather prediction system</span>, spanning the period 1981 to August 2019, and includes surface, near-surface and atmospheric parameters.  Further details may be found in the following publications:</p>
 <ul class="simple">
@@ -438,9 +435,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference internal" href="Offshore_Wind_AOI.html"><span class="doc std std-doc">Offshore Wind in Irish Areas Of Interest</span></a></p></li>
 <li><p><a class="reference internal" href="Comparison_Wind_Power.html"><span class="doc std std-doc">Comparison of Offshore Wind Speed Extrapolation and Power Density Estimation</span></a></p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="mera-wind-data-products">
+<div class="section" id="mera-wind-data-products">
 <h2>MÉRA Wind Data Products<a class="headerlink" href="#mera-wind-data-products" title="Permalink to this headline">¶</a></h2>
 <p>MÉRA data products contain wind variables with hourly/3-hourly values at multiple heights (metres above surface level), which means they are particularly useful for the EOOffshore project due to these heights being similar to typical <a class="reference external" href="https://www.wind-energy-the-facts.org/hub-height.html">wind turbine hub heights</a>. The following data variables are relevant:</p>
 <table class="colwidths-auto table">
@@ -515,9 +512,9 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 <hr class="docutils" />
-<section id="mera-wind-zarr-store">
+<div class="section" id="mera-wind-zarr-store">
 <h2>MÉRA Wind Zarr Store<a class="headerlink" href="#mera-wind-zarr-store" title="Permalink to this headline">¶</a></h2>
 <p>As MÉRA <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> variables are provided in separate monthly products for a particular height, pairs of <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> variables were initially merged for all possible month/height combinations. This process involved the selection of coordinates for the <a class="reference external" href="https://www.marine.ie/Home/site-area/irelands-marine-resource/real-map-ireland">Irish Continental Shelf (ICS)</a> regions, and computing the following new variables from <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> using <a class="reference external" href="https://unidata.github.io/MetPy/latest/index.html">MetPy</a>:</p>
 <table class="colwidths-auto table">
@@ -550,17 +547,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Disclaimer: Met Éireann does not accept any liability whatsoever for any error or omission in the data, their availability, or for any loss or damage arising from their use.</p></li>
 <li><p>The generated Zarr store contains modifications of MÉRA data as stated above.</p></li>
 </ol>
-</section>
+</div>
 <hr class="docutils" />
-<section id="mera-in-eooffshore-catalog">
+<div class="section" id="mera-in-eooffshore-catalog">
 <h2>MÉRA in EOOffshore Catalog<a class="headerlink" href="#mera-in-eooffshore-catalog" title="Permalink to this headline">¶</a></h2>
-<section id="open-the-catalog-and-view-the-mera-metadata">
+<div class="section" id="open-the-catalog-and-view-the-mera-metadata">
 <h3>Open the catalog and view the MÉRA metadata<a class="headerlink" href="#open-the-catalog-and-view-the-mera-metadata" title="Permalink to this headline">¶</a></h3>
 <p>All EOOffshore data sets, including the MÉRA Zarr store described above, are accessible using the EOOffshore <a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake</a> catalog. Each <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html">catalog</a> entry provides a description and metadata associated with the corresponding data set, defined in a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#yaml-format">YAML configuration file</a>. The EOOffshore catalog configuration was originally influenced by the <a class="reference external" href="https://github.com/pangeo-data/pangeo-datastore/blob/master/intake-catalogs/atmosphere.yaml">Pangeo Cloud Data Store atmosphere.yaml catalog configuration</a>.</p>
 <p>To view the MÉRA metadata (<em>ANALYSIS</em> indicates 3-hourly provided products were used):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">intake</span> <span class="kn">import</span> <span class="n">open_catalog</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">intake</span> <span class="k">import</span> <span class="n">open_catalog</span>
 
 <span class="n">catalog</span> <span class="o">=</span> <span class="n">open_catalog</span><span class="p">(</span><span class="s1">&#39;data/intake-catalogs/eooffshore_ics.yaml&#39;</span><span class="p">)</span>
 <span class="n">catalog</span><span class="o">.</span><span class="n">eooffshore_ics_mera_wind_ANALYSIS</span>
@@ -596,9 +593,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="load-the-catalog-mera-zarr-store">
+<div class="section" id="load-the-catalog-mera-zarr-store">
 <h3>Load the catalog MÉRA Zarr store<a class="headerlink" href="#load-the-catalog-mera-zarr-store" title="Permalink to this headline">¶</a></h3>
 <p>Intake catalog entries typically specify a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#driver-selection">driver</a> to be used when loading the corresponding data set. The MÉRA entry specifies <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">intake_xarray.xzarr.ZarrSource</span></code></a>, a driver implementation provided by the <a class="reference external" href="https://intake-xarray.readthedocs.io/">intake-xarray</a> library. This enables NetCDF and Zarr data sets to be loaded using <a class="reference external" href="https://docs.xarray.dev/en/stable/index.html">xarray</a>, a library for processing N-D labeled arrays and datasets. As xarray labels take the form of dimensions, coordinates and attributes on top of <a class="reference external" href="https://numpy.org/">NumPy</a>-like arrays, it is particularly suited to data sets such as MÉRA whose variables feature latitude/longitude grid coordinates.</p>
 <p>This intake driver will load the associated dataset into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a>. To enable support for potentially large data sets, the <a class="reference external" href="https://intake.readthedocs.io/en/latest/quickstart.html#working-with-dask"><code class="docutils literal notranslate"><span class="pre">to_dask()</span></code></a> function is used to load the underlying variable arrays with <a class="reference external" href="https://docs.dask.org/en/latest/">Dask</a>, a parallel, out-of-core computing library. The <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">ZarrSource</span></code></a> implementation will load the data set variables into <a class="reference external" href="https://docs.dask.org/en/latest/array.html">Dask arrays</a>, which will be loaded and processed in parallel as <a class="reference external" href="https://docs.dask.org/en/latest/array.html">chunks</a> during subsequent computation. As discussed above, variable chunk sizes may be specified during Zarr store creation.</p>
@@ -1997,9 +1994,9 @@ Attributes:
     </tr>
 </table></div></li></ul></div></li><li class='xr-section-item'><input id='section-bff15449-f8b0-4ee2-a4a9-3ba008dcd9b8' class='xr-section-summary-in' type='checkbox'  ><label for='section-bff15449-f8b0-4ee2-a4a9-3ba008dcd9b8' class='xr-section-summary' >Attributes: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.7</dd><dt><span>GRIB_centre :</span></dt><dd>eidb</dd><dt><span>GRIB_centreDescription :</span></dt><dd>Dublin</dd><dt><span>GRIB_edition :</span></dt><dd>1</dd><dt><span>GRIB_subCentre :</span></dt><dd>255</dd><dt><span>eooffshore_zarr_creation_time :</span></dt><dd>2022-05-13T19:03:09Z</dd><dt><span>eooffshore_zarr_details :</span></dt><dd>EOOffshore Project: Concatenated 3-hourly ANALYSIS wind variable products from the Met Éireann ReAnalysis (MÉRA) data set, for Irish Continental Shelf. Wind speed and direction have been calculated from the source u and v variables. Copyright Met Éireann. Source www.met.ie. Licence Statement: This data is published under a Creative Commons Attribution 4.0 International (CC BY 4.0). https://creativecommons.org/licenses/by/4.0/ . Disclaimer: Met Éireann does not accept any liability whatsoever for any error or omission in the data, their availability, or for any loss or damage arising from their use.</dd><dt><span>geospatial_lat_max :</span></dt><dd>58.05</dd><dt><span>geospatial_lat_min :</span></dt><dd>45.95</dd><dt><span>geospatial_lon_max :</span></dt><dd>355.15</dd><dt><span>geospatial_lon_min :</span></dt><dd>334.05</dd><dt><span>institution :</span></dt><dd>Dublin</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="mera-wind-speed-2001-2016">
+<div class="section" id="mera-wind-speed-2001-2016">
 <h3>MÉRA wind speed (2001 - 2016)<a class="headerlink" href="#mera-wind-speed-2001-2016" title="Permalink to this headline">¶</a></h3>
 <p>Each variable in the MÉRA data set, for example, wind speed, is loaded into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>:</p>
 <div class="cell docutils container">
@@ -2702,7 +2699,7 @@ Attributes:
        &#x27;2016-12-31T18:00:00.000000000&#x27;, &#x27;2016-12-31T21:00:00.000000000&#x27;],
       dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-48b305ea-ece7-432c-ac11-3fe1631f796c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-48b305ea-ece7-432c-ac11-3fe1631f796c' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>coordinates :</span></dt><dd>longitude step latitude valid_time</dd><dt><span>long_name :</span></dt><dd>Wind speed</dd><dt><span>units :</span></dt><dd>m s**-1</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<section id="calculate-mean-wind-speed-over-time-dimension-for-all-heights-at-aoi-grid-coordinates">
+<div class="section" id="calculate-mean-wind-speed-over-time-dimension-for-all-heights-at-aoi-grid-coordinates">
 <h4>Calculate mean wind speed over <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension for all heights at AOI grid coordinates<a class="headerlink" href="#calculate-mean-wind-speed-over-time-dimension-for-all-heights-at-aoi-grid-coordinates" title="Permalink to this headline">¶</a></h4>
 <p>Using Dask, the data set loading process is lazy, where no data is loaded inititally. Instead, data loading is <a class="reference external" href="https://tutorial.dask.org/01x_lazy.html">delayed until execution time, where variables will be loaded and processed in parallel according to the corresponding chunks specification</a>. Dask arrays implement a subset of the NumPy <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.ndarray.html"><code class="docutils literal notranslate"><span class="pre">ndarray</span></code></a> interface using blocked algorithms, and the original variable arrays will be split into smaller chunk arrays, enabling computation on arrays larger than memory using all available cores. The blocked algorithms are coordinated using <a class="reference external" href="https://docs.dask.org/en/stable/graphs.html">Dask graphs</a>.</p>
 <p>To perform some analysis at known AOI latitude/longitude coordinates, the <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.sel.html"><code class="docutils literal notranslate"><span class="pre">xarray.DataArray.sel(...,</span> <span class="pre">method='nearest')</span></code></a> function may be used to select a subset of the data array (or data set) at coordinates nearest to the specified parameters.
@@ -3078,10 +3075,10 @@ Coordinates:
     longitude  float64 352.6</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'wind_speed'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>height</span>: 5</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-33e8c6b4-355b-496a-abd4-f2262f067b03' class='xr-array-in' type='checkbox' checked><label for='section-33e8c6b4-355b-496a-abd4-f2262f067b03' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>8.566 9.573 9.892 10.05 10.22</span></div><div class='xr-array-data'><pre>array([ 8.566245,  9.572731,  9.891546, 10.051194, 10.216036],
       dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-240ac8e2-13d1-4fe3-8785-6dc26c4d6093' class='xr-section-summary-in' type='checkbox'  checked><label for='section-240ac8e2-13d1-4fe3-8785-6dc26c4d6093' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>height</span></div><div class='xr-var-dims'>(height)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>10.0 50.0 80.0 100.0 125.0</div><input id='attrs-a1f60951-2119-439a-8c6c-b543da417cbc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a1f60951-2119-439a-8c6c-b543da417cbc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c545f8c2-9f21-4e9c-b2af-40b7ff5153d7' class='xr-var-data-in' type='checkbox'><label for='data-c545f8c2-9f21-4e9c-b2af-40b7ff5153d7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height above the surface</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([ 10.,  50.,  80., 100., 125.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>51.37</div><input id='attrs-4681d433-5e36-47b1-9f29-b841b4ab09f2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4681d433-5e36-47b1-9f29-b841b4ab09f2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-da3f29a7-3cb0-4f93-8c1e-825a001cc51d' class='xr-var-data-in' type='checkbox'><label for='data-da3f29a7-3cb0-4f93-8c1e-825a001cc51d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array(51.36760684)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>352.6</div><input id='attrs-8be4c903-de00-421f-8d9e-1e0225b54649' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8be4c903-de00-421f-8d9e-1e0225b54649' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-59005e47-0c9e-4490-8e91-af765e319a6c' class='xr-var-data-in' type='checkbox'><label for='data-59005e47-0c9e-4490-8e91-af765e319a6c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array(352.5993649)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c7390431-d24e-4f0e-975d-3546c78d573d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-c7390431-d24e-4f0e-975d-3546c78d573d' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
