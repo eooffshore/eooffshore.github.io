@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Project Overview</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -37,17 +38,19 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://eooffshore.github.io/project_overview.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -277,12 +280,12 @@
             
               <div>
                 
-  <div class="section" id="project-overview">
+  <section id="project-overview">
 <h1>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this headline">¶</a></h1>
 <p>The expansion of renewable energy portfolios to utilise offshore wind resources is a key objective of energy policies focused on the generation of low carbon electricity. Wind atlases have been developed to provide energy resources maps, containing information on wind speeds and related variables at multiple heights above sea level for offshore areas of interest (AOIs). However, these atlases are often associated with legacy projects, where access to corresponding data products may be restricted preventing further development by third parties. Reliable, long-term observations are crucial inputs to the offshore wind farm area assessment process, with observations typically measured close to the ocean surface using in situ meteorological masts. Remote sensing techniques have been proposed to address resolution and coverage issues associated with in situ measurements, in particular, the use of space-borne Earth Observation (EO) instruments for ocean and sea surface wind estimates.</p>
-<p>In recent years, a variety of initiatives have emerged that provide public access to wind speed data products, which have potential for application in wind atlas development and offshore wind farm assessment. Combining products from multiple data providers is challenging due to differences in spatial and temporal resolution, product access, and product formats. In particular, the associated large dataset sizes are significant obstacles to data retrieval, storage, and subsequent computation. The traditional process of retrieval and local analysis of a relatively small number of AOI products is not readily scalable to accommodate longitudinal studies of wind farm AOIs.</p>
+<p>In recent years, a variety of initiatives have emerged that provide public access to wind speed data products, which have potential for application in wind atlas development and offshore wind farm assessment. Combining products from multiple data providers is challenging due to differences in spatial and temporal resolution, product access, and product formats. In particular, the associated large dataset sizes are significant obstacles to data retrieval, storage, and subsequent computation. The traditional process of retrieval and local analysis of a relatively small number of AOI products is not readily scalable to accommodate comprehensive studies of wind farm AOIs.</p>
 <p>EOOffshore presents a case study that demonstrates the utility of the <a class="reference external" href="https://pangeo.io/">Pangeo</a> software ecosystem to address these issues in the development of offshore wind speed and power density estimates, increasing wind measurement coverage of offshore renewable energy assessment areas in the <a class="reference external" href="https://www.marine.ie/Home/site-area/irelands-marine-resource/real-map-ireland">Irish Continental Shelf</a> region. It has involved the creation of a new <a class="reference internal" href="datasets.html"><span class="doc std std-doc">wind data catalog</span></a> for this region, consisting of a collection of analysis-ready, cloud-optimized (ARCO) datasets featuring up to 21 years of available in situ, reanalysis, and satellite observation wind data products. <a class="reference internal" href="Offshore_Wind_AOI.html"><span class="doc std std-doc">Scalable processing and visualization</span></a> of this ARCO catalog is demonstrated by means of a set of notebooks, including analysis of provided data variables and computation of new variables as required for AOIs, avoiding redundant storage and processing requirements for areas not under assessment. Finally, a <a class="reference internal" href="windatlas.html"><span class="doc std std-doc">prototype wind atlas service</span></a> has also been created, demonstrating interactive AOI offshore wind and power density assessment.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

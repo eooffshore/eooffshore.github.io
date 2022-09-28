@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Comparison of Offshore Wind Speed Extrapolation and Power Density Estimation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -37,20 +38,22 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}})</script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://eooffshore.github.io/Comparison_Wind_Power.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -758,9 +761,9 @@
                 
   <p><a class="reference internal" href="_images/eooffshore_banner.png"><img alt="_images/eooffshore_banner.png" src="_images/eooffshore_banner.png" style="width: 48%;" /></a> </p>
 <p><a class="reference internal" href="_images/seai.png"><img alt="_images/seai.png" src="_images/seai.png" style="width: 25%;" /></a> <span /> <a class="reference internal" href="_images/ucd.png"><img alt="_images/ucd.png" src="_images/ucd.png" style="width: 7%;" /></a></p>
-<div class="section" id="comparison-of-offshore-wind-speed-extrapolation-and-power-density-estimation">
+<section id="comparison-of-offshore-wind-speed-extrapolation-and-power-density-estimation">
 <h1>Comparison of Offshore Wind Speed Extrapolation and Power Density Estimation<a class="headerlink" href="#comparison-of-offshore-wind-speed-extrapolation-and-power-density-estimation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
+<section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This notebook demonstrates the utility of the <a class="reference external" href="https://pangeo.io/">Pangeo</a> software ecosystem in the comparison of methods for offshore wind speed extrapolation and power density estimation, increasing wind measurement coverage of offshore renewable energy assessment areas in the <a class="reference external" href="https://www.marine.ie/Home/site-area/irelands-marine-resource/real-map-ireland">Irish Continental Shelf (ICS)</a> region. It uses the EOOffshore wind data catalog created for this region, consisting of a collection of analysis-ready, cloud-optimized (ARCO) datasets featuring up to 21 years of available in situ, reanalysis, and satellite observation wind data products. Scalable processing and visualization of this ARCO catalog is demonstrated with analysis of provided data variables and derivation of new variables as required for AOIs, avoiding redundant storage and processing requirements for areas not under assessment. The notebook findings are used for AOI assessment described in the accompanying <a class="reference internal" href="Offshore_Wind_AOI.html"><span class="doc std std-doc">Offshore Wind in Irish Areas Of Interest</span></a> notebook.</p>
 <table class="colwidths-auto table">
@@ -844,40 +847,40 @@
 <li><p>Wind power density estimates comparison with provided data.</p></li>
 </ol>
 <p><strong>How to cite:</strong> O’Callaghan, D. and McBreen, S.: Scalable Offshore Wind Analysis With Pangeo, EGU General Assembly 2022, Vienna, Austria, 23–27 May 2022, EGU22-2746, <a class="reference external" href="https://doi.org/10.5194/egusphere-egu22-2746">https://doi.org/10.5194/egusphere-egu22-2746</a>, 2022.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="load-eooffshore-catalog-data">
+<section id="load-eooffshore-catalog-data">
 <h2>Load EOOffshore Catalog Data<a class="headerlink" href="#load-eooffshore-catalog-data" title="Permalink to this headline">¶</a></h2>
 <p>Imports required for subsequent processing</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">from</span> <span class="nn">abc</span> <span class="k">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
-<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="k">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">lru_cache</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
-<span class="kn">from</span> <span class="nn">intake</span> <span class="k">import</span> <span class="n">Catalog</span><span class="p">,</span> <span class="n">open_catalog</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Markdown</span>
+<span class="kn">from</span> <span class="nn">intake</span> <span class="kn">import</span> <span class="n">Catalog</span><span class="p">,</span> <span class="n">open_catalog</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">metpy.units</span> <span class="k">import</span> <span class="n">units</span>
+<span class="kn">from</span> <span class="nn">metpy.units</span> <span class="kn">import</span> <span class="n">units</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">regionmask</span>
-<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="k">import</span> <span class="n">interpn</span>
-<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="k">import</span> <span class="n">gamma</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">weibull_min</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">interpn</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">gamma</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">weibull_min</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="k">import</span> <span class="n">NearestNeighbors</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -891,7 +894,7 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="open-the-catalog">
+<section id="open-the-catalog">
 <h3>Open the catalog<a class="headerlink" href="#open-the-catalog" title="Permalink to this headline">¶</a></h3>
 <p>All EOOffshore data sets, for example, the <a class="reference internal" href="ERA5_ICS_Wind_Data.html"><span class="doc std std-doc">ERA5 Zarr store</span></a>, are accessible using the EOOffshore <a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake</a> catalog. Each <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html">catalog</a> entry provides a description and metadata associated with the corresponding data set, defined in a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#yaml-format">YAML configuration file</a>. The EOOffshore catalog configuration was originally influenced by the <a class="reference external" href="https://github.com/pangeo-data/pangeo-datastore/blob/master/intake-catalogs/atmosphere.yaml">Pangeo Cloud Data Store atmosphere.yaml catalog configuration</a>.</p>
 <div class="cell docutils container">
@@ -901,9 +904,9 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="load-the-catalog-zarr-stores">
+<section id="load-the-catalog-zarr-stores">
 <h3>Load the catalog Zarr stores<a class="headerlink" href="#load-the-catalog-zarr-stores" title="Permalink to this headline">¶</a></h3>
 <p>Intake catalog entries typically specify a <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html#driver-selection">driver</a> to be used when loading the corresponding data set. The ASCAT entries specify <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">intake_xarray.xzarr.ZarrSource</span></code></a>, a driver implementation provided by the <a class="reference external" href="https://intake-xarray.readthedocs.io/">intake-xarray</a> library. This enables NetCDF and Zarr data sets to be loaded using <a class="reference external" href="https://docs.xarray.dev/en/stable/index.html">xarray</a>, a library for processing N-D labeled arrays and datasets. As xarray labels take the form of dimensions, coordinates and attributes on top of <a class="reference external" href="https://numpy.org/">NumPy</a>-like arrays, it is particularly suited to data sets such as ASCAT whose variables feature latitude/longitude grid coordinates.</p>
 <p>This intake driver will load the associated dataset into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a>. To enable support for potentially large data sets, the <a class="reference external" href="https://intake.readthedocs.io/en/latest/quickstart.html#working-with-dask"><code class="docutils literal notranslate"><span class="pre">to_dask()</span></code></a> function is used to load the underlying variable arrays with <a class="reference external" href="https://docs.dask.org/en/latest/">Dask</a>, a parallel, out-of-core computing library. The <a class="reference external" href="https://intake-xarray.readthedocs.io/en/latest/api.html#intake_xarray.xzarr.ZarrSource"><code class="docutils literal notranslate"><span class="pre">ZarrSource</span></code></a> implementation will load the data set variables into <a class="reference external" href="https://docs.dask.org/en/latest/array.html">Dask arrays</a>, which will be loaded and processed in parallel as <a class="reference external" href="https://docs.dask.org/en/latest/array.html">chunks</a> during subsequent computation. Variable chunk sizes have been specified during Zarr store creation.</p>
@@ -1149,14 +1152,14 @@
         <span class="c1"># Select closest times to the available data</span>
         <span class="n">buoyds</span> <span class="o">=</span> <span class="n">buoyds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">buoydf</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
         
-        <span class="n">dsvariable</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;</span><span class="si">{dataset.name}</span><span class="s1">_</span><span class="si">{variable}</span><span class="s1">&#39;</span>
+        <span class="n">dsvariable</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{dataset.name}</span><span class="s1">_</span><span class="si">{variable}</span><span class="s1">&#39;</span>
         <span class="n">buoydf</span><span class="p">[</span><span class="n">dsvariable</span><span class="p">]</span> <span class="o">=</span> <span class="n">buoyds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Buoy</span><span class="o">=</span><span class="n">buoy</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">)[</span><span class="n">variable</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
         <span class="k">return</span> <span class="n">buoydf</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="load-the-ascat-reprocessed-store">
+<section id="load-the-ascat-reprocessed-store">
 <h4>Load the ASCAT REProcessed store<a class="headerlink" href="#load-the-ascat-reprocessed-store" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Data is provided at 10m above surface level (<code class="docutils literal notranslate"><span class="pre">height</span></code> dimension).</p></li>
@@ -1201,9 +1204,9 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="load-the-ccmp-store">
+<section id="load-the-ccmp-store">
 <h4>Load the CCMP store<a class="headerlink" href="#load-the-ccmp-store" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Data is provided at 10m above surface level (<code class="docutils literal notranslate"><span class="pre">height</span></code> dimension).</p></li>
@@ -1218,9 +1221,9 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="load-the-era5-store">
+<section id="load-the-era5-store">
 <h4>Load the ERA5 store<a class="headerlink" href="#load-the-era5-store" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Data is provided at both 10m and 100m above surface level (<code class="docutils literal notranslate"><span class="pre">height</span></code> dimension).</p></li>
@@ -1233,9 +1236,9 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="load-the-mera-store">
+<section id="load-the-mera-store">
 <h4>Load the MÉRA store<a class="headerlink" href="#load-the-mera-store" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Data is provided at multiple heights above surface level (<code class="docutils literal notranslate"><span class="pre">height</span></code> dimension).</p></li>
@@ -1252,9 +1255,9 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="load-the-newa-stores">
+<section id="load-the-newa-stores">
 <h4>Load the NEWA stores<a class="headerlink" href="#load-the-newa-stores" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">NewaEOOffshoreDataset</span></code> instance contains a map of AOI -&gt; <code class="docutils literal notranslate"><span class="pre">CurvilinearEooffshoreDataset</span></code>, with each of the latter backed by a <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a></p></li>
@@ -1277,9 +1280,9 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="load-the-sentinel-1-store">
+<section id="load-the-sentinel-1-store">
 <h4>Load the Sentinel-1 store<a class="headerlink" href="#load-the-sentinel-1-store" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Data is provided at 10m above surface level (<code class="docutils literal notranslate"><span class="pre">height</span></code> dimension).</p></li>
@@ -1312,17 +1315,17 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="load-aoi-catalog-data">
+<section id="load-aoi-catalog-data">
 <h3>Load AOI catalog data<a class="headerlink" href="#load-aoi-catalog-data" title="Permalink to this headline">¶</a></h3>
 <p>This section describes the AOI data sets contained in the EOOffshore catalog:</p>
 <ol class="simple">
 <li><p><a class="reference external" href="http://www.marine.ie/Home/site-area/data-services/real-time-observations/irish-weather-buoy-network-imos">Irish Weather Buoy Network</a> coordinates and data</p></li>
 <li><p>Synthentic wind farm geometries</p></li>
 </ol>
-<div class="section" id="load-the-irish-weather-buoy-network-data">
+<section id="load-the-irish-weather-buoy-network-data">
 <h4>Load the Irish Weather Buoy Network data<a class="headerlink" href="#load-the-irish-weather-buoy-network-data" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="http://www.marine.ie/Home/site-area/data-services/real-time-observations/irish-weather-buoy-network-imos">Irish Weather Buoy Network (IWB)</a>, managed by the <a class="reference external" href="https://www.marine.ie">Marine Institute</a> in collaboration with Met Éireann and the UK Met Office, is a network of five operational buoys providing regular sea surface observations including wind speed and direction. Hourly IWB data for 2001 to 2021 was retrieved from the <a class="reference external" href="https://erddap.marine.ie/erddap/index.html">Marine Institute ERDDAP server</a> and stored in a CSV file. The corresponding EOOffshore catalog entry is directly loaded into a <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>, retaining the wind speed, direction, and buoy coordinates data.</p>
 <p>The satellite and reanalysis data sets contained in the EOOffshore catalog provide wind speed values at 10m above surface level. As the IWB buoy wind speed measurements are taken at 3m, it is necessary to extrapolate the latter to 10m values. As <a class="reference external" href="https://doi.org/10.3390/en12020206">Remmers et al., 2019</a> used the log law method to perform a similar operation, it is applied here. Further details are provided later in this notebook.</p>
@@ -1345,9 +1348,9 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="load-the-synthentic-wind-farm-shapefile">
+<section id="load-the-synthentic-wind-farm-shapefile">
 <h4>Load the synthentic wind farm shapefile<a class="headerlink" href="#load-the-synthentic-wind-farm-shapefile" title="Permalink to this headline">¶</a></h4>
 <p>A synthetic wind farm AOI data set was created for the EOOffshore project, illustrating potential wind farm locations in the Irish Sea and North Celtic Sea. The data set is a shapefile containing wind farm polygon geometries, which is loaded into a <a class="reference external" href="https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.html"><code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code></a>. These polygons, along with the IWB buoy coordinates, are used to select AOI data subsets of the Zarr store variables.</p>
 <div class="cell docutils container">
@@ -1357,11 +1360,11 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="comparison-of-in-situ-buoy-and-data-set-wind-speed">
+<section id="comparison-of-in-situ-buoy-and-data-set-wind-speed">
 <h2>Comparison of In situ Buoy and Data Set Wind Speed<a class="headerlink" href="#comparison-of-in-situ-buoy-and-data-set-wind-speed" title="Permalink to this headline">¶</a></h2>
 <p>This section provides a comparison of in situ IWB buoy 10m wind speed values with corresponding wind speeds provided by the EOOffshore catalog data stores. All comparisons in this notebook generate:</p>
 <ol class="simple">
@@ -1369,7 +1372,7 @@
 <li><p>Density scatter plot for each IWB, data set pair</p></li>
 </ol>
 <hr class="docutils" />
-<div class="section" id="comparison-metrics">
+<section id="comparison-metrics">
 <h3>Comparison metrics<a class="headerlink" href="#comparison-metrics" title="Permalink to this headline">¶</a></h3>
 <p>The following metrics are calculated for all comparisons in this notebook:</p>
 <p><strong>Root Mean Square Error (RMSE)</strong></p>
@@ -1458,13 +1461,13 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">buoydf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">buoydf</span><span class="p">,</span> <span class="n">iwb</span><span class="o">.</span><span class="n">match_data</span><span class="p">(</span><span class="n">buoy</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">variable</span><span class="p">)),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">except</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Unable to match IWB </span><span class="si">{buoy}</span><span class="s1"> data with </span><span class="si">{dataset.name}</span><span class="s1"> data&#39;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to match IWB </span><span class="si">{buoy}</span><span class="s1"> data with </span><span class="si">{dataset.name}</span><span class="s1"> data&#39;</span><span class="p">)</span>
 
-        <span class="n">dsvariable</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;</span><span class="si">{dataset.name}</span><span class="s1">_</span><span class="si">{variable}</span><span class="s1">&#39;</span>
-        <span class="n">iwbvariable</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;</span><span class="si">{variable}{height}</span><span class="s1">&#39;</span>
+        <span class="n">dsvariable</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{dataset.name}</span><span class="s1">_</span><span class="si">{variable}</span><span class="s1">&#39;</span>
+        <span class="n">iwbvariable</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{variable}{height}</span><span class="s1">&#39;</span>
         <span class="n">buoydf</span> <span class="o">=</span> <span class="n">buoydf</span><span class="p">[(</span><span class="n">buoydf</span><span class="p">[</span><span class="n">iwbvariable</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">variable_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">buoydf</span><span class="p">[</span><span class="n">iwbvariable</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">variable_max</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">buoydf</span><span class="p">[</span><span class="n">dsvariable</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">variable_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">buoydf</span><span class="p">[</span><span class="n">dsvariable</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">variable_max</span><span class="p">)]</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">buoydf</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;No filtered </span><span class="si">{variable}</span><span class="s1"> available for match of IWB data with </span><span class="si">{dataset.name}</span><span class="s1"> data&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No filtered </span><span class="si">{variable}</span><span class="s1"> available for match of IWB data with </span><span class="si">{dataset.name}</span><span class="s1"> data&#39;</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
             <span class="k">continue</span>
           
@@ -1474,14 +1477,14 @@
         <span class="n">density_scatter_plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">buoydf</span><span class="p">[</span><span class="n">dsvariable</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">buoydf</span><span class="p">[</span><span class="n">iwbvariable</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
         <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">dsvariable</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">iwbvariable</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">buoydf</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{dataset.name}</span><span class="s1"> </span><span class="si">{height}</span><span class="s1">m wind speed ($n$ = {len(buoydf):,})&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{dataset.name}</span><span class="s1"> </span><span class="si">{height}</span><span class="s1">m wind speed ($n$ = {len(buoydf):,})&#39;</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">variable_lim</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">variable_lim</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">name</span><span class="p">);</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{iwb.name}</span><span class="s1">&#39;</span><span class="p">);</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{iwb.name}</span><span class="s1">&#39;</span><span class="p">);</span>
     <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
-    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{iwb.name}</span><span class="s1"> buoys - </span><span class="si">{height}</span><span class="s1">m wind speed&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{iwb.name}</span><span class="s1"> buoys - </span><span class="si">{height}</span><span class="s1">m wind speed&#39;</span><span class="p">)</span>
     
     <span class="n">allmetricsdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">allmetrics</span><span class="p">)</span>
     <span class="n">dfstyle</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;$n$&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:,.0f}</span><span class="s1">&#39;</span><span class="p">}</span>
@@ -1491,9 +1494,9 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="wind-speed-summary">
+<section id="wind-speed-summary">
 <h3>Wind speed summary<a class="headerlink" href="#wind-speed-summary" title="Permalink to this headline">¶</a></h3>
 <p>Mean 10m wind speed for IWB buoy coordinates</p>
 <div class="cell docutils container">
@@ -1586,9 +1589,9 @@
 </table>
 </div></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="iwb-wind-speed-comparison-with-data-sets">
+<section id="iwb-wind-speed-comparison-with-data-sets">
 <h3>IWB wind speed comparison with data sets<a class="headerlink" href="#iwb-wind-speed-comparison-with-data-sets" title="Permalink to this headline">¶</a></h3>
 <p>IWB buoy 10m wind speed compared with all other data sets</p>
 <div class="cell docutils container">
@@ -1685,10 +1688,10 @@ Unable to match IWB M6 data with Sentinel-1 data
 </div><img alt="_images/Comparison_Wind_Power_32_2.png" src="_images/Comparison_Wind_Power_32_2.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="data-sets-wind-speed-comparison">
+<section id="data-sets-wind-speed-comparison">
 <h2>Data Sets Wind Speed Comparison<a class="headerlink" href="#data-sets-wind-speed-comparison" title="Permalink to this headline">¶</a></h2>
 <p>In contrast to the previous section that compares IWB buoy data with corresponding satellite and reanalysis Zarr stores contained in the EOOffshore catalog, the remainder of this notebook focuses on comparisons between the Zarr stores. The approach is as follows:</p>
 <ol class="simple">
@@ -1896,7 +1899,7 @@ Unable to match IWB M6 data with Sentinel-1 data
             <span class="n">density_scatter_plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">test_matchesdf</span><span class="o">.</span><span class="n">Test</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">test_matchesdf</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">reference_name</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
             <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">reference_name</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">test_matchesdf</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{test_name}</span><span class="s1"> </span><span class="si">{self.comparison_height}</span><span class="s1">m </span><span class="si">{variable_label}</span><span class="s1"> ($n$ = {len(test_matchesdf):,})&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{test_name}</span><span class="s1"> </span><span class="si">{self.comparison_height}</span><span class="s1">m </span><span class="si">{variable_label}</span><span class="s1"> ($n$ = {len(test_matchesdf):,})&#39;</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">variable_lim</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">variable_lim</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">test_name</span><span class="p">);</span>
@@ -1904,17 +1907,17 @@ Unable to match IWB M6 data with Sentinel-1 data
         <span class="c1"># Disable any axes if required</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">ncols</span> <span class="o">*</span> <span class="n">nrows</span><span class="p">)</span> <span class="o">-</span> <span class="n">num_test_datasets</span><span class="p">):</span>
             <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{self.reference_name}</span><span class="s1"> </span><span class="si">{self.comparison_height}</span><span class="s1">m </span><span class="si">{variable_label}</span><span class="s1"> (IWB buoy, wind farm AOIs)&#39;</span><span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{self.reference_name}</span><span class="s1"> </span><span class="si">{self.comparison_height}</span><span class="s1">m </span><span class="si">{variable_label}</span><span class="s1"> (IWB buoy, wind farm AOIs)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="m-wind-speed">
+<section id="m-wind-speed">
 <h3>10m wind speed<a class="headerlink" href="#m-wind-speed" title="Permalink to this headline">¶</a></h3>
 <p>This section provides 10m wind speed comparison outputs</p>
 <hr class="docutils" />
-<div class="section" id="mera-10m-wind-speed">
+<section id="mera-10m-wind-speed">
 <h4>MÉRA 10m wind speed<a class="headerlink" href="#mera-10m-wind-speed" title="Permalink to this headline">¶</a></h4>
 <p>MÉRA 10m wind speed is compared with corresponding wind speed provided by other data sets at the IWB buoy and wind farm AOI coordinates.</p>
 <ul class="simple">
@@ -1995,9 +1998,9 @@ Unable to match IWB M6 data with Sentinel-1 data
 </div><img alt="_images/Comparison_Wind_Power_40_1.png" src="_images/Comparison_Wind_Power_40_1.png" />
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="newa-10m-wind-speed">
+<section id="newa-10m-wind-speed">
 <h4>NEWA 10m wind speed<a class="headerlink" href="#newa-10m-wind-speed" title="Permalink to this headline">¶</a></h4>
 <p>NEWA 10m wind speed is compared with corresponding wind speed provided by other data sets at the IWB buoy and wind farm AOI coordinates.</p>
 <ul class="simple">
@@ -2087,11 +2090,11 @@ Unable to match IWB M6 data with Sentinel-1 data
 </div><img alt="_images/Comparison_Wind_Power_42_1.png" src="_images/Comparison_Wind_Power_42_1.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="wind-speed-extrapolation">
+<section id="wind-speed-extrapolation">
 <h2>Wind Speed Extrapolation<a class="headerlink" href="#wind-speed-extrapolation" title="Permalink to this headline">¶</a></h2>
 <p>Wind speed extrapolation is the process of extrapolating data values at provided heights to one or more required heights for which data is unavailable, generating a wind speed profile at an AOI. For satellite or reanalysis, data is usually restricted to values at 10m above the surface level. Consequently, extrapolation may be used with these 10m data to generate wind speed values at typical <a class="reference external" href="https://www.wind-energy-the-facts.org/hub-height.html">wind turbine hub heights</a>. The following publications provide examples of wind speed extrapolation:</p>
 <ul class="simple">
@@ -2107,7 +2110,7 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </ul>
 <p>This section is not intended to be a complete analysis of possible extrapolation methods. Instead, its objective is to demonstrate how a comparison of methods may be implemented using the scalable approach offered by the combination of the xarray, Dask and Zarr libraries, applied to data at multiple heights provided by MÉRA and NEWA.</p>
 <hr class="docutils" />
-<div class="section" id="power-law-extrapolation">
+<section id="power-law-extrapolation">
 <h3>Power law extrapolation<a class="headerlink" href="#power-law-extrapolation" title="Permalink to this headline">¶</a></h3>
 <p>The power law method is often used for extrapolating 10m wind speed observations to hub heights (for example, <a class="reference external" href="https://doi.org/10.3390/en12020206">Remmers et al., 2019</a>; <a class="reference external" href="https://doi.org/10.5194/wes-5-1097-2020">Schelbergen et al., 2020</a>). It is defined as follows (<a class="reference external" href="https://journals.ametsoc.org/view/journals/apme/33/6/1520-0450_1994_033_0757_dtplwp_2_0_co_2.xml">Hsu et al., 1994 - Determining the Power-Law Wind-Profile Exponent under Near-Neutral Stability Conditions at Sea</a>):</p>
 <p><span class="math notranslate nohighlight">\(u = u_r\left(\dfrac{z}{z_r}\right)^\alpha\)</span></p>
@@ -2124,7 +2127,7 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
     <span class="sd">&quot;&quot;&quot;Wind speed Extrapolator implementation, using the power law method&quot;&quot;&quot;</span>
     <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.11</span> <span class="c1"># Hsu 1994</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.11</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.11</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
     
     <span class="k">def</span> <span class="nf">_extrapolate_wind_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">variable_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">extrapolation_height</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">reference_height</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
@@ -2137,7 +2140,7 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="mera-125m-wind-speed-comparison">
+<section id="mera-125m-wind-speed-comparison">
 <h4>MÉRA 125m wind speed comparison<a class="headerlink" href="#mera-125m-wind-speed-comparison" title="Permalink to this headline">¶</a></h4>
 <p>10m wind speed is extrapolated using the power law method, and compared with the corresponding MÉRA 125m wind speed at the IWB buoy and wind farm AOI coordinates.</p>
 <p>This data structure is used to record wind speed extrapolation comparison metrics obtained throughout this notebook</p>
@@ -2219,9 +2222,9 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div><img alt="_images/Comparison_Wind_Power_48_1.png" src="_images/Comparison_Wind_Power_48_1.png" />
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="newa-150m-wind-speed-comparison">
+<section id="newa-150m-wind-speed-comparison">
 <h4>NEWA 150m wind speed comparison<a class="headerlink" href="#newa-150m-wind-speed-comparison" title="Permalink to this headline">¶</a></h4>
 <p>150m wind speed is extrapolated using the power law method, and compared with the corresponding NEWA 150m wind speed at the IWB buoy and wind farm AOI coordinates.</p>
 <div class="cell docutils container">
@@ -2306,9 +2309,9 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div><img alt="_images/Comparison_Wind_Power_50_1.png" src="_images/Comparison_Wind_Power_50_1.png" />
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="power-law-alpha-estimation">
+<section id="power-law-alpha-estimation">
 <h4>Power law <span class="math notranslate nohighlight">\(\alpha\)</span> estimation<a class="headerlink" href="#power-law-alpha-estimation" title="Permalink to this headline">¶</a></h4>
 <p>A value of <span class="math notranslate nohighlight">\(\alpha\)</span> = 0.1 or 0.11 is often used as a good approximation for use at sea with the power law method (<a class="reference external" href="https://journals.ametsoc.org/view/journals/apme/33/6/1520-0450_1994_033_0757_dtplwp_2_0_co_2.xml">Hsu et al., 1994</a>). However, the positive Bias obtained with the corresponding comparisons (in contrast to the 10m comparisons Bias) may identify that the extrapolated wind speeds are overestimated, suggesting that an alternative <span class="math notranslate nohighlight">\(\alpha\)</span> value may be more suitable. For example, the ERA5 data set provides wind speed at both 10m and 100m, which may be used to calculate <span class="math notranslate nohighlight">\(\alpha\)</span> as follows:</p>
 <p><span class="math notranslate nohighlight">\(\alpha = \dfrac{\mathrm{ln}\left(\dfrac{u_2}{u_1}\right)}{\mathrm{ln}\left(\dfrac{z_2}{z_1}\right)}\)</span></p>
@@ -2468,9 +2471,9 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="mera-125m-wind-speed-comparison-using-era5-power-law-alpha">
+<section id="mera-125m-wind-speed-comparison-using-era5-power-law-alpha">
 <h4>MÉRA 125m wind speed comparison using ERA5 power law <span class="math notranslate nohighlight">\(\alpha\)</span><a class="headerlink" href="#mera-125m-wind-speed-comparison-using-era5-power-law-alpha" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2543,9 +2546,9 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div><img alt="_images/Comparison_Wind_Power_61_1.png" src="_images/Comparison_Wind_Power_61_1.png" />
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="newa-150m-wind-speed-comparison-using-era5-power-law-alpha">
+<section id="newa-150m-wind-speed-comparison-using-era5-power-law-alpha">
 <h4>NEWA 150m wind speed comparison using ERA5 power law <span class="math notranslate nohighlight">\(\alpha\)</span><a class="headerlink" href="#newa-150m-wind-speed-comparison-using-era5-power-law-alpha" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2629,10 +2632,10 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div><img alt="_images/Comparison_Wind_Power_63_1.png" src="_images/Comparison_Wind_Power_63_1.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="log-law-extrapolation">
+<section id="log-law-extrapolation">
 <h3>Log law extrapolation<a class="headerlink" href="#log-law-extrapolation" title="Permalink to this headline">¶</a></h3>
 <p>The log law method is an alternative extrapolation method. Here, it is implemented as defined by <a class="reference external" href="https://doi.org/10.3390/en12020206">Remmers et al., 2019</a>:</p>
 <p><span class="math notranslate nohighlight">\(u = \dfrac{\mathrm{ln}\left(\dfrac{z}{z_0}\right)}{\mathrm{ln}\left(\dfrac{z_r}{z_0}\right)} \times u_r\)</span></p>
@@ -2648,7 +2651,7 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
     <span class="sd">&quot;&quot;&quot;Wind speed Extrapolator implementation, using the log law method as defined in Remmers et al., 2019&quot;&quot;&quot;</span>
     <span class="n">z0</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0002</span> <span class="c1"># surface roughness length</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z0</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.0002</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z0</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.0002</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">z0</span> <span class="o">=</span> <span class="n">z0</span>
     
     <span class="k">def</span> <span class="nf">_extrapolate_wind_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">variable_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">extrapolation_height</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">reference_height</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
@@ -2662,7 +2665,7 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id1">
+<section id="id1">
 <h4>MÉRA 125m wind speed comparison<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <p>10m wind speed is extrapolated using the log law method, and compared with the corresponding MÉRA 125m wind speed at the IWB buoy and wind farm AOI coordinates.</p>
 <div class="cell docutils container">
@@ -2736,9 +2739,9 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div><img alt="_images/Comparison_Wind_Power_67_1.png" src="_images/Comparison_Wind_Power_67_1.png" />
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="id2">
+<section id="id2">
 <h4>NEWA 150m wind speed comparison<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>10m wind speed is extrapolated using the log law method, and compared with the corresponding NEWA 150m wind speed at the IWB buoy and wind farm AOI coordinates.</p>
 <div class="cell docutils container">
@@ -2823,10 +2826,10 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div><img alt="_images/Comparison_Wind_Power_69_1.png" src="_images/Comparison_Wind_Power_69_1.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="extrapolation-metrics-review">
+<section id="extrapolation-metrics-review">
 <h3>Extrapolation metrics review<a class="headerlink" href="#extrapolation-metrics-review" title="Permalink to this headline">¶</a></h3>
 <p>The following tables contain the extrapolation metrics obtained from the MÉRA and NEWA comparisons, where the “best” scores are highlighted.</p>
 <div class="cell docutils container">
@@ -2870,7 +2873,7 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 
 <span class="k">for</span> <span class="n">reference_dataset_label</span><span class="p">,</span> <span class="n">method_metrics</span> <span class="ow">in</span> <span class="n">reference_wind_speed_metrics</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;-----------------&#39;</span><span class="p">))</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;**Wind Speed Extrapolation Methods: compared with </span><span class="si">{reference_dataset_label}</span><span class="s1">**&#39;</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;**Wind Speed Extrapolation Methods: compared with </span><span class="si">{reference_dataset_label}</span><span class="s1">**&#39;</span><span class="p">))</span>
     <span class="n">display</span><span class="p">(</span><span class="n">dataset_metrics_table</span><span class="p">(</span><span class="n">method_metrics</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
@@ -3205,10 +3208,10 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="power-density-estimation">
+<section id="power-density-estimation">
 <h2>Power Density Estimation<a class="headerlink" href="#power-density-estimation" title="Permalink to this headline">¶</a></h2>
 <p>Offshore wind power density estimates may be generated for an AOI using the available wind speed values at the corresponding coordinates. When used in combination with wind speed extrapolation as described above, it is possible to estimate power at typical wind turbine hub heights. The following publications provide examples of power density estimation using wind speed:</p>
 <ul class="simple">
@@ -3223,7 +3226,7 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 <li><p><a class="reference external" href="https://doi.org/10.1016/j.rser.2020.110167">Xu et al. (2020) - Proliferation of offshore wind farms in the North Sea and surrounding waters revealed by satellite image time series</a></p></li>
 </ul>
 <hr class="docutils" />
-<div class="section" id="estimation-implementation">
+<section id="estimation-implementation">
 <h3>Estimation implementation<a class="headerlink" href="#estimation-implementation" title="Permalink to this headline">¶</a></h3>
 <p>Power density estimation at multiple heights is implemented as an <code class="docutils literal notranslate"><span class="pre">Extrapolator</span></code>, as used for wind speed extrapolation above. Here is the base class used for all implementations.</p>
 <div class="cell docutils container">
@@ -3239,7 +3242,7 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
     <span class="n">max_wind_speed</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">CUT_OUT_WIND_SPEED</span>
     <span class="n">wind_speed_variable_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;wind_speed&#39;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">air_density</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">1.225</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">air_density</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">1.225</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">air_density</span> <span class="o">=</span> <span class="n">air_density</span>
 
     <span class="k">def</span> <span class="nf">extrapolate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">heights</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">variable_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;power_density&#39;</span><span class="p">):</span>
@@ -3261,9 +3264,9 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="power-density-estimation-using-cubed-wind-speed">
+<section id="power-density-estimation-using-cubed-wind-speed">
 <h3>Power Density Estimation using cubed wind speed<a class="headerlink" href="#power-density-estimation-using-cubed-wind-speed" title="Permalink to this headline">¶</a></h3>
 <p>When a data set provides a complete time series of wind speed observations, power density may be estimated from the cube of the wind speed (<a class="reference external" href="https://doi.org/10.5194/wes-5-1023-2020">de Montera et al., 2020</a>):</p>
 <p><span class="math notranslate nohighlight">\(P = \dfrac{1}{2}\rho U^3\)</span></p>
@@ -3284,9 +3287,9 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="aoi-wind-speed-distributions-and-weibull-parameters">
+<section id="aoi-wind-speed-distributions-and-weibull-parameters">
 <h3>AOI wind speed distributions and Weibull parameters<a class="headerlink" href="#aoi-wind-speed-distributions-and-weibull-parameters" title="Permalink to this headline">¶</a></h3>
 <p>AOI wind speed is typically represented by a Weibull distribution of observations, characterized by a shape parameter (<span class="math notranslate nohighlight">\(k\)</span>, dimensionless) and a scale parameter (<span class="math notranslate nohighlight">\(\lambda\)</span>, <span class="math notranslate nohighlight">\(m s^{-1}\)</span>) (<a class="reference external" href="https://doi.org/10.5194/wes-5-1191-2020">Ahsbahs et al., 2020</a>). The Weibull probability density function (PDF) is as follows:</p>
 <p><span class="math notranslate nohighlight">\(\mathrm{PDF}(U) = \dfrac{k}{\lambda}\left(\dfrac{U}{k} \right)^{k-1} \epsilon^{-(U/\lambda)^k}\)</span></p>
@@ -3335,10 +3338,10 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="power-density-comparison">
+<section id="power-density-comparison">
 <h2>Power Density Comparison<a class="headerlink" href="#power-density-comparison" title="Permalink to this headline">¶</a></h2>
 <p>In contrast to the previous section that compares IWB buoy data with corresponding satellite and reanalysis Zarr stores contained in the EOOffshore catalog, the remainder of this notebook focuses on comparisons between the Zarr stores. The approach is as follows:</p>
 <ol class="simple">
@@ -3415,14 +3418,14 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
         <span class="c1"># Single plot illustrating percentage bias distribution per test dataset</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">matchesdf</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pbias_label</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_percentage_bias</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matchesdf</span><span class="o">.</span><span class="n">NEWA</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">matchesdf</span><span class="o">.</span><span class="n">Test</span><span class="p">)</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">matchesdf</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Dataset&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pbias_label</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{self.reference_name}</span><span class="s1"> </span><span class="si">{self.comparison_height}</span><span class="s1">m {self.variable.replace(&quot;_&quot;, &quot; &quot;)} (IWB buoy, wind farm AOIs)&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{self.reference_name}</span><span class="s1"> </span><span class="si">{self.comparison_height}</span><span class="s1">m {self.variable.replace(&quot;_&quot;, &quot; &quot;)} (IWB buoy, wind farm AOIs)&#39;</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="newa-150m-power-density">
+<section id="newa-150m-power-density">
 <h3>NEWA 150m power density<a class="headerlink" href="#newa-150m-power-density" title="Permalink to this headline">¶</a></h3>
 <p>10m wind speed is extrapolated and used to estimate power density, which is compared with the corresponding NEWA 150m power density at the IWB buoy and wind farm AOI coordinates. Each data set is extrapolated as follows, based on the previous metrics tables obtained from MÉRA and NEWA wind speed comparisons:</p>
 <ul class="simple">
@@ -3561,9 +3564,9 @@ weather prediction models and buoys – A comparative study for the Iberian Peni
 </div><img alt="_images/Comparison_Wind_Power_83_1.png" src="_images/Comparison_Wind_Power_83_1.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
