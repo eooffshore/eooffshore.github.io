@@ -1,7 +1,7 @@
 # Irish Continental Shelf Data Sets
 
 The EOOffshore project has involved the creation of a new wind data catalog, consisting of a collection of analysis-ready, cloud-optimized (ARCO) data sets, 
-which features up to 21 years of available in situ, reanalysis, and satellite observation wind data products for the [Irish Continental Shelf](https://www.marine.ie/Home/site-area/irelands-marine-resource/real-map-ireland) region.
+which features up to 21 years of available in situ, reanalysis, model, and satellite observation wind data products for the [Irish Continental Shelf](https://www.marine.ie/Home/site-area/irelands-marine-resource/real-map-ireland) region.
 
 | ![Irish Continental Shelf](images/ics.png) |
 | :--: |
